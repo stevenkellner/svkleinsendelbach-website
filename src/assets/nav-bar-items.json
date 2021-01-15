@@ -1,0 +1,282 @@
+﻿{
+  "all-nav-items": [
+    {
+      "id": "home",
+      "name": "Home",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "about-us",
+      "name": "über uns",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "about-us-directors",
+      "name": "Vorstandschaft",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "about-us-sports-home",
+      "name": "Sportheim",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "about-us-chronicle",
+      "name": "Chronik",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "about-us-statute",
+      "name": "Satzung",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "about-us-privacy",
+      "name": "Datenschutz",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "about-us-request",
+      "name": "Mitgliedsantrag",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-adult",
+      "name": "Herrenfussball",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-adult-general",
+      "name": "Übersicht",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-adult-1",
+      "name": "1. Mannschaft",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-adult-2",
+      "name": "2. Mannschaft",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-adult-AH",
+      "name": "Alte Herren",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-youth",
+      "name": "Jugendfussball",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-youth-general",
+      "name": "Übersicht",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-youth-A",
+      "name": "A-Jugend",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-youth-B",
+      "name": "B-Jugend",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-youth-C",
+      "name": "C-Jugend",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-youth-D",
+      "name": "D-Jugend",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-youth-E",
+      "name": "E-Jugend",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-youth-F",
+      "name": "F-Jugend",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "football-youth-G",
+      "name": "G-Jugend",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "gymnastics",
+      "name": "Gymnastik",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "dancing",
+      "name": "Tanzen",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "drive",
+      "name": "Anfahrt",
+      "linkUrl": "TODO"
+    },
+    {
+      "id": "contact",
+      "name": "Kontakt",
+      "linkUrl": "TODO"
+    }
+  ],
+  "desktop": [
+    {
+      "id": "home"
+    },
+    {
+      "id": "about-us",
+      "sub-items": [
+        "about-us-directors",
+        "about-us-sports-home",
+        "about-us-chronicle",
+        "about-us-statute",
+        "about-us-privacy",
+        "about-us-request"
+      ]
+    },
+    {
+      "id": "football-adult",
+      "sub-items": [
+        "football-adult-1",
+        "football-adult-2",
+        "football-adult-AH"
+      ]
+    },
+    {
+      "id": "football-youth",
+      "sub-items": [
+        "football-youth-A",
+        "football-youth-B",
+        "football-youth-C",
+        "football-youth-D",
+        "football-youth-E",
+        "football-youth-F",
+        "football-youth-G"
+      ]
+    },
+    {
+      "id": "gymnastics"
+    },
+    {
+      "id": "dancing"
+    },
+    {
+      "id": "drive"
+    },
+    {
+      "id": "contact"
+    }
+  ],
+  "tablet": [
+    {
+      "id": "home",
+      "sub-items": [
+        "home",
+        "drive",
+        "contact"
+      ]
+    },
+    {
+      "id": "about-us",
+      "sub-items": [
+        "about-us-directors",
+        "about-us-sports-home",
+        "about-us-chronicle",
+        "about-us-statute",
+        "about-us-privacy",
+        "about-us-request"
+      ]
+    },
+    {
+      "id": "football-adult",
+      "sub-items": [
+        "football-adult-general",
+        "football-adult-1",
+        "football-adult-2",
+        "football-adult-AH"
+      ]
+    },
+    {
+      "id": "football-youth",
+      "sub-items": [
+        "football-youth-general",
+        "football-youth-A",
+        "football-youth-B",
+        "football-youth-C",
+        "football-youth-D",
+        "football-youth-E",
+        "football-youth-F",
+        "football-youth-G"
+      ]
+    },
+    {
+      "id": "gymnastics",
+      "sub-items": [
+        "gymnastics",
+        "dancing"
+      ]
+    }
+  ],
+  "mobile": [
+    {
+      "id": "home",
+      "sub-items": [
+        "home",
+        "drive",
+        "contact"
+      ]
+    },
+    {
+      "id": "about-us",
+      "sub-items": [
+        "about-us-directors",
+        "about-us-sports-home",
+        "about-us-chronicle",
+        "about-us-statute",
+        "about-us-privacy",
+        "about-us-request"
+      ]
+    },
+    {
+      "id": "football-adult",
+      "sub-items": [
+        "football-adult-general",
+        "football-adult-1",
+        "football-adult-2",
+        "football-adult-AH"
+      ]
+    },
+    {
+      "id": "football-youth",
+      "sub-items": [
+        "football-youth-general",
+        "football-youth-A",
+        "football-youth-B",
+        "football-youth-C",
+        "football-youth-D",
+        "football-youth-E",
+        "football-youth-F",
+        "football-youth-G"
+      ]
+    },
+    {
+      "id": "gymnastics",
+      "sub-items": [
+        "gymnastics",
+        "dancing"
+      ]
+    }
+  ]
+}

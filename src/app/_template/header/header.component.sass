@@ -10,9 +10,7 @@
     justify-content: space-around
 
     .logo-link
-        $height-procent: 75
-        height: $height-procent * 1%
-        margin: ((100 - $height-procent) / 200 * $top-header-height) 0 0 0
+        height: 75%
         cursor: default
 
         .logo
@@ -68,7 +66,7 @@
                 transform: translateY(0.25 * $cube)
                 z-index: 0
         
-        &:hover 
+        &:hover, &.after-load
             > .text
                 transform: translateY(0.25 * $cube)
 
@@ -76,13 +74,13 @@
                 transform: translateY(-0.25 * $cube)
                 background-color: $red
 
-        &.no-title
+        &.nav-bar-item-hover
             > .text
-                transform: translateY(0)
+                transform: translateY(0.25 * $cube)
+
             .header-sheet
-                display: none
-            &hover > .text
-                transform: translateY(0)
+                transform: translateY(-0.25 * $cube)
+                background-color: $gray-light
     
     .social-media-buttons
         width: 9 * $cube
