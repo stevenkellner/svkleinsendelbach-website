@@ -25,7 +25,7 @@
         transition: .3s linear
 
         > .text
-            padding: $cube (5 * $cube)
+            padding: $cube (4 * $cube)
             color: $dark-prime
             background-color: $blue-dark
             border-radius: 0.5 * $cube
@@ -159,3 +159,46 @@
             .buttons .link
                 opacity: 1
                 transform: translateX(0)
+
+        &.cover-unvisible
+            .cover
+                display: none
+
+            .buttons
+                background-color: $gray-light
+                
+                .link
+                    transform: translateX(0)
+                    opacity: 1
+            
+            &:hover
+                transform: scale(1)
+
+.top-header.mobile
+    $top-header-height: 5 * $cube
+    height: $top-header-height
+
+    .title-container 
+        margin-right: 3 * $cube
+
+        > .text
+            padding: $cube (3 * $cube)
+            border-radius: 0.5 * $cube
+            font:
+                size: $cube
+                weight: 500
+            transform: translateY(0)
+
+        .header-sheet
+            display: none
+
+@media screen and (prefers-color-scheme: dark)
+    .top-header
+        .title-container.nav-bar-item-hover .header-sheet 
+            background-color: $dark-background
+            .text
+                color: $white-text-dark-theme
+
+        .social-media-buttons .cover
+            background-color: $dark-background
+            color: $white-text-dark-theme

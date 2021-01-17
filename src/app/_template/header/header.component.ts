@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ElementRef, AfterViewInit, Renderer2, OnInit } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit, Renderer2, OnInit, HostListener } from '@angular/core';
 import { HoverEmitter, NavigationBarItem } from './nav-bar/nav-bar.component'
 
 @Component({
@@ -12,9 +12,13 @@ export class HeaderComponent implements AfterViewInit, OnInit {
 
     navBarHoverItem: NavigationBarItem | null = null;
 
+    deviceTypeListener: DeviceTypeListener;
+
     @ViewChild('headerTitleContainer') titleContainer: ElementRef | undefined;
 
-    constructor(private renderer: Renderer2) {}
+    constructor(private renderer: Renderer2) {
+        this.deviceTypeListener = new DeviceTypeListener(window, () => {});
+    }
 
     ngOnInit(): void {
         if (this.title == null) {
@@ -24,6 +28,11 @@ export class HeaderComponent implements AfterViewInit, OnInit {
 
     ngAfterViewInit(): void {
         this.setHeaderSheetTimeout();
+    }
+
+    @HostListener('window:resize', ['$event'])
+    windowChanged(event: any): void {
+        this.deviceTypeListener.windowChanged(window);
     }
 
     handleHoverEmitter(hoverEmitter: HoverEmitter): void {
@@ -40,4 +49,52 @@ export class HeaderComponent implements AfterViewInit, OnInit {
             this.renderer.removeClass(this.titleContainer?.nativeElement, "after-load");
         }, 10000);
     }
+}
+
+export enum DeviceType {
+    desktop = "desktop",
+    tablet = "tablet",
+    mobile = "mobile"
+}
+
+export class DeviceTypeListener {
+
+    deviceType: DeviceType;
+
+    constructor(window: Window,
+        private onChange: (deviceType: DeviceType) => void) {
+            this.deviceType = this.getDeviceType(window);
+            this.onChange(this.deviceType);
+        }
+
+    windowChanged(window: Window): void {
+        this.deviceType = this.getDeviceType(window);
+        this.onChange(this.deviceType);
+    }
+
+    getDeviceType(window: Window): DeviceType {
+        if (window.innerWidth >= 1113) {
+            return DeviceType.desktop;
+        } else if (window.innerWidth <= 767) {
+            return DeviceType.mobile;
+        }
+        return DeviceType.tablet;
+    }
+
+    isMobile(): boolean {
+        return this.deviceType == DeviceType.mobile;
+    }
+    
+    isTablet(): boolean {
+        return this.deviceType == DeviceType.tablet;
+    }
+
+    isDesktop(): boolean {
+        return this.deviceType == DeviceType.desktop;
+    }
+
+    deviceTypeString(): string {
+        return this.deviceType.valueOf();
+    }
+
 }

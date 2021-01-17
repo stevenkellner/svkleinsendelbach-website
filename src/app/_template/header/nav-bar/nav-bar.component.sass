@@ -41,7 +41,6 @@
                 .sub-item
                     display: flex
                     flex-direction: column
-                    height: $sub-item-height
                     overflow: hidden
                     justify-content: center
                     width: 100%
@@ -93,6 +92,7 @@
         flex-direction: row
         align-items: center
         justify-content: flex-start
+        z-index: 103
 
         .button
             $line-height: 0.25 * $cube
@@ -128,6 +128,111 @@
                     transform: rotate(45deg) translate(0.7 * $line-width, -0.7 * $line-width)
                 &::after
                     transform: rotate(-45deg) translate(0.7 * $line-width, 0.7 * $line-width)
+
+    .nav-bar-items
+        $nav-bar-item-height: 2.5 * $cube
+        $sub-item-height: 2 * $cube
+        display: flex
+        flex-direction: column
+        align-content: center
+        justify-content: flex-start
+
+        .nav-bar-item
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: flex-start
+            overflow: hidden
+            height: 0
+            transition: transform .5s linear
+
+            > .link
+                display: flex
+                flex-direction: row
+                align-items: center
+                justify-content: center
+                text-decoration: none
+                width: 95vw
+                height: 100%
+                transition: transform .5s linear
+
+                .text
+                    text-transform: uppercase
+                    white-space: nowrap
+                    
+                i
+                    margin-left: 4px
+                
+            @for $i from 1 through 100 
+                &:nth-child(#{$i})
+                    transform: translateY(-$i * $nav-bar-item-height)
+                    z-index: 101 - $i
+
+            .sub-items
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: flex-start
+
+                .sub-item
+                    display: flex
+                    flex-direction: column
+                    overflow: hidden
+                    justify-content: center
+                    width: 100%
+                    height: 0
+                    padding: 0 $cube
+                    transition: transform .5s linear
+                    transition-delay: 0
+                    width: 75vw
+
+                    @for $i from 1 through 100 
+                        &:nth-child(#{$i})
+                            transform: translateY(-$i * $sub-item-height)
+                            z-index: 101 - $i
+
+                    > .link
+                        text-decoration: none
+
+                        .text
+                            display: flex
+                            flex-direction: row
+                            text-transform: uppercase
+                            white-space: nowrap
+                            justify-content: center
+
+        &.active .nav-bar-item
+            height: $nav-bar-item-height
+            transform: translateY(0)
+        
+            &.expanded
+                height: 100%
+                margin-bottom: $cube
+
+                > .link 
+                    background-color: $gray-dark
+                    height: $nav-bar-item-height
+                    z-index: 102
+                    transition: border-radius .5s linear
+                    border-radius: 0 0 $cube $cube
+
+                    .text, i
+                        color: $blue-light
+
+                .sub-items .sub-item
+                    height: $sub-item-height
+                    transform: translateY(0)
+                    transition: height .5s linear
+
+                    @for $i from 1 through 100 
+                        &:nth-child(#{$i})
+                            transition-delay: #{0.05 * $i}s
+
+                + .nav-bar-item 
+                    > .link
+                        border-radius: $cube $cube 0 0 
+                    &:last-child > .link
+                        border-radius: $cube
 
 // Style of nav bar for desktop and tablet
 .nav-bar.desktop, .nav-bar.tablet
@@ -184,3 +289,68 @@
 
             &.active .btn-image
                 background-color: transparent
+
+    .nav-bar-items
+        .nav-bar-item
+            > .link
+                background-color: $dark-prime
+                cursor: pointer
+
+                .text, i
+                    color: $white-text
+                
+            &:last-child > .link
+                border-radius: 0 0 $cube $cube
+
+            .sub-items
+                .sub-item
+                    background-color: $dark-prime
+
+                    > .link
+                        cursor: pointer
+
+                        .text
+                            color: $white-text
+                
+                    &:last-child
+                        border-radius: 0 0 (0.5 * $cube) (0.5 * $cube)
+
+@media screen and (prefers-color-scheme: dark)
+    .nav-bar.desktop, .nav-bar.tablet
+        .nav-bar-items .nav-bar-item 
+            .sub-items .sub-item
+                border: 
+                    right: (0.15 * $cube) solid $gray-text-dark-theme
+                    left: (0.15 * $cube) solid $gray-text-dark-theme
+                > .link .text
+                    color: $gray-text-dark-theme
+            > .link 
+                .text, i
+                    color: $gray-text-dark-theme
+    .nav-bar.desktop .nav-bar-items .nav-bar-item:hover .sub-items .sub-item:last-child
+        border-bottom: (0.15 * $cube) solid $gray-text-dark-theme
+    .nav-bar.tablet .nav-bar-items .nav-bar-item.expanded .sub-items .sub-item:last-child
+        border-bottom: (0.15 * $cube) solid $gray-text-dark-theme
+
+    .nav-bar.mobile
+        .drop-down-btn
+            border-bottom: (0.15 * $cube) solid $gray-text-dark-theme
+
+        .nav-bar-items.active
+            .nav-bar-item
+                > .link
+                    border: 
+                        right: (0.125 * $cube) solid $gray-text-dark-theme
+                        left: (0.125 * $cube) solid $gray-text-dark-theme
+                    
+                &:last-child > .link, &.expanded > .link
+                    border-bottom: (0.125 * $cube) solid $gray-text-dark-theme
+
+                &.expanded .sub-items
+                    .sub-item
+                        border: 
+                            right: (0.1 * $cube) solid $gray-text-dark-theme
+                            left: (0.1 * $cube) solid $gray-text-dark-theme
+                    
+                        &:last-child
+                            border-bottom: (0.1 * $cube) solid $gray-text-dark-theme

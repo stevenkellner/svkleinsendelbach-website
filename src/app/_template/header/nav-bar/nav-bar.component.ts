@@ -1,5 +1,6 @@
-import { Component, OnInit, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, HostListener, Output, EventEmitter, ElementRef, ViewChildren, Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { DeviceTypeListener, DeviceType } from '../header.component'
 
 @Component({
     selector: 'app-nav-bar',
@@ -11,7 +12,7 @@ export class NavBarComponent implements OnInit {
 
     navBarItems: NavigationBarItem[]
 
-    deviceType: DeviceType;
+    deviceTypeListener: DeviceTypeListener;
 
     activeNavBarItemId: string | null = null;
 
@@ -19,26 +20,24 @@ export class NavBarComponent implements OnInit {
 
     @Output() navBarItemHoverEmitter: EventEmitter<HoverEmitter> = new EventEmitter<HoverEmitter>()
 
-    constructor(private httpClient: HttpClient) {
+    @ViewChildren('navBarItem') navBarItemElements: ElementRef[] | undefined;
+
+    constructor(private httpClient: HttpClient,
+        private renderer: Renderer2) {
         this.navBarItems = [];
-        this.deviceType = this.getDeviceType();
-        this.decodeNavItems();
+        this.deviceTypeListener = new DeviceTypeListener(window, deviceType => {
+            if (deviceType == DeviceType.desktop) {
+                this.activeNavBarItemId = null
+            }
+            this.decodeNavItems();
+        });
     }
 
     ngOnInit(): void {}
 
-    @HostListener('window:resize', ['$event'])
-    resizeNavBar(event: any): void {
-        this.deviceType = this.getDeviceType();
-        if (this.deviceType == DeviceType.desktop) {
-            this.activeNavBarItemId = null
-        }
-        this.decodeNavItems()
-    }
-
     decodeNavItems(): void {
         this.httpClient.get('../../../../assets/nav-bar-items.json').subscribe((data: any) => {
-            const navItems = data[this.deviceType];
+            const navItems = data[this.deviceTypeListener.deviceType];
             let navBarItems: NavigationBarItem[] = [];
             for (const navItem of navItems) {
                 const returnTuple = this.getNavBarItem(data, navItem["id"]);
@@ -73,33 +72,22 @@ export class NavBarComponent implements OnInit {
         return null;
     }
 
-    getDeviceType(): DeviceType {
-        if (window.innerWidth >= 1113) {
-            return DeviceType.desktop;
-        } else if (window.innerWidth <= 767) {
-            return DeviceType.mobile;
-        }
-        return DeviceType.tablet;
+    @HostListener('window:resize', ['$event'])
+    windowChanged(event: any): void {
+        this.deviceTypeListener.windowChanged(window);
     }
-
-    isMobile(): boolean {
-        return this.deviceType == DeviceType.mobile;
-    }
-
-    isDesktop(): boolean {
-        return this.deviceType == DeviceType.desktop;
-    }
-
-    deviceTypeString(): string {
-        return this.deviceType.valueOf();
-    }
-
+    
     setActiveNavBarItem(item: NavigationBarItem): void {
         this.activeNavBarItemId = this.activeNavBarItemId == item.id ? null : item.id;
     }
 
     toggleMobileHamburgerButtonActive(): void {
         this.mobileHamburgerButtonActive = this.mobileHamburgerButtonActive ? false : true
+        if (!this.mobileHamburgerButtonActive && this.navBarItemElements != null) {
+            for (const navBarItemElement of this.navBarItemElements) {
+                this.renderer.removeClass(navBarItemElement.nativeElement, "expanded");
+            }
+        }
     }
 
     widthOfNavBarItem(navBarItem: NavigationBarItem): number {
@@ -179,10 +167,4 @@ class NavigationBarSubItem {
         this.name = name;
         this.linkUrl = linkUrl;
     }
-}
-
-enum DeviceType {
-    desktop = "desktop",
-    tablet = "tablet",
-    mobile = "mobile"
 }

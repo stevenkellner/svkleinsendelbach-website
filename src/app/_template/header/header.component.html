@@ -1,4 +1,4 @@
-<span class="top-header">
+<span [ngClass]="deviceTypeListener.deviceTypeString()" class="top-header">
     <a href="TODO to home" class="logo-link">
         <img src="../../../assets/images/logo-transparent.png" class="logo">
     </a>
@@ -8,7 +8,7 @@
             <p class="text">{{ navBarHoverItem != null ? navBarHoverItem?.name : title }}</p>
         </span>
     </span>
-    <span class="social-media-buttons">
+    <span *ngIf="!deviceTypeListener.isMobile()" [ngClass]="{'cover-unvisible': !deviceTypeListener.isDesktop() }" class="social-media-buttons">
         <span class="cover">
             <i class="fas fa-share-alt"></i>
             <p class="text">Social Media</p>
