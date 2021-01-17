@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, ElementRef, AfterViewInit, Renderer2, OnInit, HostListener } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, AfterViewInit, Renderer2, OnInit, HostListener, Output, EventEmitter } from '@angular/core';
 import { HoverEmitter, NavigationBarItem } from './nav-bar/nav-bar.component'
 
 @Component({
@@ -9,6 +9,8 @@ import { HoverEmitter, NavigationBarItem } from './nav-bar/nav-bar.component'
 export class HeaderComponent implements AfterViewInit, OnInit {
 
     @Input() title: string | undefined;
+
+    @Output() navBarStickyEmitter: EventEmitter<boolean> = new EventEmitter<boolean>()
 
     navBarHoverItem: NavigationBarItem | null = null;
 
@@ -41,6 +43,10 @@ export class HeaderComponent implements AfterViewInit, OnInit {
         } else if (this.navBarHoverItem?.id == hoverEmitter.item.id) {
             this.navBarHoverItem = null;
         }
+    }
+
+    handleNavBarSticky(navBarSticky: boolean): void {
+        this.navBarStickyEmitter.emit(navBarSticky);
     }
 
     setHeaderSheetTimeout(): void {

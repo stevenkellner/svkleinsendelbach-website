@@ -1,4 +1,4 @@
-<nav [ngClass]="deviceTypeListener.deviceTypeString()" class="nav-bar">
+<nav [ngClass]="deviceTypeListener.deviceTypeString()" class="nav-bar" #navBar>
     <span *ngIf="deviceTypeListener.isMobile()" class="drop-down-btn">
         <span (click)="toggleMobileHamburgerButtonActive()" [ngClass]="{'active': mobileHamburgerButtonActive }" class="button"><div class="btn-image"></div></span>
     </span>

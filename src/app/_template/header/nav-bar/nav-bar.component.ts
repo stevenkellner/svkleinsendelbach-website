@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Output, EventEmitter, ElementRef, ViewChildren, Renderer2 } from '@angular/core';
+import { Component, OnInit, HostListener, Output, EventEmitter, ElementRef, ViewChildren, Renderer2, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DeviceTypeListener, DeviceType } from '../header.component'
 
@@ -8,7 +8,7 @@ import { DeviceTypeListener, DeviceType } from '../header.component'
     styleUrls: ['./nav-bar.component.sass']
 })
 
-export class NavBarComponent implements OnInit {
+export class NavBarComponent implements OnInit, AfterViewInit {
 
     navBarItems: NavigationBarItem[]
 
@@ -20,7 +20,13 @@ export class NavBarComponent implements OnInit {
 
     @Output() navBarItemHoverEmitter: EventEmitter<HoverEmitter> = new EventEmitter<HoverEmitter>()
 
+    @Output() navBarStickyEmitter: EventEmitter<boolean> = new EventEmitter<boolean>()
+
     @ViewChildren('navBarItem') navBarItemElements: ElementRef[] | undefined;
+
+    @ViewChild('navBar') navBarElement: ElementRef | undefined;
+
+    stickyNavBarOffset: number | undefined;
 
     constructor(private httpClient: HttpClient,
         private renderer: Renderer2) {
@@ -34,6 +40,21 @@ export class NavBarComponent implements OnInit {
     }
 
     ngOnInit(): void {}
+
+    ngAfterViewInit(): void {
+        this.stickyNavBarOffset = this.navBarElement?.nativeElement.offsetTop
+        window.onscroll = () => {
+            if (this.stickyNavBarOffset != null) {
+                if (window.pageYOffset >= this.stickyNavBarOffset) {
+                    this.renderer.addClass(this.navBarElement?.nativeElement, "sticky");
+                    this.navBarStickyEmitter.emit(true);
+                } else {
+                    this.renderer.removeClass(this.navBarElement?.nativeElement, "sticky");
+                    this.navBarStickyEmitter.emit(false);
+                }
+            }
+        }
+    }
 
     decodeNavItems(): void {
         this.httpClient.get('../../../../assets/nav-bar-items.json').subscribe((data: any) => {
@@ -75,6 +96,10 @@ export class NavBarComponent implements OnInit {
     @HostListener('window:resize', ['$event'])
     windowChanged(event: any): void {
         this.deviceTypeListener.windowChanged(window);
+    }
+
+    windowScrolled(event: any): void {
+        console.log(window.pageYOffset);
     }
     
     setActiveNavBarItem(item: NavigationBarItem): void {

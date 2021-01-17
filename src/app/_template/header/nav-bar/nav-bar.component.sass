@@ -2,14 +2,16 @@
 
 // Layout of nav bar for desktop and tablet
 .nav-bar.desktop, .nav-bar.tablet
+    $nav-bar-item-height: 4 * $cube
+    $sub-item-height: 3 * $cube
+    height: $nav-bar-item-height
+    
     .nav-bar-items
         display: flex
         flex-direction: row
         align-content: center
 
         .nav-bar-item
-            $nav-bar-item-height: 4 * $cube
-            $sub-item-height: 3 * $cube
             display: flex
             flex-direction: column
             align-items: center
@@ -64,6 +66,10 @@
                             white-space: nowrap
                             justify-content: center
 
+    &.sticky
+        position: fixed
+        top: 0
+
 .nav-bar.desktop .nav-bar-items .nav-bar-item:hover, .nav-bar.tablet .nav-bar-items .nav-bar-item.expanded
     > .link
         z-index: 102
@@ -87,7 +93,7 @@
     justify-content: flex-start
 
     .drop-down-btn
-        width: 100%
+        width: 100vw
         display: flex
         flex-direction: row
         align-items: center
@@ -233,6 +239,10 @@
                         border-radius: $cube $cube 0 0 
                     &:last-child > .link
                         border-radius: $cube
+
+    &.sticky
+        position: fixed
+        top: 0
 
 // Style of nav bar for desktop and tablet
 .nav-bar.desktop, .nav-bar.tablet
