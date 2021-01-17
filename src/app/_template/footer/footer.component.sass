@@ -1,0 +1,213 @@
+@import '../../../styles.sass'
+
+.vStack
+    background-color: $dark-prime
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-end
+
+    .footer
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-around
+        width: 100vw
+        padding: (2 * $cube) 0 (2 * $cube) 0
+
+        .card
+            $width: 30vw
+            $cover-height: 6 * $cube
+            $under-sheet-height: 5 * $cube
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-self: center
+
+            .cover
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                background-color: $gray-light
+                width: $width
+                height: $cover-height
+                transition: .5s linear
+                transform: translateY(0.25 * ($cover-height + $under-sheet-height))
+                z-index: 2
+                border-radius: 0.75 * $cube
+
+                .text
+                    font: 
+                        size: 1.25 * $cube
+                        weight: 500
+                    color: $dark-gray-text
+                    padding: 5px 0
+                    white-space: nowrap
+                
+            .under-sheet
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                background-color: $red
+                width: $width
+                height: $under-sheet-height
+                transition: .5s linear
+                transform: translateY(-0.25 * ($cover-height + $under-sheet-height))
+                z-index: 1
+                border-radius: 0.75 * $cube
+
+                .text
+                    font: 
+                        size: $cube
+                        weight: 500
+                    color: $dark-gray-text
+                    padding: 2px 0
+                    white-space: nowrap
+
+                .telephone
+                    display: flex
+                    flex-direction: row
+                    align-items: center
+                    justify-content: center
+                    text-decoration: none
+
+                    i
+                        padding-right: 2px
+
+            &:hover
+                .cover
+                    transform: translateY(0)
+                    border-radius: (0.75 * $cube) (0.75 * $cube) 0 0
+                .under-sheet
+                    transform: translateY(0)
+                    border-radius: 0 0 (0.75 * $cube) (0.75 * $cube)
+        
+        .social-media
+            .link
+                i
+                img
+
+                &.light
+                &.dark
+
+        .page-links-copyright
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+
+            .page-links
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+
+                .link
+                    text-decoration: none
+                    color: $white-text
+                    white-space: nowrap
+                    padding: (0.5 * $cube) (0.5 * $cube)
+                    margin: (0.25 * $cube) 0
+                    width: 100%
+                    border-radius: 0.25 * $cube
+                    text-align: center
+                    transform: .3s linear
+                    font:
+                        size: 1.2 * $cube
+                        weight: 400
+
+                    &:hover
+                        background-color: $gray-hover-background
+                        color: $blue-light
+                        transform: scale(1.1)
+
+            .copyright
+                margin-top: 0.5 * $cube
+                color: $white-text
+                font:
+                    size: 0.75 * $cube
+                    weight: 300
+
+        &.tablet .page-links-copyright .page-links
+            width: 60vw
+            flex-direction: row
+
+            .link
+                background-color: $gray-light
+                color: $dark-gray-text
+                margin: 0 (3 * $cube)
+                padding: (0.5 * $cube) (2 * $cube)
+
+                &:hover
+                    transform: none
+
+        &.mobile 
+            .social-media
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                background-color: $gray-light
+                border-radius: 0.25 * $cube
+                padding: (0.5 * $cube) (0.25 * $cube)
+
+                .link
+                    padding: 0.5 * $cube
+
+                    i
+                        color: $dark-gray-text
+                        font:
+                            size: 1.5 * $cube
+                            weight: 100
+                    img
+                        height: 1.5 * $cube
+
+                    &.dark
+                        display: none
+
+            .page-links-copyright .page-links 
+                width: 50vw
+                .link
+                    background-color: $gray-light
+                    color: $dark-gray-text
+                    white-space: pre-wrap
+
+    > .copyright
+        color: $white-text
+        font:
+            size: 0.75 * $cube
+            weight: 300
+        margin-bottom: $cube
+
+@media screen and (prefers-color-scheme: dark)
+    .vStack 
+        .footer 
+            .card .cover
+                background-color: $dark-background
+                .text
+                    color: $white-text-dark-theme
+            .page-links-copyright 
+                .page-links .link
+                    color: $gray-text-dark-theme
+                .copyright
+                    color: $gray-text-dark-theme
+            &.tablet .page-links-copyright .page-links .link
+                background-color: $dark-background
+                color: $gray-text-dark-theme
+            &.mobile 
+                .page-links-copyright .page-links .link
+                    background-color: $dark-background
+                    color: $gray-text-dark-theme
+                .social-media
+                    background-color: $dark-background
+                    .link 
+                        i
+                            color: $gray-text-dark-theme
+                        &.dark
+                            display: block
+                        &.light
+                            display: none
+        > .copyright
+            color: $gray-text-dark-theme

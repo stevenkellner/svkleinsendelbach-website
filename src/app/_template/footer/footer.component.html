@@ -1,0 +1,47 @@
+<span class="vStack">
+    <span [ngClass]="deviceTypeListener.deviceTypeString()" class="footer">
+        <span *ngIf="deviceTypeListener.isDesktop()" class="card left">
+            <span class="cover">
+                <p class="text">Sportheim</p>
+                <p class="text">Sportverein Kleinsendelbach e.V</p>
+            </span>
+            <span class="under-sheet">
+                <p class="text">Hauptstraße 21</p>
+                <p class="text">91077 Kleinsendelbach</p>
+                <a href="tel:091268304" class="telephone">
+                    <i class="text fas fa-phone"></i>
+                    <p class="text number">09126 / 8304</p>
+                </a>
+            </span>
+        </span>
+        <span *ngIf="deviceTypeListener.isDesktop()" class="card right">
+            <span class="cover">
+                <p class="text">Vertretungsberechtigter Vorstand</p>
+                <p class="text">Martina E. Kellner</p>
+            </span>
+            <span class="under-sheet">
+                <p class="text">Lilienweg 6b</p>
+                <p class="text">91077 Kleinsendelbach</p>
+                <a href="tel:015174211318" class="telephone">
+                    <i class="text fas fa-phone"></i>
+                    <p class="text number">01517 / 4211318</p>
+                </a>
+            </span>
+        </span>
+        <span *ngIf="deviceTypeListener.isMobile()" class="social-media">
+            <a href="https://www.facebook.com/svkleinsendelbach/" target="_blank" class="link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/sgkleinsendelbachhetzles/" target="_blank" class="link"><i class="fab fa-instagram"></i></a>
+            <a href="http://sg-kh.de" target="_blank" class="link light"><img src="../../../assets/images/Logo-SG.png"></a>
+            <a href="http://sg-kh.de" target="_blank" class="link dark"><img src="../../../assets/images/Logo-SG-light.png"></a>
+        </span>
+        <span class="page-links-copyright">
+            <span class="page-links">
+                <a href="TODO" class="link">Anfahrt</a>
+                <a href="TODO" class="link">Kontakt</a>
+                <a href="TODO" class="link">Impressum und Datenschutz</a>
+            </span>
+            <p *ngIf="deviceTypeListener.isDesktop()" class="copyright">© Copyright 2021 SV Kleinsendelbach</p>
+        </span>
+    </span>
+    <p *ngIf="!deviceTypeListener.isDesktop()" class="copyright">© Copyright 2021 SV Kleinsendelbach</p>
+</span>

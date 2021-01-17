@@ -301,6 +301,9 @@
                 background-color: transparent
 
     .nav-bar-items
+        background-color: $light-background
+        width: 100vw
+
         .nav-bar-item
             > .link
                 background-color: $dark-prime
@@ -346,6 +349,9 @@
         .drop-down-btn
             border-bottom: (0.15 * $cube) solid $gray-text-dark-theme
 
+        .nav-bar-items
+            background-color: $dark-background
+
         .nav-bar-items.active
             .nav-bar-item
                 > .link
@@ -356,11 +362,14 @@
                 &:last-child > .link, &.expanded > .link
                     border-bottom: (0.125 * $cube) solid $gray-text-dark-theme
 
-                &.expanded .sub-items
-                    .sub-item
-                        border: 
-                            right: (0.1 * $cube) solid $gray-text-dark-theme
-                            left: (0.1 * $cube) solid $gray-text-dark-theme
-                    
-                        &:last-child
-                            border-bottom: (0.1 * $cube) solid $gray-text-dark-theme
+                &.expanded 
+                    .sub-items
+                        .sub-item
+                            border: 
+                                right: (0.1 * $cube) solid $gray-text-dark-theme
+                                left: (0.1 * $cube) solid $gray-text-dark-theme
+                        
+                            &:last-child
+                                border-bottom: (0.1 * $cube) solid $gray-text-dark-theme
+                    + .nav-bar-item > .link
+                            border-top: (0.1 * $cube) solid $gray-text-dark-theme
