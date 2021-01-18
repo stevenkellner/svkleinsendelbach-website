@@ -3,7 +3,7 @@
         <span (click)="toggleMobileHamburgerButtonActive()" [ngClass]="{'active': mobileHamburgerButtonActive }" class="button"><div class="btn-image"></div></span>
     </span>
     <span [ngClass]="{'active': mobileHamburgerButtonActive }" class="nav-bar-items">
-        <span *ngFor="let navBarItem of navBarItems" #navBarItem (click)="setActiveNavBarItem(navBarItem)" (mouseenter)="hoverStartItem(navBarItem)" (mouseleave)="hoverEndItem(navBarItem)" [ngClass]="{'expanded': navBarItem.subItems != null && activeNavBarItemId == navBarItem.id}" [ngStyle]="deviceTypeListener.isMobile() ? null : {'width': widthOfNavBarItem(navBarItem) + 'px'}" class="nav-bar-item">
+        <span *ngFor="let navBarItem of navBarItems" #navBarItem (click)="setActiveNavBarItem(navBarItem)" (mouseenter)="hoverStartItem(navBarItem)" (mouseleave)="hoverEndItem(navBarItem)" [ngClass]="{'expanded': navBarItem.subItems != null && activeNavBarItemId == navBarItem.id, 'active-screen': navBarItem.id == activeId}" [ngStyle]="deviceTypeListener.isMobile() ? null : {'width': widthOfNavBarItem(navBarItem) + 'px'}" class="nav-bar-item">
             <a *ngIf="deviceTypeListener.isDesktop()" href="{{ navBarItem.linkUrl }}" class="link">
                 <p class="text">{{ navBarItem.name }}</p>
                 <i *ngIf="navBarItem.subItems != null" class="fas fa-caret-down"></i>

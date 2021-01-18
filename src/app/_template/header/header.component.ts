@@ -8,7 +8,9 @@ import { HoverEmitter, NavigationBarItem } from './nav-bar/nav-bar.component'
 })
 export class HeaderComponent implements AfterViewInit, OnInit {
 
-    @Input() title: string | undefined;
+    @Input() activeId: string | undefined;
+
+    title: string | undefined;
 
     @Output() navBarStickyEmitter: EventEmitter<boolean> = new EventEmitter<boolean>()
 
@@ -23,8 +25,8 @@ export class HeaderComponent implements AfterViewInit, OnInit {
     }
 
     ngOnInit(): void {
-        if (this.title == null) {
-            throw new Error('No title given.');
+        if (this.activeId == null) {
+            throw new Error('No active Id given.');
         }
     }
 
@@ -48,6 +50,10 @@ export class HeaderComponent implements AfterViewInit, OnInit {
     handleNavBarSticky(navBarSticky: boolean): void {
         this.navBarStickyEmitter.emit(navBarSticky);
     }
+    
+    handleTitleEmitter(title: string): void {
+        this.title = title;
+    } 
 
     setHeaderSheetTimeout(): void {
         this.renderer.addClass(this.titleContainer?.nativeElement, "after-load");

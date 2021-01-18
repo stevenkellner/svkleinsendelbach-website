@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Output, EventEmitter, ElementRef, ViewChildren, Renderer2, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostListener, Output, EventEmitter, ElementRef, ViewChildren, Renderer2, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DeviceTypeListener, DeviceType } from '../header.component'
 
@@ -9,6 +9,8 @@ import { DeviceTypeListener, DeviceType } from '../header.component'
 })
 
 export class NavBarComponent implements OnInit, AfterViewInit {
+
+    @Input() activeId: string | undefined;
 
     navBarItems: NavigationBarItem[]
 
@@ -21,6 +23,8 @@ export class NavBarComponent implements OnInit, AfterViewInit {
     @Output() navBarItemHoverEmitter: EventEmitter<HoverEmitter> = new EventEmitter<HoverEmitter>()
 
     @Output() navBarStickyEmitter: EventEmitter<boolean> = new EventEmitter<boolean>()
+
+    @Output() titleEmitter: EventEmitter<string> = new EventEmitter<string>()
 
     @ViewChildren('navBarItem') navBarItemElements: ElementRef[] | undefined;
 
@@ -80,6 +84,12 @@ export class NavBarComponent implements OnInit, AfterViewInit {
                 navBarItems.push(navBarItem);
             }
             this.navBarItems = navBarItems;
+            for (const navBarItem of navBarItems) {
+                if (navBarItem.id == this.activeId) {
+                    this.titleEmitter.emit(navBarItem.name);
+                    break;
+                }
+            }
         });
     }
 

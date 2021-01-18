@@ -1,10 +1,11 @@
 <span [ngClass]="deviceTypeListener.deviceTypeString()" class="page-container"> 
     <header>
-        <app-header [title]="'Home'" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-header>
+        <app-header [activeId]="'home'" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-header>
     </header> 
     <body class="body" [ngClass]="{'nav-bar-sticky': navBarSticky }">
-        asldfnadsljf
+        asdfadgafd
     </body>
+    <app-wave></app-wave>
     <footer>
         <app-footer></app-footer>
     </footer>

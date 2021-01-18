@@ -82,7 +82,7 @@
             &:nth-child(#{$i})
                 transition-delay: #{0.05 * $i}s
 
-.nav-bar.tablet .nav-bar-items .nav-bar-item:hover > .link
+.nav-bar.tablet .nav-bar-items .nav-bar-item:hover > .link, .nav-bar.tablet .nav-bar-items .nav-bar-item.active-screen > .link,  .nav-bar.desktop .nav-bar-items .nav-bar-item.active-screen > .link
     z-index: 102
 
 // Layout of nav bar for mobile
@@ -275,7 +275,7 @@
                         color: $blue-light
                         
                     
-            &:hover, &.expanded
+            &:hover, &.expanded, &.active-screen
                 > .link 
                     padding: 0 (0.5 * $cube)
                     background-color: $gray-dark

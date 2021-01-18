@@ -109,11 +109,12 @@
                     color: $white-text
                     white-space: nowrap
                     padding: (0.5 * $cube) (0.5 * $cube)
-                    margin: (0.25 * $cube) 0
+                    margin: (0.1 * $cube) 0
                     width: 100%
                     border-radius: 0.25 * $cube
                     text-align: center
                     transform: .3s linear
+                    transition: .3s linear
                     font:
                         size: 1.2 * $cube
                         weight: 400
@@ -195,16 +196,16 @@
                     color: $gray-text-dark-theme
             &.tablet .page-links-copyright .page-links .link
                 background-color: $dark-background
-                color: $gray-text-dark-theme
+                color: $white-text-dark-theme
             &.mobile 
                 .page-links-copyright .page-links .link
                     background-color: $dark-background
-                    color: $gray-text-dark-theme
+                    color: $white-text-dark-theme
                 .social-media
                     background-color: $dark-background
                     .link 
                         i
-                            color: $gray-text-dark-theme
+                            color: $white-text-dark-theme
                         &.dark
                             display: block
                         &.light

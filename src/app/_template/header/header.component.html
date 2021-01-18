@@ -26,4 +26,4 @@
         </span>
     </span>
 </span>
-<app-nav-bar (navBarItemHoverEmitter)="handleHoverEmitter($event)" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-nav-bar>
+<app-nav-bar [activeId]="activeId" (titleEmitter)="handleTitleEmitter($event)" (navBarItemHoverEmitter)="handleHoverEmitter($event)" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-nav-bar>
