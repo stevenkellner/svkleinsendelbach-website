@@ -1,0 +1,13 @@
+<span [ngClass]="{'offscreen': offscreen }" class="left-row">
+    <span class="btn-wrapper">
+        <span (click)="toggleOffscreen()" class="retract-btn">
+            <i class="single-arrow left fas fa-angle-left"></i>
+            <i class="double-arrow left fas fa-angle-double-left"></i>
+            <i class="single-arrow right fas fa-angle-right"></i>
+            <i class="double-arrow right fas fa-angle-double-right"></i>
+        </span>
+    </span>
+    <span class="content">
+        <ng-content></ng-content>
+    </span>
+</span>

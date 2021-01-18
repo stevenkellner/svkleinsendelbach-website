@@ -1,0 +1,71 @@
+@import '../../../styles'
+
+@mixin arrow-visibility($activeSelector)
+    *:not(#{$activeSelector})
+        display: none
+    #{$activeSelector}
+        display: block
+
+.left-row
+    $width: 15 * $cube
+    $retract-btn-width: 3.5 * $cube
+    $border-width: 0.2 * $cube
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    width: 100%
+    z-index: 100
+    overflow: visible
+    transition: .5s linear
+
+    .btn-wrapper
+        width: $width
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-end
+        background-color: $gray-light
+        border-right: $dark-prime-transparent solid $border-width
+        transition: .5s linear
+
+        .retract-btn
+            @include arrow-visibility(".left.single-arrow")
+            width: $retract-btn-width
+            background-color: $dark-prime
+            padding: $cube 0
+            border-radius: 0 0 0 (0.5 * $cube)
+            transition: .5s linear
+
+            *
+                color: $white-text
+                text-align: center
+                font-size: 1.5 * $cube
+
+            &:hover
+                @include arrow-visibility(".left.double-arrow")
+                *
+                    color: $red
+
+    .content
+        width: $width
+        min-height: 85vw
+        background-color: $gray-light
+        border-right: $dark-prime-transparent solid $border-width
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
+        transition: .5s linear
+
+    &.offscreen 
+        width: 0
+        transform: translateX(-0.5 * $width - $border-width)
+        .btn-wrapper 
+            .retract-btn
+                @include arrow-visibility(".right.single-arrow")
+                transform: translateX($retract-btn-width + $border-width)
+                border-radius: 0 0 (0.5 * $cube) 0
+
+                &:hover
+                    @include arrow-visibility(".right.double-arrow")

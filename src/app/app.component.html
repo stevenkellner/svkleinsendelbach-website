@@ -3,6 +3,11 @@
         <app-header [activeId]="'home'" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-header>
     </header> 
     <body class="body" [ngClass]="{'nav-bar-sticky': navBarSticky }">
+        <span [ngStyle]="{'width': (leftRowWidth == null ? (deviceTypeListener.isMobile() ? 0 : 15) : leftRowWidth) + 'rem' }" class="left-row-wrapper">
+            <app-left-row (widthEmitter)="handleLeftRowWidthChange($event)">
+                <p>content</p>
+            </app-left-row>
+        </span>
         asdfadgafd
     </body>
     <app-wave></app-wave>

@@ -13,6 +13,8 @@ export class AppComponent {
 
     deviceTypeListener: DeviceTypeListener;
 
+    leftRowWidth: number | undefined;
+
     constructor() {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
@@ -24,5 +26,9 @@ export class AppComponent {
     @HostListener('window:resize', ['$event'])
     windowChanged(event: any): void {
         this.deviceTypeListener.windowChanged(window);
+    }
+
+    handleLeftRowWidthChange(width: number) {
+        this.leftRowWidth = width;
     }
 }
