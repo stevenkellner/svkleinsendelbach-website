@@ -1,11 +1,5 @@
 @import '../styles'
 
-.body
-    background-color: $light-background
-    min-height: 120vh
-    display: flex
-    flex-direction: row
-
 .page-container.desktop, .page-container.tablet
     .body.nav-bar-sticky
         padding-top: 4 * $cube
@@ -13,10 +7,3 @@
 .page-container.mobile
     .body.nav-bar-sticky
         padding-top: 3.75 * $cube
-
-.left-row-wrapper
-    transition: .5s linear
-
-@media screen and (prefers-color-scheme: dark)
-    .body
-        background-color: $dark-background

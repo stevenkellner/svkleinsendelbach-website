@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, OnInit, Output, Renderer2 } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { DeviceType, DeviceTypeListener } from '../header/header.component';
 
 @Component({
@@ -19,7 +19,7 @@ export class LeftRowComponent implements OnInit {
             if (deviceType == DeviceType.mobile) {
                 this.offscreen = true;
             }
-            this.widthEmitter.emit(this.offscreen ? 0 : 15);
+            this.widthEmitter.emit(this.offscreen ? 0 : 12.5);
         });
     }
     ngOnInit(): void {}
@@ -31,6 +31,6 @@ export class LeftRowComponent implements OnInit {
 
     toggleOffscreen(): void {
         this.offscreen = this.offscreen ? false : true;
-        this.widthEmitter.emit(this.offscreen ? 0 : 15);
+        this.widthEmitter.emit(this.offscreen ? 0 : 12.5);
     }
 }

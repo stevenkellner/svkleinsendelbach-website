@@ -7,9 +7,9 @@
         display: block
 
 .left-row
-    $width: 15 * $cube
+    $width: 12.5 * $cube
     $retract-btn-width: 3.5 * $cube
-    $border-width: 0.2 * $cube
+    $border-width: 0.15 * $cube
     display: flex
     flex-direction: column
     align-items: center
@@ -49,7 +49,7 @@
 
     .content
         width: $width
-        min-height: 85vw
+        min-height: 85vh
         background-color: $gray-light
         border-right: $dark-prime-transparent solid $border-width
         display: flex
@@ -57,9 +57,9 @@
         align-items: center
         justify-content: flex-start
         transition: .5s linear
+        padding-bottom: 3 * $cube
 
     &.offscreen 
-        width: 0
         transform: translateX(-0.5 * $width - $border-width)
         .btn-wrapper 
             .retract-btn
@@ -69,3 +69,22 @@
 
                 &:hover
                     @include arrow-visibility(".right.double-arrow")
+
+@media screen and (prefers-color-scheme: dark)
+    .left-row
+        .btn-wrapper
+            background-color: $dark-prime
+            border-color: $gray-text-dark-theme
+            .retract-btn
+                background-color: $dark-background
+                *
+                    color: #C8D6E5
+        .content
+            background-color: $dark-prime
+            border-color: $gray-text-dark-theme
+        &.offscreen .btn-wrapper .retract-btn
+            background-color: $dark-prime
+            *
+                color: $white-text
+            &:hover *
+                color: $red

@@ -1,0 +1,72 @@
+﻿{
+  "link-items": [
+    {
+      "id": "about-us",
+      "name": "Über uns",
+      "linkUrl": "TODO",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
+      "iconClass": "fas fa-info",
+      "animation": "jump"
+    },
+    {
+      "id": "football-adult",
+      "name": "Herrenfussball",
+      "linkUrl": "TODO",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
+      "iconClass": "far fa-futbol",
+      "animation": "football"
+    },
+    {
+      "id": "football-youth",
+      "name": "Jugendfussball",
+      "linkUrl": "TODO",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
+      "iconClass": "far fa-futbol",
+      "animation": "football"
+    },
+    {
+      "id": "gymnastics",
+      "name": "Gymnastik",
+      "linkUrl": "TODO",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
+      "iconClass": "fas fa-user-friends",
+      "animation": "jump"
+    },
+    {
+      "id": "dancing",
+      "name": "Tanzen",
+      "linkUrl": "TODO",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
+      "iconClass": "fas fa-child",
+      "animation": "jump"
+    },
+    {
+      "id": "drive",
+      "name": "Anfahrt",
+      "linkUrl": "TODO",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
+      "iconClass": "far fa-map-marked-alt",
+      "animation": "shake"
+    },
+    {
+      "id": "contact",
+      "name": "Kontakt",
+      "linkUrl": "TODO",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
+      "iconClass": "fas fa-address-card",
+      "animation": "shake"
+    }
+  ],
+  "desktop": [
+    ["about-us", "football-adult", "football-youth", "gymnastics"],
+    ["dancing", "drive", "contact"]
+  ],
+  "tablet": [
+    ["about-us", "football-adult"], 
+    ["football-youth", "gymnastics", "dancing"], 
+    ["drive", "contact"]
+  ],
+  "mobile": [
+    ["about-us"], ["football-adult"], ["football-youth"], ["gymnastics"], ["dancing"], ["drive"], ["contact"]
+  ]
+}

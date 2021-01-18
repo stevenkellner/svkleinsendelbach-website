@@ -1,6 +1,62 @@
 @import './sass/_var/color'
 @import './sass/_var/other'
 @import './sass/reset'
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500')
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:600&display=swap')
 
 *:not(i)
-    font-family: "Montserrat", sans-serif
+    font-family: 'Montserrat', sans-serif
+
+.left-row-wrapper
+    transition: .5s linear
+
+.body
+    background-color: $light-background
+    min-height: 120vh
+    display: flex
+    flex-direction: row
+
+.overlined
+    border-top: 2px solid $dark-prime-transparent
+    padding-top: 3 * $cube
+
+.text-section
+    margin:
+        right: 3 * $cube
+        left: 3 * $cube
+
+.text-colored
+    color: $light-gray-text
+
+.title-colored
+    color: $dark-prime
+
+p.content-text
+    font:
+        size: 1.5 * $cube
+        weight: 500
+    text-align: center
+    line-height: 2 * $cube
+
+h3.content-text
+    font:
+        size: 2.5 * $cube
+        weight: 500
+    text-align: center
+    line-height: 3 * $cube
+    padding:
+        right: 2 * $cube
+        left: 2 * $cube
+
+@media screen and (prefers-color-scheme: dark)
+    .body
+        background-color: $dark-background
+
+    .overlined
+        border-top: 2px solid $white-text-dark-theme
+
+    .text-colored
+        color: $gray-text-dark-theme
+
+    .title-colored
+        color: $white-text-dark-theme

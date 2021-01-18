@@ -13,14 +13,8 @@ export class AppComponent {
 
     deviceTypeListener: DeviceTypeListener;
 
-    leftRowWidth: number | undefined;
-
     constructor() {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
-    }
-
-    handleNavBarSticky(navBarSticky: boolean): void {
-      this.navBarSticky = navBarSticky;
     }
 
     @HostListener('window:resize', ['$event'])
@@ -28,7 +22,7 @@ export class AppComponent {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    handleLeftRowWidthChange(width: number) {
-        this.leftRowWidth = width;
+    handleNavBarSticky(navBarSticky: boolean): void {
+      this.navBarSticky = navBarSticky;
     }
 }
