@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HomeLeftRowComponent } from './pages/home/home-left-row/home-left-row.component';
 import { ManagersComponent } from './pages/about-us/managers/managers.component';
 import { AboutUsLeftRowComponent } from './pages/about-us/about-us-left-row/about-us-left-row.component';
+import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AboutUsLeftRowComponent } from './pages/about-us/about-us-left-row/abou
     HomeComponent,
     HomeLeftRowComponent,
     ManagersComponent,
-    AboutUsLeftRowComponent
+    AboutUsLeftRowComponent,
+    SportsHomeComponent
   ],
   imports: [
     BrowserModule,

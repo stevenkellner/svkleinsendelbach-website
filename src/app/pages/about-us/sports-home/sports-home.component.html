@@ -1,0 +1,28 @@
+<span class="body">
+    <span [ngStyle]="{'width': (leftRowWidth == null ? (deviceTypeListener.isMobile() ? 0 : 12.5) : leftRowWidth) + 'rem' }" class="left-row-wrapper">
+        <app-left-row (widthEmitter)="handleLeftRowWidthChange($event)">                
+            <app-about-us-left-row [activeId]="'about-us-sports-home'"></app-about-us-left-row>
+        </app-left-row>
+    </span>
+    <span [ngClass]="deviceTypeListener.deviceTypeString()" class="content text-section">
+        <h3 class="overlined title-colored content-text">Sportheim in Kleinsendelbach</h3>
+        <p class="text-colored small-text content-text">Der SV Kleinsendelbach überträgt in seinem Sportheim die Spiele der Bundesliga auf Sky. Sie können live dabei sein, wenn Ihre Lieblingsmannschaft aufläuft. Frei nach dem Motto von Sky „Unsere Gäste haben das Beste verdient“, zeigen wir auch die Champions League Spiele mit deutscher Beteiligung, die nicht im freien Fernsehen ausgestrahlt werden.</p>
+        <p class="text-colored small-text content-text">Der Sportverein freut sich zusammen mit Ihnen auf spannende Spiele!</p>
+        <h3 class="overlined title-colored content-text">Unsere Öffnungszeiten</h3>
+        <span class="opening-hours">
+            <span *ngFor="let openingHourItemRow of openingHourItemRows" class="row">
+                <span *ngFor="let openingHourItem of openingHourItemRow" class="item">
+                    <p class="title">{{ openingHourItem.title }}</p>
+                    <p class="time">{{ openingHourItem.time }}</p>
+                </span>
+            </span>
+        </span>
+        <h3 class="overlined title-colored content-text">Sportheim des SV Kleinsendelbach e.V.</h3>
+        <p class="text-colored content-text">Hauptstraße 21</p>
+        <p class="text-colored content-text small-margin">91077 Kleinsendelbach</p>
+        <a href="tel:091268403" class="small-margin">
+            <i class="fas fa-phone"></i>
+            <p>09126 / 8403</p>
+        </a>
+    </span>
+</span>
