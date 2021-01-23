@@ -1,0 +1,39 @@
+@import '../../../../styles'
+
+.left-row-content
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+
+    .items
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
+        margin-top: $cube
+
+        .item
+            text-decoration: none
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: center
+            margin: $cube (2 * $cube)
+            padding: (0.5 * $cube) 0
+            border-bottom: $dark-prime-transparent solid 0.1 * $cube
+
+            .text
+                text-align: center
+                font-size: $cube
+                color: $dark-prime
+                transition: .1s linear
+        
+            &:hover .text, &.active .text
+                color: $red
+
+@media screen and (prefers-color-scheme: dark)
+    .left-row-content .items .item
+            border-color: $white-text-dark-theme
+            .text
+                color: $gray-text-dark-theme

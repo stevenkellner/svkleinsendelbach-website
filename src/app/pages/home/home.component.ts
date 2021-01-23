@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { RouterLinkWithHref } from '@angular/router';
-import { DeviceType, DeviceTypeListener } from 'src/app/_template/header/header.component';
+import {  DeviceTypeListener } from 'src/app/_template/header/header.component';
 
 @Component({
     selector: 'app-home',

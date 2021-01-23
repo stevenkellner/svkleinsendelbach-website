@@ -11,6 +11,8 @@ import { WaveComponent } from './_template/wave/wave.component';
 import { LeftRowComponent } from './_template/left-row/left-row.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HomeLeftRowComponent } from './pages/home/home-left-row/home-left-row.component';
+import { ManagersComponent } from './pages/about-us/managers/managers.component';
+import { AboutUsLeftRowComponent } from './pages/about-us/about-us-left-row/about-us-left-row.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HomeLeftRowComponent } from './pages/home/home-left-row/home-left-row.c
     WaveComponent,
     LeftRowComponent,
     HomeComponent,
-    HomeLeftRowComponent
+    HomeLeftRowComponent,
+    ManagersComponent,
+    AboutUsLeftRowComponent
   ],
   imports: [
     BrowserModule,

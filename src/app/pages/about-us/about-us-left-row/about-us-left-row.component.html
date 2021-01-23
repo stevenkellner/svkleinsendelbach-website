@@ -1,0 +1,7 @@
+<span class="left-row-content">
+    <span class="items">
+        <a *ngFor="let leftRowItem of leftRowItems" href="{{ leftRowItem.linkUrl }}" [ngClass]="{'active': leftRowItem.id == activeId}" class="item">
+            <span class="text">{{ leftRowItem.name }}</span>
+        </a>
+    </span>
+</span>

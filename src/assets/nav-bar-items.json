@@ -11,7 +11,7 @@
       "linkUrl": "TODO"
     },
     {
-      "id": "about-us-directors",
+      "id": "about-us-managers",
       "name": "Vorstandschaft",
       "linkUrl": "TODO"
     },
@@ -138,7 +138,7 @@
     {
       "id": "about-us",
       "sub-items": [
-        "about-us-directors",
+        "about-us-managers",
         "about-us-sports-home",
         "about-us-chronicle",
         "about-us-statute",
@@ -191,7 +191,7 @@
     {
       "id": "about-us",
       "sub-items": [
-        "about-us-directors",
+        "about-us-managers",
         "about-us-sports-home",
         "about-us-chronicle",
         "about-us-statute",
@@ -241,7 +241,7 @@
     {
       "id": "about-us",
       "sub-items": [
-        "about-us-directors",
+        "about-us-managers",
         "about-us-sports-home",
         "about-us-chronicle",
         "about-us-statute",
