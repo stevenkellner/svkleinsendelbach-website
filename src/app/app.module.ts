@@ -4,16 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app.routing.module'
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './_template/header/header.component';
+import { AboutUsLeftRowComponent } from './pages/about-us/about-us-left-row/about-us-left-row.component';
+import { HomeLeftRowComponent } from './pages/home/home-left-row/home-left-row.component';
+import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
+import { ChronicleComponent } from './pages/about-us/chronicle/chronicle.component';
+import { ManagersComponent } from './pages/about-us/managers/managers.component';
 import { NavBarComponent } from './_template/header/nav-bar/nav-bar.component';
+import { LeftRowComponent } from './_template/left-row/left-row.component';
+import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
 import { WaveComponent } from './_template/wave/wave.component';
-import { LeftRowComponent } from './_template/left-row/left-row.component';
 import { HomeComponent } from './pages/home/home.component';
-import { HomeLeftRowComponent } from './pages/home/home-left-row/home-left-row.component';
-import { ManagersComponent } from './pages/about-us/managers/managers.component';
-import { AboutUsLeftRowComponent } from './pages/about-us/about-us-left-row/about-us-left-row.component';
-import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.co
     HomeLeftRowComponent,
     ManagersComponent,
     AboutUsLeftRowComponent,
-    SportsHomeComponent
+    SportsHomeComponent,
+    ChronicleComponent
   ],
   imports: [
     BrowserModule,
