@@ -5,6 +5,8 @@
     $nav-bar-item-height: 4 * $cube
     $sub-item-height: 3 * $cube
     height: $nav-bar-item-height
+    position: relative
+    z-index: 1150
     
     .nav-bar-items
         display: flex
@@ -26,6 +28,7 @@
                 height: $nav-bar-item-height
                 width: 100%
                 z-index: 1101
+                position: relative
 
                 .text
                     text-transform: uppercase
@@ -55,6 +58,7 @@
                         &:nth-child(#{$i})
                             transform: translateY(-$i * $sub-item-height)
                             z-index: 1101 - $i
+                            position: relative
 
                     > .link
                         text-decoration: none
@@ -72,7 +76,8 @@
 
 .nav-bar.desktop .nav-bar-items .nav-bar-item:hover, .nav-bar.tablet .nav-bar-items .nav-bar-item.expanded
     > .link
-        z-index: 1102
+        z-index: 1102  
+        position: relative
 
     .sub-items .sub-item
         height: 100%
@@ -84,6 +89,7 @@
 
 .nav-bar.tablet .nav-bar-items .nav-bar-item:hover > .link, .nav-bar.tablet .nav-bar-items .nav-bar-item.active-screen > .link,  .nav-bar.desktop .nav-bar-items .nav-bar-item.active-screen > .link
     z-index: 1102
+    position: relative
 
 // Layout of nav bar for mobile
 .nav-bar.mobile
@@ -91,6 +97,8 @@
     flex-direction: column
     align-items: center
     justify-content: flex-start
+    position: relative
+    z-index: 1150
 
     .drop-down-btn
         width: 100vw
@@ -99,6 +107,7 @@
         align-items: center
         justify-content: flex-start
         z-index: 1103
+        position: relative
 
         .button
             $line-height: 0.25 * $cube
@@ -173,6 +182,7 @@
                 &:nth-child(#{$i})
                     transform: translateY(-$i * $nav-bar-item-height)
                     z-index: 1101 - $i
+                    position: relative
 
             .sub-items
                 display: flex
@@ -196,6 +206,7 @@
                         &:nth-child(#{$i})
                             transform: translateY(-$i * $sub-item-height)
                             z-index: 1101 - $i
+                            position: relative
 
                     > .link
                         text-decoration: none
@@ -219,6 +230,7 @@
                     background-color: $gray-dark
                     height: $nav-bar-item-height
                     z-index: 1102
+                    position: relative
                     transition: border-radius .5s linear
                     border-radius: 0 0 $cube $cube
 

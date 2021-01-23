@@ -2,9 +2,9 @@
     <header>
         <app-header [activeId]="'home'" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-header>
     </header> 
-    <body [ngClass]="{'nav-bar-sticky': navBarSticky }">
+    <span [ngClass]="{'nav-bar-sticky': navBarSticky }" class="body">
         <router-outlet></router-outlet>
-    </body>
+    </span>
     <app-wave></app-wave>
     <footer>
         <app-footer></app-footer>
