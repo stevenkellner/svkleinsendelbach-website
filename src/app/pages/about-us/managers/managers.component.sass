@@ -10,3 +10,85 @@
         transition: .5s linear
         *
             transition: .5s linear
+
+.content
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    overflow: hidden
+
+    .image
+        $image-width: 60% 
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
+
+        .img
+            width: $image-width
+            box-shadow: 0 0 (4 * $cube) $dark-prime
+            position: relative
+            z-index: 1
+            margin-top: 2 * $cube
+
+        .image-text
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: space-around
+            width: $image-width
+            position: relative
+            z-index: 2
+            padding: (0.5 * $cube) 0
+            background-color: $dark-prime
+            transform: translateY(-125%)
+
+            .text-list
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+
+                .name
+                    color: $white-text
+                    font-size: 0.9 * $cube
+                    padding-bottom: 0.1 * $cube
+
+                .function
+                    color: $white-text
+                    font-size: 0.9 * $cube
+
+        .bg-wrapper
+            position: relative
+            z-index: 0
+            height: 0
+
+            .bg
+                width: 100%
+                filter: blur(5px)
+                transform: translateY(-100%)
+
+    .note
+        margin-top: 2 * $cube
+        margin-bottom: 8 * $cube
+
+        *
+            margin-top: 2 * $cube
+
+            &.bigger-margin
+                margin-top: 6 * $cube
+
+            &.last 
+                margin-top: 0
+            
+.content.mobile .image
+    $image-width: 80%
+    .img
+        width: $image-width
+        margin-top: $cube
+    .image-text
+        width: $image-width
+    .bg-wrapper .bg
+            transform: translateY(-115%)
+    

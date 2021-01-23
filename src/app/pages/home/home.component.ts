@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {  DeviceTypeListener } from 'src/app/_template/header/header.component';
 
 @Component({
@@ -15,7 +16,9 @@ export class HomeComponent implements OnInit {
     
     linkItemRows: LinkItem[][] = [];
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient,
+        private titleService: Title) {
+        this.titleService.setTitle("SV Kleinsendelbach")
         this.deviceTypeListener = new DeviceTypeListener(window, () => {
             this.decodeLinkItems();
         });

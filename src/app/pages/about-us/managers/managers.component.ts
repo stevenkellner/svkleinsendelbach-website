@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 
 @Component({
@@ -12,7 +13,8 @@ export class ManagersComponent implements OnInit {
 
     deviceTypeListener: DeviceTypeListener;
     
-    constructor() {
+    constructor(private titleService: Title) {
+        this.titleService.setTitle("Vorstandschaft")
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 
