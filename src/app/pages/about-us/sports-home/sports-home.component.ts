@@ -36,7 +36,7 @@ export class SportsHomeComponent implements OnInit {
     }
 
     decodeOpeningHourItems(): void {
-        this.httpClient.get('../../../../assets/opening-hours-items.json').subscribe((data: any) => {
+        this.httpClient.get('../../../../assets/json-data/opening-hours-items.json').subscribe((data: any) => {
             const openingHourItemIdRows = data[this.deviceTypeListener.deviceType];
             this.openingHourItemRows = [];
             for (const openingHourItemIdRow of openingHourItemIdRows) {

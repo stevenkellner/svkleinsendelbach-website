@@ -30,7 +30,7 @@ export class AboutUsLeftRowComponent implements OnInit {
     }
 
     decodeLeftRowItems(): void {
-        this.httpClient.get('../../../../assets/nav-bar-items.json').subscribe((data: any) => {
+        this.httpClient.get('../../../../assets/json-data/nav-bar-items.json').subscribe((data: any) => {
             const leftRowItemsId = data[this.deviceTypeListener.deviceType].find((element: {[x: string]: string}) => element["id"] == "about-us")["sub-items"];
             this.leftRowItems = [];
             for (const leftRowItemId of leftRowItemsId) {

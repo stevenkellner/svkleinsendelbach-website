@@ -61,7 +61,7 @@ export class NavBarComponent implements OnInit, AfterViewInit {
     }
 
     decodeNavItems(): void {
-        this.httpClient.get('../../../../assets/nav-bar-items.json').subscribe((data: any) => {
+        this.httpClient.get('../../../../assets/json-data/nav-bar-items.json').subscribe((data: any) => {
             const navItems = data[this.deviceTypeListener.deviceType];
             let navBarItems: NavigationBarItem[] = [];
             for (const navItem of navItems) {

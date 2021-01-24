@@ -28,7 +28,7 @@
 .text-colored
     color: $light-gray-text
 
-.title-colored, .dark-colored
+.title-colored, .dark-colored, .sub-item-colored
     color: $dark-prime
 
 .red-colored
@@ -54,6 +54,13 @@ h3.content-text
         right: 2 * $cube
         left: 2 * $cube
 
+h4.content-text
+    font:
+        size: 1.5 * $cube
+        weight: 500
+    text-align: start
+    line-height: 2 * $cube
+
 @media screen and (prefers-color-scheme: dark)
     .body
         background-color: $dark-background
@@ -64,5 +71,5 @@ h3.content-text
     .text-colored
         color: $gray-text-dark-theme
 
-    .title-colored, .dark-colored
+    .title-colored, .dark-colored, .sub-item-colored
         color: $white-text-dark-theme

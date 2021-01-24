@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
     }
 
     decodeLinkItems(): void {
-        this.httpClient.get('../../../../assets/link-items.json').subscribe((data: any) => {
+        this.httpClient.get('../../../../assets/json-data/link-items.json').subscribe((data: any) => {
             const linkItemIdRows = data[this.deviceTypeListener.deviceType];
             let linkItemRows: LinkItem[][] = [];
             for (const linkItemIdRow of linkItemIdRows) {
