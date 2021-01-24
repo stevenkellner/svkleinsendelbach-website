@@ -1,0 +1,18 @@
+<span class="body">
+    <span [ngStyle]="{'width': (leftRowWidth == null ? (deviceTypeListener.isMobile() ? 0 : 12.5) : leftRowWidth) + 'rem' }" class="left-row-wrapper">
+        <app-left-row (widthEmitter)="handleLeftRowWidthChange($event)">                
+            <app-about-us-left-row [activeId]="'about-us-request'"></app-about-us-left-row>
+        </app-left-row>
+    </span>
+    <span [ngClass]="deviceTypeListener.deviceTypeString()" class="content text-section">
+        <h3 class="content-text title-colored overlined">Mitgliedsantrag</h3>
+        <h4 class="content-text sub-item-colored small-text">Wenn Sie Mitglied beim SVK werden wollen, gehen Sie bitte wie folgt vor:</h4>
+        <span class="list">
+            <p>1. Mitgliedsantrag <a href="../../../../assets/download-files/Mitgliedsantrag.pdf" target="_blank" rel="noopener noreferrer">hier</a> herunterladen</p>
+            <p>2. Mitgliedsantrag bitte vollständig ausfüllen (beide Seiten!) und unterschreiben</p>
+            <p>3. Ausgefüllten Antrag als Scan per E-Mail an <a href="mailto:mitglieder@sv-kleinsendelbach.de">mitglieder@sv-kleinsendelbach.de</a> senden, in den Briefkasten am Sportheim einwerfen oder ganz einfach dem entsprechenden Trainer/Übungsleiter geben</p>
+        </span>
+        <p class="content-text text-colored small-text">Unsere Mitgliedsbeiträge finden Sie im Antrag. Eine Aufnahmegebühr erheben wir nicht.</p>
+        <p class="content-text text-colored small-text">Vielen Dank für Ihre Mitgliedschaft beim SVK und viel Spaß mit unserem Sportangebot!</p>
+    </span>
+</span>

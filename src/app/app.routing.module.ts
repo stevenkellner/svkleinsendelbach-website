@@ -5,6 +5,7 @@ import { ChronicleComponent } from './pages/about-us/chronicle/chronicle.compone
 import { ManagersComponent } from './pages/about-us/managers/managers.component'
 import { PrivacyComponent } from './pages/about-us/privacy/privacy.component'
 import { StatuteComponent } from './pages/about-us/statute/statute.component'
+import { RequestComponent } from './pages/about-us/request/request.component'
 import { HomeComponent } from './pages/home/home.component'
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
     {path: 'über-uns/chronik', component: ChronicleComponent},
     {path: 'über-uns/satzung', component: StatuteComponent},
     {path: 'über-uns/datenschutz', component: PrivacyComponent},
+    {path: 'über-uns/mitgliedsantrag', component: RequestComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 

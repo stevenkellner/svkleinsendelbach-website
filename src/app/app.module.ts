@@ -12,6 +12,7 @@ import { ManagersComponent } from './pages/about-us/managers/managers.component'
 import { NavBarComponent } from './_template/header/nav-bar/nav-bar.component';
 import { StatuteComponent } from './pages/about-us/statute/statute.component';
 import { PrivacyComponent } from './pages/about-us/privacy/privacy.component';
+import { RequestComponent } from './pages/about-us/request/request.component';
 import { LeftRowComponent } from './_template/left-row/left-row.component';
 import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
@@ -33,7 +34,8 @@ import { HomeComponent } from './pages/home/home.component';
     SportsHomeComponent,
     ChronicleComponent,
     StatuteComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,
