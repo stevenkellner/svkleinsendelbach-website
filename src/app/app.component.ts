@@ -7,11 +7,14 @@ import { DeviceTypeListener } from './_template/header/header.component';
     styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
+
     title = 'svkleinsendelbach-website';
 
     navBarSticky: boolean = false;
 
     deviceTypeListener: DeviceTypeListener;
+
+    activeNavBarId: string = "home";
 
     constructor() {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
@@ -24,5 +27,9 @@ export class AppComponent {
 
     handleNavBarSticky(navBarSticky: boolean): void {
       this.navBarSticky = navBarSticky;
+    }
+
+    setActiveNavBarId(event: any) {
+        this.activeNavBarId = event["activeNavBarId"];
     }
 }

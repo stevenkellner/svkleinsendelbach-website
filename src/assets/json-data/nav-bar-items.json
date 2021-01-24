@@ -3,42 +3,42 @@
     {
       "id": "home",
       "name": "Home",
-      "linkUrl": "TODO"
+      "linkUrl": "home"
     },
     {
       "id": "about-us",
       "name": "über uns",
-      "linkUrl": "TODO"
+      "linkUrl": "über-uns/vorstandschaft"
     },
     {
       "id": "about-us-managers",
       "name": "Vorstandschaft",
-      "linkUrl": "TODO"
+      "linkUrl": "über-uns/vorstandschaft"
     },
     {
       "id": "about-us-sports-home",
       "name": "Sportheim",
-      "linkUrl": "TODO"
+      "linkUrl": "über-uns/sportheim"
     },
     {
       "id": "about-us-chronicle",
       "name": "Chronik",
-      "linkUrl": "TODO"
+      "linkUrl": "über-uns/chronik"
     },
     {
       "id": "about-us-statute",
       "name": "Satzung",
-      "linkUrl": "TODO"
+      "linkUrl": "über-uns/satzung"
     },
     {
       "id": "about-us-privacy",
       "name": "Datenschutz",
-      "linkUrl": "TODO"
+      "linkUrl": "über-uns/datenschutz"
     },
     {
       "id": "about-us-request",
       "name": "Mitgliedsantrag",
-      "linkUrl": "TODO"
+      "linkUrl": "über-uns/mitgliedsantrag"
     },
     {
       "id": "football-adult",

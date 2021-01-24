@@ -13,6 +13,8 @@ export class ManagersComponent implements OnInit {
 
     deviceTypeListener: DeviceTypeListener;
     
+    activeNavBarId: string = "about-us";
+
     constructor(private titleService: Title) {
         this.titleService.setTitle("Vorstandschaft")
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});

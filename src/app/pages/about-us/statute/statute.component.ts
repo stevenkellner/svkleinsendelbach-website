@@ -13,6 +13,8 @@ export class StatuteComponent implements OnInit {
 
     deviceTypeListener: DeviceTypeListener;
     
+    activeNavBarId: string = "about-us";
+
     constructor(private titleService: Title) {
         this.titleService.setTitle("Satzung")
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});

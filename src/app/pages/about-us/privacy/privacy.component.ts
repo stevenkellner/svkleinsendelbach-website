@@ -13,6 +13,8 @@ export class PrivacyComponent implements OnInit {
 
     deviceTypeListener: DeviceTypeListener;
     
+    activeNavBarId: string = "about-us";
+
     constructor(private titleService: Title) {
         this.titleService.setTitle("Datenschutzerklärung")
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});

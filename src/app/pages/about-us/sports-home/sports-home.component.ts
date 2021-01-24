@@ -16,6 +16,8 @@ export class SportsHomeComponent implements OnInit {
 
     openingHourItemRows: OpeningHourItem[][] = []; 
     
+    activeNavBarId: string = "about-us";
+
     constructor(private titleService: Title,
         private httpClient: HttpClient) {
         this.titleService.setTitle("Sportheim")

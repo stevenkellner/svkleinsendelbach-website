@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import {  DeviceTypeListener } from 'src/app/_template/header/header.component';
 
@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
     deviceTypeListener: DeviceTypeListener;
     
     linkItemRows: LinkItem[][] = [];
+
+    activeNavBarId: string = "home";
 
     constructor(private httpClient: HttpClient,
         private titleService: Title) {

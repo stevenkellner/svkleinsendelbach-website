@@ -3,7 +3,7 @@
     {
       "id": "about-us",
       "name": "Über uns",
-      "linkUrl": "TODO",
+      "linkUrl": "über-uns/vorstandschaft",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
       "iconClass": "fas fa-info",
       "animation": "jump"
