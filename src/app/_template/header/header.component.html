@@ -1,4 +1,14 @@
-<span [ngClass]="deviceTypeListener.deviceTypeString()" class="top-header">
+<span class="header">
+    <app-top-header [title]="title" [navBarHoverItem]="navBarHoverItem"></app-top-header>
+    <span class="test-nav-bar"> <!-- TODO remove -->
+        <p class="test-item" (mouseenter)="hoverStartItem('Test No. 1')" (mouseleave)="hoverEndItem()">Test No. 1</p>
+        <p class="test-item" (mouseenter)="hoverStartItem('Test No. 2')" (mouseleave)="hoverEndItem()">Test No. 2</p>
+        <p class="test-item" (mouseenter)="hoverStartItem('Test No. 3')" (mouseleave)="hoverEndItem()">Test No. 3</p>
+    </span>
+</span>
+
+
+<!--span [ngClass]="deviceTypeListener.deviceTypeString()" class="top-header">
     <a href="TODO to home" class="logo-link">
         <img src="../../../assets/images/logo-transparent.png" class="logo">
     </a>
@@ -26,4 +36,4 @@
         </span>
     </span>
 </span>
-<app-nav-bar [activeId]="activeId" (titleEmitter)="handleTitleEmitter($event)" (navBarItemHoverEmitter)="handleHoverEmitter($event)" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-nav-bar>
+<app-nav-bar [activeId]="activeId" (titleEmitter)="handleTitleEmitter($event)" (navBarItemHoverEmitter)="handleHoverEmitter($event)" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-nav-bar-->

@@ -22,6 +22,7 @@ export class HeaderComponent implements AfterViewInit, OnInit {
 
     constructor(private renderer: Renderer2) {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
+        this.title = "Test Title"; // TODO remove
     }
 
     ngOnInit(): void {
@@ -60,6 +61,14 @@ export class HeaderComponent implements AfterViewInit, OnInit {
         setTimeout(() => {
             this.renderer.removeClass(this.titleContainer?.nativeElement, "after-load");
         }, 10000);
+    }
+
+    hoverStartItem(navBarItem: string): void {
+        this.navBarHoverItem = new NavigationBarItem("", navBarItem, "", null);
+    }
+
+    hoverEndItem(): void {
+        this.navBarHoverItem = null;
     }
 }
 
