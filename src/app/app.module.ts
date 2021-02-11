@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app.routing.module'
 import { AppComponent } from './app.component';
+import { FootballAdultsLeftRowComponent } from './pages/football-adults/football-adults-left-row/football-adults-left-row.component';
+import { FootballAdultsGeneralComponent } from './pages/football-adults/football-adults-general/football-adults-general.component';
 import { AboutUsLeftRowComponent } from './pages/about-us/about-us-left-row/about-us-left-row.component';
 import { HomeLeftRowComponent } from './pages/home/home-left-row/home-left-row.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
@@ -18,6 +20,7 @@ import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
 import { WaveComponent } from './_template/wave/wave.component';
 import { HomeComponent } from './pages/home/home.component';
+import { TopHeaderComponent } from './_template/header/top-header/top-header.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,11 @@ import { HomeComponent } from './pages/home/home.component';
     ChronicleComponent,
     StatuteComponent,
     PrivacyComponent,
-    RequestComponent
+    RequestComponent,
+    FootballAdultsGeneralComponent,
+    FootballAdultsLeftRowComponent,
+    FootballAdultsGeneralComponent,
+    TopHeaderComponent
   ],
   imports: [
     BrowserModule,

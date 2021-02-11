@@ -1,0 +1,82 @@
+﻿{
+    "links": [
+        {
+            "id": "general",
+            "title": "Übersicht",
+            "link": "fussball/herren/übersicht"
+        },
+        {
+            "id": "first-team",
+            "title": "1. Mannschaft",
+            "sub-items": [
+                {
+                    "id": "first-team-squad",
+                    "title": "Kader",
+                    "link": "fussball/herren/erste-mannschaft/kader"
+                },
+                {
+                    "id": "first-team-times",
+                    "title": "Trainingszeiten",
+                    "link": "fussball/herren/erste-mannschaft/training"
+                },
+                {
+                    "id": "first-team-contact",
+                    "title": "Kontakt",
+                    "link": "fussball/herren/erste-mannschaft/kontakt"
+                },
+                {
+                    "id": "first-team-results",
+                    "title": "Ergegnisse",
+                    "link": "fussball/herren/erste-mannschaft/ergebnis"
+                }
+            ]
+        },
+        {
+            "id": "second-team",
+            "title": "2. Mannschaft",
+            "sub-items": [
+                {
+                    "id": "second-team-squad",
+                    "title": "Kader",
+                    "link": "fussball/herren/zweite-mannschaft/kader"
+                },
+                {
+                    "id": "second-team-times",
+                    "title": "Trainingszeiten",
+                    "link": "fussball/herren/zweite-mannschaft/training"
+                },
+                {
+                    "id": "second-team-contact",
+                    "title": "Kontakt",
+                    "link": "fussball/herren/zweite-mannschaft/kontakt"
+                },
+                {
+                    "id": "second-team-results",
+                    "title": "Ergegnisse",
+                    "link": "fussball/herren/zweite-mannschaft/ergebnis"
+                }
+            ]
+        },
+        {
+            "id": "ah-team",
+            "title": "Alte Herren",
+            "sub-items": [
+                {
+                    "id": "ah-team-squad",
+                    "title": "Kader",
+                    "link": "fussball/herren/alte-herren/kader"
+                },
+                {
+                    "id": "ah-team-times",
+                    "title": "Trainingszeiten",
+                    "link": "fussball/herren/alte-herren/training"
+                },
+                {
+                    "id": "ah-team-contact",
+                    "title": "Kontakt",
+                    "link": "fussball/herren/alte-herren/kontakt"
+                }
+            ]
+        }
+    ]
+}

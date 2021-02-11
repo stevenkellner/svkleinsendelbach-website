@@ -43,37 +43,37 @@
     {
       "id": "football-adult",
       "name": "Herrenfussball",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/herren/übersicht"
     },
     {
       "id": "football-adult-general",
       "name": "Übersicht",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/herren/übersicht"
     },
     {
       "id": "football-adult-1",
       "name": "1. Mannschaft",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/herren/erste-mannschaft/kader"
     },
     {
       "id": "football-adult-2",
       "name": "2. Mannschaft",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/herren/zweite-mannschaft/kader"
     },
     {
       "id": "football-adult-AH",
       "name": "Alte Herren",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/herren/alte-herren/kader"
     },
     {
       "id": "football-youth",
       "name": "Jugendfussball",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/jugend/übersicht"
     },
     {
       "id": "football-youth-general",
       "name": "Übersicht",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/jugend/übersicht"
     },
     {
       "id": "football-youth-A",
@@ -88,7 +88,7 @@
     {
       "id": "football-youth-C",
       "name": "C-Jugend",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/jugend/c-jugend/kader"
     },
     {
       "id": "football-youth-D",
@@ -98,37 +98,37 @@
     {
       "id": "football-youth-E",
       "name": "E-Jugend",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/jugend/e-jugend/kader"
     },
     {
       "id": "football-youth-F",
       "name": "F-Jugend",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/jugend/f-jugend/kader"
     },
     {
       "id": "football-youth-G",
       "name": "G-Jugend",
-      "linkUrl": "TODO"
+      "linkUrl": "fussball/jugend/g-jugend/kader"
     },
     {
       "id": "gymnastics",
       "name": "Gymnastik",
-      "linkUrl": "TODO"
+      "linkUrl": "gymnastik"
     },
     {
       "id": "dancing",
       "name": "Tanzen",
-      "linkUrl": "TODO"
+      "linkUrl": "tanzen"
     },
     {
       "id": "drive",
       "name": "Anfahrt",
-      "linkUrl": "TODO"
+      "linkUrl": "anfahrt"
     },
     {
       "id": "contact",
       "name": "Kontakt",
-      "linkUrl": "TODO"
+      "linkUrl": "kontakt"
     }
   ],
   "desktop": [

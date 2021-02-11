@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { element } from 'protractor';
 import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 
 @Component({

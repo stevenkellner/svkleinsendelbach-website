@@ -11,7 +11,7 @@
     {
       "id": "football-adult",
       "name": "Herrenfussball",
-      "linkUrl": "TODO",
+      "linkUrl": "fussball/herren/allgemein",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
       "iconClass": "far fa-futbol",
       "animation": "football"
@@ -19,7 +19,7 @@
     {
       "id": "football-youth",
       "name": "Jugendfussball",
-      "linkUrl": "TODO",
+      "linkUrl": "fussball/jugend/allgemein",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
       "iconClass": "far fa-futbol",
       "animation": "football"
@@ -27,7 +27,7 @@
     {
       "id": "gymnastics",
       "name": "Gymnastik",
-      "linkUrl": "TODO",
+      "linkUrl": "gymnastik",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
       "iconClass": "fas fa-user-friends",
       "animation": "jump"
@@ -35,7 +35,7 @@
     {
       "id": "dancing",
       "name": "Tanzen",
-      "linkUrl": "TODO",
+      "linkUrl": "tanzen",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
       "iconClass": "fas fa-child",
       "animation": "jump"
@@ -43,7 +43,7 @@
     {
       "id": "drive",
       "name": "Anfahrt",
-      "linkUrl": "TODO",
+      "linkUrl": "anfahrt",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
       "iconClass": "far fa-map-marked-alt",
       "animation": "shake"
@@ -51,7 +51,7 @@
     {
       "id": "contact",
       "name": "Kontakt",
-      "linkUrl": "TODO",
+      "linkUrl": "kontakt",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
       "iconClass": "fas fa-address-card",
       "animation": "shake"

@@ -1,0 +1,52 @@
+<span class="left-row-content">
+    <span class="links">
+        <span class="title">
+            <i class="fas fa-futbol"></i>
+            <p>Mannschaften</p>
+        </span>
+        <span *ngFor="let link of links" class="link">
+            <p *ngIf="link.subLinks != null" class="text">{{ link.title }}</p>
+            <a *ngIf="link.subLinks == null" href="{{ link.link }}" class="text">{{ link.title }}</a>
+            <span class="sub-items">
+                <span *ngFor="let subLink of link.subLinks" class="sub-item">
+                    <a href="{{ subLink.link }}" class="sub-text">{{ subLink.title }}</a>
+                </span>
+            </span>
+        </span>
+        <span class="events">
+            <span class="title">
+                <i class="far fa-calender-times"></i>
+                <p>Termine</p>
+            </span>
+            <span *ngIf="events.length == 0" class="empty-events">
+                No Events
+            </span>
+            <span *ngFor="let event of events" class="event">
+                <p class="event-title">{{ event.title }}</p>
+                <p class="event-date">{{ event.date }}</p>
+                <p *ngIf="event.description != null" class="event-description">{{ event.description }}</p>
+                <a *ngIf="event.link != null" href="{{ event.link }}" class="link">Link</a>
+            </span>
+        </span>
+        <span class="contacts">
+            <span class="title">
+                <i class="far fa-address-card"></i>
+                <p>Kontakt</p>
+            </span>
+            <span class="all-contacts">
+                <span class="function-contacts">
+                    <p class="function">Abteilungsleiter Fussball</p>
+                    <span class="function-contacts">
+                        <span class="contact">
+                            <p class="name">J. Hoier</p>
+                            <a href="tel;017657857884" class="link">
+                                <i class="fas fa-phone"></i>
+                                <p class="number">0176 / 57857884</p>
+                            </a>
+                        </span>
+                    </span>
+                </span>
+            </span>
+        </span>
+    </span>
+</span>

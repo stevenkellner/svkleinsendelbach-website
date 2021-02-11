@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
+import { FootballAdultsGeneralComponent } from './pages/football-adults/football-adults-general/football-adults-general.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component'
 import { ChronicleComponent } from './pages/about-us/chronicle/chronicle.component'
 import { ManagersComponent } from './pages/about-us/managers/managers.component'
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path: 'über-uns/satzung', component: StatuteComponent},
     {path: 'über-uns/datenschutz', component: PrivacyComponent},
     {path: 'über-uns/mitgliedsantrag', component: RequestComponent},
+    {path: 'fussball/herren/übersicht', component: FootballAdultsGeneralComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'}
 ]
 
