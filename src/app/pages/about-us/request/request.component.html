@@ -1,7 +1,7 @@
 <span class="body">
     <span [ngStyle]="{'width': (leftRowWidth == null ? (deviceTypeListener.isMobile() ? 0 : 12.5) : leftRowWidth) + 'rem' }" class="left-row-wrapper">
         <app-left-row (widthEmitter)="handleLeftRowWidthChange($event)">                
-            <app-about-us-left-row [activeId]="'about-us-request'"></app-about-us-left-row>
+            <app-about-us-left-row [activePageId]="'about-us-request'"></app-about-us-left-row>
         </app-left-row>
     </span>
     <span [ngClass]="deviceTypeListener.deviceTypeString()" class="content text-section">

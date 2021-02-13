@@ -1,38 +1,49 @@
-import { Component, Input, ViewChild, ElementRef, AfterViewInit, Renderer2, OnInit, HostListener, Output, EventEmitter } from '@angular/core';
-import { HoverEmitter, NavigationBarItem } from './nav-bar/nav-bar.component'
+import { HttpClient } from '@angular/common/http';
+import { Component, Input, HostListener, Output, EventEmitter } from '@angular/core';
+import { NavBarDecoderService, NavigationBarItem } from 'src/app/services/nav-bar-decoder.service';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.sass']
 })
-export class HeaderComponent implements AfterViewInit, OnInit {
+export class HeaderComponent {
 
-    @Input() activeId: string | undefined;
+    /** Id of active nav bar item */ 
+    @Input() activePageId: string | undefined;
 
+    /** Title of current navigation page (e.g. 'Über uns' for all about-us tabs) */
     title: string | undefined;
 
-    @Output() navBarStickyEmitter: EventEmitter<boolean> = new EventEmitter<boolean>()
+    /** Current nav bar item that is hovered over (e.g. 'Gynmastik' if hover over 'Gymnastik' nav bar item) */
+    expandedNavBarItem: NavigationBarItem | null = null;
 
-    navBarHoverItem: NavigationBarItem | null = null;
-
+    /** Device type listener */
     deviceTypeListener: DeviceTypeListener;
 
-    @ViewChild('headerTitleContainer') titleContainer: ElementRef | undefined;
+    /** All nav bar items */
+    navBarItems: NavigationBarItem[] | null = null;
 
-    constructor(private renderer: Renderer2) {
-        this.deviceTypeListener = new DeviceTypeListener(window, () => {});
-        this.title = "Test Title"; // TODO remove
-    }
+    /** Emits sticky nav bar */
+    @Output() navBarStickyEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    ngOnInit(): void {
-        if (this.activeId == null) {
-            throw new Error('No active Id given.');
-        }
-    }
-
-    ngAfterViewInit(): void {
-        this.setHeaderSheetTimeout();
+    constructor(httpClient: HttpClient) {
+        this.deviceTypeListener = new DeviceTypeListener(window, deviceType => {
+            new NavBarDecoderService(httpClient).decode(deviceType, (navBarItems, error) => {
+                if (error != null) {
+                    throw error;
+                } else if (navBarItems == null) {
+                    throw new Error("Couln't decode nav bar.");
+                }
+                this.navBarItems = navBarItems;
+                for (const navBarItem of navBarItems) {
+                    if (navBarItem.id == this.activePageId) {
+                        this.title = navBarItem.name;
+                        break;
+                    }
+                }
+            });
+        });
     }
 
     @HostListener('window:resize', ['$event'])
@@ -40,36 +51,21 @@ export class HeaderComponent implements AfterViewInit, OnInit {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    handleHoverEmitter(hoverEmitter: HoverEmitter): void {
-        if (hoverEmitter.start) {
-            this.navBarHoverItem = hoverEmitter.item;
-        } else if (this.navBarHoverItem?.id == hoverEmitter.item.id) {
-            this.navBarHoverItem = null;
-        }
+    /**
+     * Sets hovered nav bar item
+     * @param expandedNavBarItem hovered nav bar item
+     */
+    setExpandedNavBar(item: NavigationBarItem | null): void {
+        this.expandedNavBarItem = item;
     }
 
-    handleNavBarSticky(navBarSticky: boolean): void {
+    /**
+     * Handles sticky nav bar change
+     * @param navBarSticky is nav bar sticky
+     */
+    handleNavBarStickyEmitter(navBarSticky: boolean) {
         this.navBarStickyEmitter.emit(navBarSticky);
-    }
-    
-    handleTitleEmitter(title: string): void {
-        this.title = title;
-    } 
-
-    setHeaderSheetTimeout(): void {
-        this.renderer.addClass(this.titleContainer?.nativeElement, "after-load");
-        setTimeout(() => {
-            this.renderer.removeClass(this.titleContainer?.nativeElement, "after-load");
-        }, 10000);
-    }
-
-    hoverStartItem(navBarItem: string): void {
-        this.navBarHoverItem = new NavigationBarItem("", navBarItem, "", null);
-    }
-
-    hoverEndItem(): void {
-        this.navBarHoverItem = null;
-    }
+      }
 }
 
 export enum DeviceType {

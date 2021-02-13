@@ -9,7 +9,7 @@ import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 })
 export class AboutUsLeftRowComponent implements OnInit {
 
-    @Input() activeId: string | undefined;
+    @Input() activePageId: string | undefined;
 
     deviceTypeListener: DeviceTypeListener;
 

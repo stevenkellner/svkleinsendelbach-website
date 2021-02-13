@@ -10,7 +10,7 @@ import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 })
 export class FootballAdultsLeftRowComponent implements OnInit {
 
-    @Input() activeId: string | undefined;
+    @Input() activePageId: string | undefined;
 
     deviceTypeListener: DeviceTypeListener;
 

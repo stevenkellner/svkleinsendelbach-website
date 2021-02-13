@@ -21,6 +21,7 @@ import { FooterComponent } from './_template/footer/footer.component';
 import { WaveComponent } from './_template/wave/wave.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TopHeaderComponent } from './_template/header/top-header/top-header.component';
+import { NavBarItemComponent } from './_template/header/nav-bar/nav-bar-item/nav-bar-item.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TopHeaderComponent } from './_template/header/top-header/top-header.com
     FootballAdultsGeneralComponent,
     FootballAdultsLeftRowComponent,
     FootballAdultsGeneralComponent,
-    TopHeaderComponent
+    TopHeaderComponent,
+    NavBarItemComponent
   ],
   imports: [
     BrowserModule,

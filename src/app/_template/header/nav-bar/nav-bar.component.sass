@@ -1,113 +1,19 @@
 @import '../../../../styles.sass'
 
-// Layout of nav bar for desktop and tablet
-.nav-bar.desktop, .nav-bar.tablet
-    $nav-bar-item-height: 4 * $cube
-    $sub-item-height: 3 * $cube
-    height: $nav-bar-item-height
-    position: relative
-    z-index: 1150
-    
-    .nav-bar-items
-        display: flex
-        flex-direction: row
-        align-content: center
+$z-index: 8000
 
-        .nav-bar-item
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: flex-start
+.nav-bar.desktop .nav-bar-items, .nav-bar.tablet .nav-bar-items
+    @include flex-row(flex-start, flex-start)
 
-            > .link
-                display: flex
-                flex-direction: row
-                align-items: center
-                justify-content: center
-                text-decoration: none
-                height: $nav-bar-item-height
-                width: 100%
-                z-index: 1101
-                position: relative
-
-                .text
-                    text-transform: uppercase
-                    white-space: nowrap
-                    
-                i
-                    margin-left: 4px
-
-            .sub-items
-                display: flex
-                flex-direction: column
-                align-items: center
-                justify-content: flex-start
-
-                .sub-item
-                    display: flex
-                    flex-direction: column
-                    overflow: hidden
-                    justify-content: center
-                    width: 100%
-                    height: 0
-                    padding: 0 $cube
-                    transition: transform .3s linear
-                    transition-delay: 0
-
-                    @for $i from 1 through 100 
-                        &:nth-child(#{$i})
-                            transform: translateY(-$i * $sub-item-height)
-                            z-index: 1101 - $i
-                            position: relative
-
-                    > .link
-                        text-decoration: none
-
-                        .text
-                            display: flex
-                            flex-direction: row
-                            text-transform: uppercase
-                            white-space: nowrap
-                            justify-content: center
-
-    &.sticky
-        position: fixed
-        top: 0
-
-.nav-bar.desktop .nav-bar-items .nav-bar-item:hover, .nav-bar.tablet .nav-bar-items .nav-bar-item.expanded
-    > .link
-        z-index: 1102  
-        position: relative
-
-    .sub-items .sub-item
-        height: 100%
-        padding: $cube
-        transform: translateY(0)
-        @for $i from 1 through 100 
-            &:nth-child(#{$i})
-                transition-delay: #{0.05 * $i}s
-
-.nav-bar.tablet .nav-bar-items .nav-bar-item:hover > .link, .nav-bar.tablet .nav-bar-items .nav-bar-item.active-screen > .link,  .nav-bar.desktop .nav-bar-items .nav-bar-item.active-screen > .link
-    z-index: 1102
-    position: relative
-
-// Layout of nav bar for mobile
 .nav-bar.mobile
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: flex-start
-    position: relative
-    z-index: 1150
+    @include flex-column(center, flex-start)
+    z-index: $z-index
 
     .drop-down-btn
+        @include flex-row(flex-start)
         width: 100vw
-        display: flex
-        flex-direction: row
-        align-items: center
-        justify-content: flex-start
-        z-index: 1103
-        position: relative
+        background-color: $darkLightBackground
+        z-index: $z-index + 999
 
         .button
             $line-height: 0.25 * $cube
@@ -119,8 +25,9 @@
                 margin: $line-height + $distance 0
                 width: $line-width
                 height: $line-height
-                transition: .5s linear
+                transition: .5s
                 border-radius: 0.5 * $line-height
+                background-color: $whiteDarkText
                 opacity: 1
 
                 &::before
@@ -133,11 +40,13 @@
                     position: absolute
                     width: $line-width
                     height: $line-height
-                    transition: .5s linear
+                    transition: .5s
                     border-radius: 0.5 * $line-height
+                    background-color: $whiteDarkText
 
             &.active .btn-image
                 transform: translateX(-$line-width)
+                background-color: transparent
 
                 &::before
                     transform: rotate(45deg) translate(0.7 * $line-width, -0.7 * $line-width)
@@ -145,243 +54,27 @@
                     transform: rotate(-45deg) translate(0.7 * $line-width, 0.7 * $line-width)
 
     .nav-bar-items
-        $nav-bar-item-height: 2.5 * $cube
-        $sub-item-height: 2 * $cube
-        display: flex
-        flex-direction: column
-        align-content: center
-        justify-content: flex-start
-
+        @include flex-column(center, flex-start)
+        $transition: .3s
+        $titleHeightMobile: 3 * $cube
+        transition: $transition
+        width: 95vw
+        height: 0
+        
         .nav-bar-item
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: flex-start
-            overflow: hidden
-            height: 0
-            transition: transform .5s linear
-
-            > .link
-                display: flex
-                flex-direction: row
-                align-items: center
-                justify-content: center
-                text-decoration: none
-                width: 95vw
-                height: 100%
-                transition: transform .5s linear
-
-                .text
-                    text-transform: uppercase
-                    white-space: nowrap
-                    
-                i
-                    margin-left: 4px
-                
+            width: 100%
+            transition: $transition
             @for $i from 1 through 100 
                 &:nth-child(#{$i})
-                    transform: translateY(-$i * $nav-bar-item-height)
-                    z-index: 1101 - $i
-                    position: relative
+                    transform: translateY(-$i * $titleHeightMobile)
+                    z-index: $z-index + 201 - $i
 
-            .sub-items
-                display: flex
-                flex-direction: column
-                align-items: center
-                justify-content: flex-start
-
-                .sub-item
-                    display: flex
-                    flex-direction: column
-                    overflow: hidden
-                    justify-content: center
-                    width: 100%
-                    height: 0
-                    padding: 0 $cube
-                    transition: transform .5s linear
-                    transition-delay: 0
-                    width: 75vw
-
-                    @for $i from 1 through 100 
-                        &:nth-child(#{$i})
-                            transform: translateY(-$i * $sub-item-height)
-                            z-index: 1101 - $i
-                            position: relative
-
-                    > .link
-                        text-decoration: none
-
-                        .text
-                            display: flex
-                            flex-direction: row
-                            text-transform: uppercase
-                            white-space: nowrap
-                            justify-content: center
-
-        &.active .nav-bar-item
-            height: $nav-bar-item-height
-            transform: translateY(0)
-        
-            &.expanded
-                height: 100%
-                margin-bottom: $cube
-
-                > .link 
-                    background-color: $gray-dark
-                    height: $nav-bar-item-height
-                    z-index: 1102
-                    position: relative
-                    transition: border-radius .5s linear
-                    border-radius: 0 0 $cube $cube
-
-                    .text, i
-                        color: $blue-light
-
-                .sub-items .sub-item
-                    height: $sub-item-height
-                    transform: translateY(0)
-                    transition: height .5s linear
-
-                    @for $i from 1 through 100 
-                        &:nth-child(#{$i})
-                            transition-delay: #{0.05 * $i}s
-
-                + .nav-bar-item 
-                    > .link
-                        border-radius: $cube $cube 0 0 
-                    &:last-child > .link
-                        border-radius: $cube
-
-    &.sticky
-        position: fixed
-        top: 0
-
-// Style of nav bar for desktop and tablet
-.nav-bar.desktop, .nav-bar.tablet
-    .nav-bar-items
-        .nav-bar-item
-            > .link
-                background-color: $dark-prime
-                cursor: pointer
-                transition: .3s linear
-
-                .text, i
-                    color: $white-text
-
-            .sub-items
-                .sub-item
-                    background-color: $dark-prime
-
-                    > .link
-                        cursor: pointer
-                        transition: .3s linear
-
-                        .text
-                            color: $white-text
-                            transition: .3s linear
-                
-                    &:last-child
-                        border-radius: 0 0 (0.5 * $cube) (0.5 * $cube)
-
-                    &:hover > .link .text
-                        color: $blue-light
-                        
-                    
-            &:hover, &.expanded, &.active-screen
-                > .link 
-                    padding: 0 (0.5 * $cube)
-                    background-color: $gray-dark
-                    border-radius: 0.5 * $cube
-                    transform: scale(1.1)
-
-                    .text, i
-                        color: $blue-light
-
-// Style of nav bar for mobile
-.nav-bar.mobile
-    .drop-down-btn
-        background-color: $dark-prime
-
-        .button            
-            .btn-image
-                background-color: $white-text
-
-                &::before, &::after
-                        background-color: $white-text
-
-            &.active .btn-image
-                background-color: transparent
-
-    .nav-bar-items
-        background-color: $light-background
-        width: 100vw
-
-        .nav-bar-item
-            > .link
-                background-color: $dark-prime
-                cursor: pointer
-
-                .text, i
-                    color: $white-text
-                
-            &:last-child > .link
-                border-radius: 0 0 $cube $cube
-
-            .sub-items
-                .sub-item
-                    background-color: $dark-prime
-
-                    > .link
-                        cursor: pointer
-
-                        .text
-                            color: $white-text
-                
-                    &:last-child
-                        border-radius: 0 0 (0.5 * $cube) (0.5 * $cube)
+        &.active
+            height: 100%
+            transition: $transition
+            .nav-bar-item
+                transform: translateY(0)
 
 @media screen and (prefers-color-scheme: dark)
-    .nav-bar.desktop, .nav-bar.tablet
-        .nav-bar-items .nav-bar-item 
-            .sub-items .sub-item
-                border: 
-                    right: (0.15 * $cube) solid $gray-text-dark-theme
-                    left: (0.15 * $cube) solid $gray-text-dark-theme
-                > .link .text
-                    color: $gray-text-dark-theme
-            > .link 
-                .text, i
-                    color: $gray-text-dark-theme
-    .nav-bar.desktop .nav-bar-items .nav-bar-item:hover .sub-items .sub-item:last-child
-        border-bottom: (0.15 * $cube) solid $gray-text-dark-theme
-    .nav-bar.tablet .nav-bar-items .nav-bar-item.expanded .sub-items .sub-item:last-child
-        border-bottom: (0.15 * $cube) solid $gray-text-dark-theme
-
-    .nav-bar.mobile
-        .drop-down-btn
-            border-bottom: (0.15 * $cube) solid $gray-text-dark-theme
-
-        .nav-bar-items
-            background-color: $dark-background
-
-        .nav-bar-items.active
-            .nav-bar-item
-                > .link
-                    border: 
-                        right: (0.125 * $cube) solid $gray-text-dark-theme
-                        left: (0.125 * $cube) solid $gray-text-dark-theme
-                    
-                &:last-child > .link, &.expanded > .link
-                    border-bottom: (0.125 * $cube) solid $gray-text-dark-theme
-
-                &.expanded 
-                    .sub-items
-                        .sub-item
-                            border: 
-                                right: (0.1 * $cube) solid $gray-text-dark-theme
-                                left: (0.1 * $cube) solid $gray-text-dark-theme
-                        
-                            &:last-child
-                                border-bottom: (0.1 * $cube) solid $gray-text-dark-theme
-                    + .nav-bar-item > .link
-                            border-top: (0.1 * $cube) solid $gray-text-dark-theme
+    .nav-bar.mobile .drop-down-btn
+        border-bottom: (0.15 * $cube) solid $grayDarkText

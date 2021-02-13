@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener, Input, Renderer2, ViewChild } from '@angular/core';
+import { NavigationBarItem } from 'src/app/services/nav-bar-decoder.service';
 import { DeviceTypeListener } from '../header.component';
-import { NavigationBarItem } from '../nav-bar/nav-bar.component';
 
 @Component({
     selector: 'app-top-header',
@@ -11,7 +11,7 @@ export class TopHeaderComponent implements AfterViewInit {
 
     @Input() title: string | undefined;
     
-    @Input() navBarHoverItem: NavigationBarItem | null = null;
+    @Input() expandedNavBarItem: NavigationBarItem | null = null;
 
     deviceTypeListener: DeviceTypeListener;
 

@@ -3,22 +3,18 @@
         <span (click)="toggleMobileHamburgerButtonActive()" [ngClass]="{'active': mobileHamburgerButtonActive }" class="button"><div class="btn-image"></div></span>
     </span>
     <span [ngClass]="{'active': mobileHamburgerButtonActive }" class="nav-bar-items">
-        <span *ngFor="let navBarItem of navBarItems" #navBarItem (click)="setActiveNavBarItem(navBarItem)" (mouseenter)="hoverStartItem(navBarItem)" (mouseleave)="hoverEndItem(navBarItem)" [ngClass]="{'expanded': navBarItem.subItems != null && activeNavBarItemId == navBarItem.id, 'active-screen': navBarItem.id == activeId}" [ngStyle]="deviceTypeListener.isMobile() ? null : {'width': widthOfNavBarItem(navBarItem) + 'px'}" class="nav-bar-item">
-            <a *ngIf="deviceTypeListener.isDesktop()" href="{{ navBarItem.linkUrl }}" class="link">
-                <p class="text">{{ navBarItem.name }}</p>
-                <i *ngIf="navBarItem.subItems != null" class="fas fa-caret-down"></i>
-            </a>
-            <span *ngIf="!deviceTypeListener.isDesktop()" class="link">
-                <p class="text">{{ navBarItem.name }}</p>
-                <i *ngIf="navBarItem.subItems != null" class="fas fa-caret-down"></i>
-            </span>
-            <span *ngIf="navBarItem.subItems != null" class="sub-items">
-                <span *ngFor="let subItem of navBarItem.subItems" class="sub-item">
-                    <a href="{{ subItem.linkUrl }}" class="link">
-                        <p class="text">{{ subItem.name }}</p>
-                    </a>
-                </span>
-            </span>
-        </span>
+        <app-nav-bar-item *ngFor="let navBarItem of navBarItems" 
+            [ngClass]="{'expanded': expandedNavBarItem?.id == navBarItem.id }" 
+            (expandedNavBarItemEmitter)="setExpandedNavBarItem($event)" 
+            [navBarItem]="navBarItem" 
+            [expandedNavBarItem]="expandedNavBarItem" 
+            [activePageId]="activePageId" 
+            [afterExpandedNavBarItemId]="afterExpandedNavBarItemId"
+            [lastNavBarItemId]="lastNavBarItemId"
+            [isMobileNavBarExtended]="mobileHamburgerButtonActive"
+            [ngStyle]="widthStyle(navBarItem)"
+            class="nav-bar-item"
+            #navBarItem>
+        </app-nav-bar-item>
     </span>
 </nav>

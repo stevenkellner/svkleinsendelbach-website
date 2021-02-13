@@ -1,0 +1,28 @@
+<span *ngIf="navBarItem" [ngClass]="deviceTypeListener.deviceTypeString()" class="nav-bar-column">
+    <a *ngIf="deviceTypeListener.isDesktop()" [ngClass]="{'expanded': expandedNavBarItem?.id == navBarItem.id }" (mouseenter)="hoverStarted()" (mouseleave)="hoverEnded()" href="{{ navBarItem.linkUrl }}" class="title">
+        <p class="text">{{ navBarItem.name }}</p>
+        <i *ngIf="navBarItem.subItems" class="fas fa-caret-down"></i>
+    </a>
+    <span *ngIf="!deviceTypeListener.isDesktop()" 
+        [ngClass]="{
+            'expanded': expandedNavBarItem?.id == navBarItem.id, 
+            'last': lastNavBarItemId == navBarItem.id, 
+            'after-expanded': afterExpandedNavBarItemId == navBarItem.id,
+            'isMobileNavBarNotExtended': !isMobileNavBarExtended
+        }" 
+        (click)="setExpandedNavBarItemOnClick()" 
+        class="title"
+        #navBarItemTitle>
+        <p class="text">{{ navBarItem.name }}</p>
+        <i *ngIf="navBarItem.subItems" class="fas fa-caret-down"></i>
+    </span>
+    <span *ngIf="navBarItem.subItems" 
+        [ngStyle]="widthStyle()" 
+        [ngClass]="{'expanded': expandedNavBarItem?.id == navBarItem.id }" 
+        (mouseenter)="hoverStarted()" 
+        (mouseleave)="hoverEnded()" 
+        class="sub-items"
+        #subItems>
+        <a *ngFor="let subItem of navBarItem.subItems" href="{{ subItem.linkUrl }}" class="sub-item">{{ subItem.name }}</a>
+    </span>
+</span>

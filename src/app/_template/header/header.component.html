@@ -1,39 +1,4 @@
 <span class="header">
-    <app-top-header [title]="title" [navBarHoverItem]="navBarHoverItem"></app-top-header>
-    <span class="test-nav-bar"> <!-- TODO remove -->
-        <p class="test-item" (mouseenter)="hoverStartItem('Test No. 1')" (mouseleave)="hoverEndItem()">Test No. 1</p>
-        <p class="test-item" (mouseenter)="hoverStartItem('Test No. 2')" (mouseleave)="hoverEndItem()">Test No. 2</p>
-        <p class="test-item" (mouseenter)="hoverStartItem('Test No. 3')" (mouseleave)="hoverEndItem()">Test No. 3</p>
-    </span>
+    <app-top-header [title]="title" [expandedNavBarItem]="expandedNavBarItem"></app-top-header>
+    <app-nav-bar [activePageId]="activePageId" [navBarItems]="navBarItems" (expandedNavBarItemEmitter)="setExpandedNavBar($event)" (navBarStickyEmitter)="handleNavBarStickyEmitter($event)"></app-nav-bar>
 </span>
-
-
-<!--span [ngClass]="deviceTypeListener.deviceTypeString()" class="top-header">
-    <a href="TODO to home" class="logo-link">
-        <img src="../../../assets/images/logo-transparent.png" class="logo">
-    </a>
-    <span [ngClass]="{'nav-bar-item-hover': navBarHoverItem != null }" class="title-container" #headerTitleContainer>
-        <p class="text">SV Kleinsendelbach</p>
-        <span class="header-sheet">
-            <p class="text">{{ navBarHoverItem != null ? navBarHoverItem?.name : title }}</p>
-        </span>
-    </span>
-    <span *ngIf="!deviceTypeListener.isMobile()" [ngClass]="{'cover-unvisible': !deviceTypeListener.isDesktop() }" class="social-media-buttons">
-        <span class="cover">
-            <i class="fas fa-share-alt"></i>
-            <p class="text">Social Media</p>
-        </span>
-        <span class="buttons">
-            <a href="http://sg-kh.de" class="link" target="_blank">
-                <img src="../../../assets/images/Logo-SG.png">
-            </a>
-            <a href="https://www.instagram.com/sgkleinsendelbachhetzles/" class="link" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/svkleinsendelbach/" class="link" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-        </span>
-    </span>
-</span>
-<app-nav-bar [activeId]="activeId" (titleEmitter)="handleTitleEmitter($event)" (navBarItemHoverEmitter)="handleHoverEmitter($event)" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-nav-bar-->

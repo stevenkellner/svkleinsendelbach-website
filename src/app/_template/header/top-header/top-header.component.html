@@ -2,10 +2,10 @@
     <a href="TODO" class="img-link">
         <img src="../../../../assets/images/logo-transparent.png" class="logo">
     </a>
-    <span [ngClass]="{'nav-bar-item-hover': navBarHoverItem != null }" class="title-container" #titleContainer>
+    <span [ngClass]="{'nav-bar-item-hover': expandedNavBarItem != null }" class="title-container" #titleContainer>
         <p class="title">SV Kleinsendelbach</p>
         <span *ngIf="!deviceTypeListener.isMobile()" class="hover-sheet">
-            <p class="hover-text">{{ navBarHoverItem != null ? navBarHoverItem!.name : title }}</p>
+            <p class="hover-text">{{ expandedNavBarItem != null ? expandedNavBarItem!.name : title }}</p>
         </span>
     </span>
     <span *ngIf="!deviceTypeListener.isMobile()" class="social-media-buttons">
@@ -26,32 +26,3 @@
         </span>
     </span>
 </span>
-
-<!--span [ngClass]="deviceTypeListener.deviceTypeString()" class="top-header">
-    <a href="TODO to home" class="logo-link">
-        <img src="../../../assets/images/logo-transparent.png" class="logo">
-    </a>
-    <span [ngClass]="{'nav-bar-item-hover': navBarHoverItem != null }" class="title-container" #headerTitleContainer>
-        <p class="text">SV Kleinsendelbach</p>
-        <span class="header-sheet">
-            <p class="text">{{ navBarHoverItem != null ? navBarHoverItem?.name : title }}</p>
-        </span>
-    </span>
-    <span *ngIf="!deviceTypeListener.isMobile()" [ngClass]="{'cover-unvisible': !deviceTypeListener.isDesktop() }" class="social-media-buttons">
-        <span class="cover">
-            <i class="fas fa-share-alt"></i>
-            <p class="text">Social Media</p>
-        </span>
-        <span class="buttons">
-            <a href="http://sg-kh.de" class="link" target="_blank">
-                <img src="../../../assets/images/Logo-SG.png">
-            </a>
-            <a href="https://www.instagram.com/sgkleinsendelbachhetzles/" class="link" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/svkleinsendelbach/" class="link" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-        </span>
-    </span>
-</span-->
