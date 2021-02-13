@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, Output, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild, ViewChildren } from '@angular/core';
 import { NavigationBarItem } from 'src/app/services/nav-bar-decoder.service';
 import { DeviceTypeListener } from '../../header.component';
 
@@ -24,12 +24,14 @@ export class NavBarItemComponent {
     @Output() expandedNavBarItemEmitter: EventEmitter<NavigationBarItem | null> = new EventEmitter<NavigationBarItem | null>();
     
     @ViewChild('navBarItemTitle') navBarItemTitleElement: ElementRef | undefined;
-    
+
     @ViewChild('subItems') subItemsElement: ElementRef | undefined;
+    
+    @ViewChildren('subItem') subItemElements: ElementRef[] | undefined;
 
     deviceTypeListener: DeviceTypeListener;
 
-    constructor(private renderer: Renderer2) {
+    constructor() {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 
@@ -38,10 +40,10 @@ export class NavBarItemComponent {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    removeExpandedClass() {
-        console.log(this.subItemsElement)
-        this.renderer.removeClass(this.navBarItemTitleElement?.nativeElement, "expanded");
-        this.renderer.removeClass(this.subItemsElement?.nativeElement, "expanded");
+    numberSubItemsStyle(): string {
+        if (!this.navBarItem?.subItems) return "";
+        if (this.navBarItem != this.expandedNavBarItem) return "";
+        return "number" + this.navBarItem.subItems.length.toString();
     }
 
     widthOfSubItems(): number {

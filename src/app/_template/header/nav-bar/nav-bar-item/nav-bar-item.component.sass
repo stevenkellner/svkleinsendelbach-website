@@ -71,13 +71,11 @@ $transition: .3s
                     transform: translateY(-$i * $subItemHeight)
                     z-index: $z-index + 101 - $i
 
-        &.expanded
-            height: 100%
-            .sub-item
-                transform: translateY(0)
-                @for $i from 1 through 100 
-                    &:nth-child(#{$i})
-                        transition-delay: #{0.05 * $i}s
+        &.expanded .sub-item
+            transform: translateY(0)
+            @for $i from 1 through 100 
+                &:nth-child(#{$i})
+                    transition-delay: #{0.05 * $i}s
 
 .nav-bar-column.mobile
     @include flex-column(center, flex-start)
@@ -139,22 +137,24 @@ $transition: .3s
             font-weight: 300
             color: $whiteDarkText
             text-align: center
-            transition: $transition
 
             &:last-child
                 border-radius: 0 0 (0.5 * $cube) (0.5 * $cube)
+
 
             @for $i from 1 through 100 
                 &:nth-child(#{$i})
                     transform: translateY(-$i * $subItemHeightMobile)
                     z-index: $z-index + 101 - $i
 
-        &.expanded
-            height: 100%
-            margin-bottom: $cube
-            transition: $transition
-            .sub-item
+            &.expanded
                 transform: translateY(0)
+                transition: $transition
+
+        @for $i from 0 through 100
+            &.number#{$i}
+                margin-bottom: $cube + $i * $subItemHeightMobile
+                transition: $transition
 
 @media screen and (prefers-color-scheme: dark)
     .nav-bar-column
@@ -180,4 +180,3 @@ $transition: .3s
                 border-bottom: none
             &.after-expanded
                 border-top: $border
-

@@ -69,7 +69,8 @@ export class NavBarComponent implements AfterViewInit, OnChanges {
         if (this.mobileHamburgerButtonActive || !this.navBarItemElements) return;
         for (const navBarItemComponent of this.navBarItemElements) {
             this.afterExpandedNavBarItemId = null;
-            navBarItemComponent.removeExpandedClass(); // Ignore this error, nav bar item component has this method!
+            this.expandedNavBarItem = null;
+            // navBarItemComponent.removeExpandedClass(); // Ignore this error, nav bar item component has this method!
         }
     }
 
