@@ -1,11 +1,5 @@
 @import '../../../styles'
 
-@mixin arrow-visibility($activeSelector)
-    *:not(#{$activeSelector})
-        display: none
-    #{$activeSelector}
-        display: block
-
 $transition: .5s
 $width: 17.5 * $cube
 $retractBtnWidth: 3.5 * $cube
@@ -24,7 +18,6 @@ $z-index: 6000
         background-color: $grayLightBackground
 
         .retract-btn
-            @include arrow-visibility(".left.single-arrow")
             width: $retractBtnWidth
             background-color: $darkLightBackground
             padding: $cube 0
@@ -35,11 +28,17 @@ $z-index: 6000
                 color: $whiteDarkText
                 text-align: center
                 font-size: 1.5 * $cube
+                &.left.single-arrow
+                    display: block
+                &.left.double-arrow, &.right.single-arrow, &.right.double-arrow
+                    display: none
 
-            &:hover
-                @include arrow-visibility(".left.double-arrow")
-                *
-                    color: $red
+            &:hover *
+                color: $red
+                &.left.double-arrow
+                    display: block
+                &.left.single-arrow, &.right.single-arrow, &.right.double-arrow
+                    display: none
 
             &.isMoving *
                 color: $red
@@ -55,12 +54,19 @@ $z-index: 6000
         width: 0
         border-right: none
         .btn-wrapper .retract-btn
-            @include arrow-visibility(".right.single-arrow")
             transform: translateX($retractBtnWidth)
             border-radius: 0 0 (0.5 * $cube) 0
+            *
+                &.right.single-arrow
+                    display: block
+                &.left.double-arrow, &.left.single-arrow, &.right.double-arrow
+                    display: none
 
-            &:hover
-                @include arrow-visibility(".right.double-arrow")
+            &:hover *
+                &.right.double-arrow
+                    display: block
+                &.left.double-arrow, &.right.single-arrow, &.left.single-arrow
+                    display: none
 
 @media screen and (prefers-color-scheme: dark)
     .left-row

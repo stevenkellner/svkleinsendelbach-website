@@ -10,8 +10,6 @@ import {  DeviceTypeListener } from 'src/app/_template/header/header.component';
 })
 export class HomeComponent {
 
-    // leftRowWidth: number | undefined;
-
     deviceTypeListener: DeviceTypeListener;
     
     linkItemRows: LinkItem[][] = [];
@@ -26,16 +24,12 @@ export class HomeComponent {
         });
     }
 
-    @HostListener('window:resize', ['$event'])
-    windowChanged(event: any): void {
+    @HostListener('window:resize')
+    windowChanged() {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    // handleLeftRowWidthChange(width: number) {
-    //     this.leftRowWidth = width;
-    // }
-
-    decodeLinkItems(): void {
+    decodeLinkItems() {
         this.httpClient.get('../../../../assets/json-data/link-items.json').subscribe((data: any) => {
             const linkItemIdRows = data[this.deviceTypeListener.deviceType];
             let linkItemRows: LinkItem[][] = [];

@@ -2,6 +2,7 @@
 @import './sass/_var/other'
 @import './sass/reset'
 @import './sass/flex'
+@import './sass/text-style'
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100')
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200')
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300')
@@ -12,69 +13,15 @@
 *:not(i)
     font-family: 'Montserrat', sans-serif
 
-// .left-row-wrapper
-//     transition: .5s linear
-
 .body
+    @include flex-row(flex-start, flex-start)
     background-color: $light-background
     min-height: 120vh
-    display: flex
-    flex-direction: row
-
-.overlined
-    border-top: 2px solid $dark-prime-transparent
-    padding-top: 3 * $cube
-
-.text-section
-    margin:
-        right: 3 * $cube
-        left: 3 * $cube
-
-.text-colored
-    color: $light-gray-text
-
-.title-colored, .dark-colored, .sub-item-colored
-    color: $dark-prime
-
-.red-colored
-    color: $red
-
-p.content-text
-    font:
-        size: 1.5 * $cube
-        weight: 500
-    text-align: center
-    line-height: 2 * $cube
-    &.small-text
-        font-size: 1.1 * $cube
-        line-height: 1.25 * $cube
-
-h3.content-text
-    font:
-        size: 2.5 * $cube
-        weight: 500
-    text-align: center
-    line-height: 3 * $cube
-    padding:
-        right: 2 * $cube
-        left: 2 * $cube
-
-h4.content-text
-    font:
-        size: 1.5 * $cube
-        weight: 500
-    text-align: start
-    line-height: 1.5 * $cube
+    .main-content
+        @include flex-column(center, flex-start)
+        width: 100%
+        padding: (4 * $cube) 0
 
 @media screen and (prefers-color-scheme: dark)
     .body
         background-color: $dark-background
-
-    .overlined
-        border-top: 2px solid $white-text-dark-theme
-
-    .text-colored
-        color: $gray-text-dark-theme
-
-    .title-colored, .dark-colored, .sub-item-colored
-        color: $white-text-dark-theme

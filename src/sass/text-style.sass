@@ -1,0 +1,57 @@
+@import './_var/color'
+@import './_var/other'
+@import './flex'
+
+.text-section
+    @include flex-column()
+    margin: 3 * $cube
+    padding-top: 3 * $cube
+    border-top: $darkGrayLightBackground solid 1px
+
+    h1
+        color: $darkLightText
+        font:
+            size: 2.5 * $cube
+            weight: 500
+        text-align: center
+        line-height: 3 * $cube
+        padding:
+            right: 2 * $cube
+            left: 2 * $cube
+            bottom: 3 * $cube
+
+    p
+        color: $lightLightText
+        font:
+            size: 1.1 * $cube
+            weight: 400
+        text-align: center
+        line-height: 1.25 * $cube
+        padding-bottom: 2 * $cube
+        &.large
+            font:
+                size: 1.5 * $cube
+                weight: 500
+            line-height: 2 * $cube
+            padding-bottom: 3 * $cube
+
+    .top-space
+        padding-top: 3 * $cube
+
+    .red
+        color: $red
+
+// h4.content-text
+//     font:
+//         size: 1.5 * $cube
+//         weight: 500
+//     text-align: start
+//     line-height: 1.5 * $cube
+
+@media screen and (prefers-color-scheme: dark)
+    .text-section
+        border-top: $grayShiningDarkText solid 1px
+        h1
+            color: $grayShiningDarkText
+        p
+            color: $grayDarkText

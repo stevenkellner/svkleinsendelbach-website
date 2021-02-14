@@ -1,24 +1,15 @@
 @import '../../../../styles'
 
 .left-row-content
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: flex-start
+    @include flex-column(center, flex-start)
 
     > *
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: flex-start
+        @include flex-column(center, flex-start)
         margin-top: 3 * $cube
 
         .title
-            display: flex
-            flex-direction: row
-            align-items: center
-            justify-content: center
-            border-bottom: $dark-prime-transparent solid 0.1 * $cube
+            @include flex-row()
+            border-bottom: $darkGrayLightBackground solid 1px
             padding: 0.5 * $cube
 
             i
@@ -31,22 +22,19 @@
                 text-transform: uppercase
 
         .items
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: flex-start
+            @include flex-column(center, flex-start)
             margin-top: $cube
 
             .item
+                @include flex-row()
                 text-decoration: none
-                display: flex
-                flex-direction: row
-                align-items: center
-                justify-content: center
                 margin: $cube (2 * $cube)
                 padding: (0.5 * $cube) 0
-                padding-bottom: $cube
-                border-bottom: $dark-prime-transparent solid 0.1 * $cube
+                padding:
+                    bottom: $cube
+                    left: 0.5 * $cube
+                    right: 0.5 * $cube
+                border-bottom: $darkGrayLightBackground solid 1px
 
                 .text
                     text-align: center

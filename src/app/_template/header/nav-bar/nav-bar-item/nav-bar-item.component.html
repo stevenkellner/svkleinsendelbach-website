@@ -1,6 +1,9 @@
 <span *ngIf="navBarItem" [ngClass]="deviceTypeListener.deviceTypeString()"class="nav-bar-column">
     <a *ngIf="deviceTypeListener.isDesktop()" 
-        [ngClass]="{'expanded': expandedNavBarItem?.id == navBarItem.id }" 
+        [ngClass]="{
+            'expanded': expandedNavBarItem?.id == navBarItem.id,
+            'active': activePageId == navBarItem.id
+        }" 
         (mouseenter)="hoverStarted()" 
         (mouseleave)="hoverEnded()" 
         href="{{ navBarItem.linkUrl }}" 
@@ -11,6 +14,7 @@
     <span *ngIf="!deviceTypeListener.isDesktop()" 
         [ngClass]="{
             'expanded': expandedNavBarItem?.id == navBarItem.id, 
+            'active': activePageId == navBarItem.id,
             'last': lastNavBarItemId == navBarItem.id, 
             'after-expanded': afterExpandedNavBarItemId == navBarItem.id,
             'isMobileNavBarNotExtended': !isMobileNavBarExtended
