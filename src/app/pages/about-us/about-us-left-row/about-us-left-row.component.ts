@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 
 @Component({
@@ -7,7 +7,7 @@ import { DeviceTypeListener } from 'src/app/_template/header/header.component';
     templateUrl: './about-us-left-row.component.html',
     styleUrls: ['./about-us-left-row.component.sass']
 })
-export class AboutUsLeftRowComponent implements OnInit {
+export class AboutUsLeftRowComponent {
 
     @Input() activePageId: string | undefined;
 
@@ -20,15 +20,13 @@ export class AboutUsLeftRowComponent implements OnInit {
             this.decodeLeftRowItems();
         });
     }
-
-    ngOnInit(): void {}
-
-    @HostListener('window:resize', ['$event'])
-    windowChanged(event: any): void {
+    
+    @HostListener('window:resize')
+    windowChanged() {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    decodeLeftRowItems(): void {
+    decodeLeftRowItems() {
         this.httpClient.get('../../../../assets/json-data/nav-bar-items.json').subscribe((data: any) => {
             const leftRowItemsId = data[this.deviceTypeListener.deviceType].find((element: {[x: string]: string}) => element["id"] == "about-us")["sub-items"];
             this.leftRowItems = [];

@@ -1,42 +1,33 @@
 @import '../../../../styles'
 
 .left-row-content
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: flex-start
+    @include flex-column(center, flex-start)
 
     .items
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: flex-start
-        margin-top: $cube
+        @include flex-column(center, flex-start)
+        margin-top: 2 * $cube
 
         .item
+            @include flex-row()
             text-decoration: none
-            display: flex
-            flex-direction: row
-            align-items: center
-            justify-content: center
             margin: (0.5 * $cube) (2 * $cube)
             padding: (0.5 * $cube) 0
             padding-bottom: $cube
             width: 80%
-            border-bottom: $dark-prime-transparent solid 0.1 * $cube
+            border-bottom: $darkGrayLightBackground solid 1px
 
             .text
                 text-align: center
                 font-size: $cube
-                font-weight: 100
-                color: $dark-prime
-                transition: .1s linear
+                font-weight: 400
+                color: $darkLightText
+                transition: .1s
         
             &:hover .text, &.active .text
                 color: $red
 
 @media screen and (prefers-color-scheme: dark)
     .left-row-content .items .item
-            border-color: $gray-text-dark-theme
+            border-color: $grayDarkText
             .text
-                color: $gray-text-dark-theme
+                color: $grayDarkText

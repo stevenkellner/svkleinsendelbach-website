@@ -4,9 +4,10 @@
 
 .text-section
     @include flex-column()
-    margin: 3 * $cube
+    margin: 3 * $cube 0
     padding-top: 3 * $cube
     border-top: $darkGrayLightBackground solid 1px
+    width: 90%
 
     h1
         color: $darkLightText
@@ -19,6 +20,17 @@
             right: 2 * $cube
             left: 2 * $cube
             bottom: 3 * $cube
+
+    h2
+        font:
+            size: 1.5 * $cube
+            weight: 400
+        color: $darkLightText
+        line-height: 1.5 * $cube
+        padding-bottom: $cube
+        &.left-align
+            width: 100%
+            text-align: left
 
     p
         color: $lightLightText
@@ -34,24 +46,74 @@
                 weight: 500
             line-height: 2 * $cube
             padding-bottom: 3 * $cube
+        &.medium
+            font:
+                size: 1.25 * $cube
+                weight: 500
+            line-height: 1.75 * $cube
+            padding-bottom: 2.5 * $cube
+        &.left-align
+            width: 100%
+            text-align: left
+
+    a, a > *
+        @include flex-row()
+        color: $red
+        text-decoration: none
+        font:
+            size: 1.1 * $cube
+            weight: 400
+        text-align: center
+        line-height: 1.25 * $cube
+        padding-bottom: 2 * $cube
+        &.large
+            font:
+                size: 1.5 * $cube
+                weight: 500
+            line-height: 2 * $cube
+            padding-bottom: 3 * $cube
+        &.medium
+            font:
+                size: 1.25 * $cube
+                weight: 500
+            line-height: 1.75 * $cube
+            padding-bottom: 2.5 * $cube
+        &.inline, &.inline.large, &.inline.medium
+            padding: 0
+            text-align: justify
+            display: inline
+
+    i
+        margin: 0 2px
+        &.large
+            margin: 0 4px
 
     .top-space
         padding-top: 3 * $cube
 
+    .large-top-space
+        padding-top: 5 * $cube
+
+    .no-bottom-space
+        padding-bottom: 0 !important
+
+    .small-bottom-space
+        padding-bottom: $cube !important
+
     .red
         color: $red
 
-// h4.content-text
-//     font:
-//         size: 1.5 * $cube
-//         weight: 500
-//     text-align: start
-//     line-height: 1.5 * $cube
+    .dark
+        color: $darkLightText
 
 @media screen and (prefers-color-scheme: dark)
     .text-section
         border-top: $grayShiningDarkText solid 1px
         h1
             color: $grayShiningDarkText
+        h2
+            color: $grayShiningDarkText
         p
+            color: $grayDarkText
+        .dark
             color: $grayDarkText

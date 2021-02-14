@@ -1,51 +1,22 @@
 @import '../../../../styles'
 
-.body
-    display: flex
-    flex-direction: row
-    align-items: flex-start
-    justify-content: flex-start
-
-    .left-row-wrapper
-        transition: .5s linear
-        *
-            transition: .5s linear
-
-
-.content
-    display: flex
-    flex-direction: column
-    justify-content: flex-start
-    margin-top: 4 * $cube
-    margin-bottom: 10 * $cube
-
-    h4
-        margin-top: 4 * $cube
-
-
-    > *
-        margin-top: 2 * $cube
+.main-content .text-section 
+    h3
+        width: 100%
+        color: $darkLightText
+        font:
+            size: 1.75 * $cube
+            weight: 500
+        text-align: left
+        padding:
+            bottom: $cube
 
     .list
-        margin-left: 4 * $cube
+        @include flex-column(flex-start)
+        margin:
+            bottom: 2 * $cube
+            left: 4 * $cube
 
-        p
-            color: $light-gray-text
-            font:
-                size: 1.1 * $cube
-                weight: 500
-            text-align: start
-            margin: 0.5 * $cube 0
-            line-height: 1.25 * $cube
-
-            a
-                text-decoration: none
-                color: $red
-                font:
-                    size: 1.1 * $cube
-                    weight: 500
-                line-height: 1.25 * $cube
-        
 @media screen and (prefers-color-scheme: dark)
-    .content .list .p
-        color: $gray-text-dark-theme
+    .main-content .text-section h3
+        color: $grayShiningDarkText

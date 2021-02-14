@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 
@@ -7,7 +7,7 @@ import { DeviceTypeListener } from 'src/app/_template/header/header.component';
   templateUrl: './managers.component.html',
   styleUrls: ['./managers.component.sass']
 })
-export class ManagersComponent implements OnInit {
+export class ManagersComponent {
 
     leftRowWidth: number | undefined;
 
@@ -20,14 +20,8 @@ export class ManagersComponent implements OnInit {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 
-    ngOnInit(): void {}
-
-    @HostListener('window:resize', ['$event'])
-    windowChanged(event: any): void {
+    @HostListener('window:resize')
+    windowChanged() {
         this.deviceTypeListener.windowChanged(window);
-    }
-
-    handleLeftRowWidthChange(width: number) {
-        this.leftRowWidth = width;
     }
 }

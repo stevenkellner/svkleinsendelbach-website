@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 
@@ -8,7 +8,7 @@ import { DeviceTypeListener } from 'src/app/_template/header/header.component';
     templateUrl: './sports-home.component.html',
     styleUrls: ['./sports-home.component.sass']
 })
-export class SportsHomeComponent implements OnInit {
+export class SportsHomeComponent {
 
     leftRowWidth: number | undefined;
 
@@ -26,15 +26,9 @@ export class SportsHomeComponent implements OnInit {
         });
     }
 
-    ngOnInit(): void {}
-
-    @HostListener('window:resize', ['$event'])
-    windowChanged(event: any): void {
+    @HostListener('window:resize')
+    windowChanged() {
         this.deviceTypeListener.windowChanged(window);
-    }
-
-    handleLeftRowWidthChange(width: number) {
-        this.leftRowWidth = width;
     }
 
     decodeOpeningHourItems(): void {

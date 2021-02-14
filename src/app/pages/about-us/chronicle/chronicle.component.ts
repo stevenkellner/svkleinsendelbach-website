@@ -1,13 +1,13 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 
 @Component({
-  selector: 'app-chronicle',
-  templateUrl: './chronicle.component.html',
-  styleUrls: ['./chronicle.component.sass']
+    selector: 'app-chronicle',
+    templateUrl: './chronicle.component.html',
+    styleUrls: ['./chronicle.component.sass']
 })
-export class ChronicleComponent implements OnInit {
+export class ChronicleComponent {
 
     leftRowWidth: number | undefined;
 
@@ -20,14 +20,8 @@ export class ChronicleComponent implements OnInit {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 
-    ngOnInit(): void {}
-
     @HostListener('window:resize', ['$event'])
     windowChanged(event: any): void {
         this.deviceTypeListener.windowChanged(window);
-    }
-
-    handleLeftRowWidthChange(width: number) {
-        this.leftRowWidth = width;
     }
 }
