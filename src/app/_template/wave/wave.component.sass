@@ -1,10 +1,13 @@
 @import '../../../styles'
+
+$z-index: -12
+
 .waves 
     .wave
         position: absolute
         width: 100%
         height: 143px
-        z-index: -10
+        z-index: $z-index + 2
         transform: translateY(-143px)
         left: 0
         opacity: .1
@@ -15,7 +18,7 @@
         &::before 
             content: ""
             position: absolute
-            z-index: -11
+            z-index: $z-index + 1
             width: 100%
             height: 143px
             background: url(../../../assets/images/wave.png)
@@ -28,7 +31,7 @@
         &::after
             content: ""
             position: absolute
-            z-index: -12
+            z-index: $z-index
             width: 100%
             height: 143px
             background: url(../../../assets/images/wave.png)

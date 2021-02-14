@@ -1,10 +1,9 @@
 <span [ngClass]="deviceTypeListener.deviceTypeString()" class="page-container"> 
     <app-header [activePageId]="activeNavBarId" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-header>
-    Das ist ein test
-    <!--span [ngClass]="{'nav-bar-sticky': navBarSticky }" class="body">
+    <span [ngClass]="{'nav-bar-sticky': navBarSticky }" class="body">
         <router-outlet (activate)="setActiveNavBarId($event)"></router-outlet>
     </span>
-    <app-wave></app-wave-->
+    <app-wave></app-wave>
     <footer>
         <app-footer></app-footer>
     </footer>

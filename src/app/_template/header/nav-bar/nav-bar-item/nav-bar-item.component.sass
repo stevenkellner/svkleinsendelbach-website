@@ -71,11 +71,11 @@ $transition: .3s
                     transform: translateY(-$i * $subItemHeight)
                     z-index: $z-index + 101 - $i
 
-        &.expanded .sub-item
-            transform: translateY(0)
-            @for $i from 1 through 100 
-                &:nth-child(#{$i})
-                    transition-delay: #{0.05 * $i}s
+            &.expanded
+                transform: translateY(0)
+                @for $i from 1 through 100 
+                    &:nth-child(#{$i})
+                        transition-delay: #{0.05 * $i}s
 
 .nav-bar-column.mobile
     @include flex-column(center, flex-start)

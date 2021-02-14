@@ -2,8 +2,12 @@
 
 $z-index: 8000
 
-.nav-bar.desktop .nav-bar-items, .nav-bar.tablet .nav-bar-items
-    @include flex-row(flex-start, flex-start)
+.nav-bar.desktop, .nav-bar.tablet
+    .nav-bar-items
+        @include flex-row(flex-start, flex-start)
+    &.sticky
+        position: fixed
+        top: 0
 
 .nav-bar.mobile
     @include flex-column(center, flex-start)
@@ -74,6 +78,10 @@ $z-index: 8000
             .nav-bar-item
                 transform: translateY(0)
 
+    &.sticky
+        position: fixed
+        top: 0
+        
 @media screen and (prefers-color-scheme: dark)
     .nav-bar.mobile .drop-down-btn
         border-bottom: (0.15 * $cube) solid $grayDarkText

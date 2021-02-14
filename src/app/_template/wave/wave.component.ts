@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-wave',
   templateUrl: './wave.component.html',
   styleUrls: ['./wave.component.sass']
 })
-export class WaveComponent implements OnInit {
+export class WaveComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
 }

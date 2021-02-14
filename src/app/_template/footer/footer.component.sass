@@ -1,8 +1,11 @@
 @import '../../../styles.sass'
 
+$z-index: 7000
+
 .vStack
     @include flex-column(center, flex-end)
     background-color: $darkLightBackground
+    z-index: $z-index
 
     .footer
         @include flex-row(space-around)
