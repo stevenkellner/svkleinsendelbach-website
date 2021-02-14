@@ -1,4 +1,7 @@
-<span [ngClass]="{'offscreen': offscreen }" class="left-row">
+<span [ngClass]="{
+        'offscreen': offscreen,
+        'mobile': deviceTypeListener.isMobile()
+    }" class="left-row" id="left-row">
     <span class="btn-wrapper">
         <span [ngClass]="{'isMoving': isMoving }" (click)="toggleOffscreen()" class="retract-btn">
             <i class="single-arrow left fas fa-angle-left"></i>

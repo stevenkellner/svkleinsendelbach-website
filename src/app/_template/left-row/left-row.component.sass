@@ -9,6 +9,7 @@ $z-index: 6000
     @include flex-column(flex-end, flex-start)
     width: $width
     z-index: $z-index
+    position: relative
     transition: width $transition
     border-right: $darkGrayLightBackground solid 2px
 
@@ -67,6 +68,13 @@ $z-index: 6000
                     display: block
                 &.left.double-arrow, &.right.single-arrow, &.left.single-arrow
                     display: none
+
+.left-row.mobile
+    width: 0
+    transition: transform $transition
+    transform: translateX($width)
+    &.offscreen
+        transform: translateX(0)
 
 @media screen and (prefers-color-scheme: dark)
     .left-row

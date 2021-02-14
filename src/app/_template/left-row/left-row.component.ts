@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { DeviceType, DeviceTypeListener } from '../header/header.component';
 
 @Component({
@@ -6,7 +6,7 @@ import { DeviceType, DeviceTypeListener } from '../header/header.component';
     templateUrl: './left-row.component.html',
     styleUrls: ['./left-row.component.sass']
 })
-export class LeftRowComponent {
+export class LeftRowComponent implements AfterViewInit {
 
     offscreen = false;
 
@@ -21,7 +21,20 @@ export class LeftRowComponent {
             if (deviceType == DeviceType.mobile) {
                 this.offscreen = true;
             }
+            let appLeftRow = document.getElementById("left-row")?.parentElement;
+            appLeftRow?.classList.remove("desktop");
+            appLeftRow?.classList.remove("tablet");
+            appLeftRow?.classList.remove("mobile");
+            appLeftRow?.classList.add(deviceType);
         });
+    }
+
+    ngAfterViewInit() {
+        let appLeftRow = document.getElementById("left-row")?.parentElement;
+        appLeftRow?.classList.remove("desktop");
+        appLeftRow?.classList.remove("tablet");
+        appLeftRow?.classList.remove("mobile");
+        appLeftRow?.classList.add(this.deviceTypeListener.deviceType);
     }
 
     @HostListener('window:resize')
@@ -31,6 +44,14 @@ export class LeftRowComponent {
 
     toggleOffscreen() {
         this.offscreen = this.offscreen ? false : true;
+        if (this.deviceTypeListener.isMobile()) {
+            let appLeftRow = document.getElementById("left-row")?.parentElement;
+            if (this.offscreen) {
+                appLeftRow?.classList.remove("onscreen");
+            } else {
+                appLeftRow?.classList.add("onscreen");
+            }
+        }
         this.isMoving = true;
         if (this.currentMovingTimeout) clearTimeout(this.currentMovingTimeout);
         this.currentMovingTimeout = window.setTimeout(() => {

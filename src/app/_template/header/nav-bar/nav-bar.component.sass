@@ -3,6 +3,8 @@
 $z-index: 8000
 
 .nav-bar.desktop, .nav-bar.tablet
+    z-index: $z-index
+    position: relative
     .nav-bar-items
         @include flex-row(flex-start, flex-start)
     &.sticky

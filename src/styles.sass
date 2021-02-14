@@ -26,6 +26,9 @@
 .outlet ~ *
     width: 100%
 
+.mobile.onscreen ~ *
+    filter: blur(5px)
+
 @media screen and (prefers-color-scheme: dark)
     .body
         background-color: $dark-background
