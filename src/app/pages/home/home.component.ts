@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import {  DeviceTypeListener } from 'src/app/_template/header/header.component';
 
@@ -8,9 +8,9 @@ import {  DeviceTypeListener } from 'src/app/_template/header/header.component';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.sass']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-    leftRowWidth: number | undefined;
+    // leftRowWidth: number | undefined;
 
     deviceTypeListener: DeviceTypeListener;
     
@@ -26,16 +26,14 @@ export class HomeComponent implements OnInit {
         });
     }
 
-    ngOnInit(): void {}
-
     @HostListener('window:resize', ['$event'])
     windowChanged(event: any): void {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    handleLeftRowWidthChange(width: number) {
-        this.leftRowWidth = width;
-    }
+    // handleLeftRowWidthChange(width: number) {
+    //     this.leftRowWidth = width;
+    // }
 
     decodeLinkItems(): void {
         this.httpClient.get('../../../../assets/json-data/link-items.json').subscribe((data: any) => {

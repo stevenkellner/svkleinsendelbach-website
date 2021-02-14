@@ -1,36 +1,40 @@
-import { Component, ElementRef, EventEmitter, HostListener, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { DeviceType, DeviceTypeListener } from '../header/header.component';
 
 @Component({
-  selector: 'app-left-row',
-  templateUrl: './left-row.component.html',
-  styleUrls: ['./left-row.component.sass']
+    selector: 'app-left-row',
+    templateUrl: './left-row.component.html',
+    styleUrls: ['./left-row.component.sass']
 })
-export class LeftRowComponent implements OnInit {
+export class LeftRowComponent {
 
     offscreen = false;
 
+    isMoving = false;
+
+    private currentMovingTimeout: number | null = null;
+
     deviceTypeListener: DeviceTypeListener;
 
-    @Output() widthEmitter: EventEmitter<number> = new EventEmitter<number>()
-
-    constructor(private renderer: Renderer2) {
+    constructor() {
         this.deviceTypeListener = new DeviceTypeListener(window, deviceType => {
             if (deviceType == DeviceType.mobile) {
                 this.offscreen = true;
             }
-            this.widthEmitter.emit(this.offscreen ? 0 : 12.5);
         });
     }
-    ngOnInit(): void {}
 
-    @HostListener('window:resize', ['$event'])
-    windowChanged(event: any): void {
+    @HostListener('window:resize')
+    windowChanged() {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    toggleOffscreen(): void {
+    toggleOffscreen() {
         this.offscreen = this.offscreen ? false : true;
-        this.widthEmitter.emit(this.offscreen ? 0 : 12.5);
+        this.isMoving = true;
+        if (this.currentMovingTimeout) clearTimeout(this.currentMovingTimeout);
+        this.currentMovingTimeout = window.setTimeout(() => {
+            this.isMoving = false;
+        }, 500);
     }
 }

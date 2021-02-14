@@ -6,40 +6,33 @@
     #{$activeSelector}
         display: block
 
+$transition: .5s
+$width: 17.5 * $cube
+$retractBtnWidth: 3.5 * $cube
+$z-index: 6000
+
 .left-row
-    $width: 12.5 * $cube
-    $retract-btn-width: 3.5 * $cube
-    $border-width: 0.15 * $cube
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: flex-start
-    width: 100%
-    z-index: 100
-    position: relative
-    overflow: visible
-    transition: .5s linear
+    @include flex-column(flex-end, flex-start)
+    width: $width
+    z-index: $z-index
+    transition: width $transition
+    border-right: $darkGrayLightBackground solid 2px
 
     .btn-wrapper
+        @include flex-row(flex-end)
         width: $width
-        display: flex
-        flex-direction: row
-        align-items: center
-        justify-content: flex-end
-        background-color: $gray-light
-        border-right: $dark-prime-transparent solid $border-width
-        transition: .5s linear
+        background-color: $grayLightBackground
 
         .retract-btn
             @include arrow-visibility(".left.single-arrow")
-            width: $retract-btn-width
-            background-color: $dark-prime
+            width: $retractBtnWidth
+            background-color: $darkLightBackground
             padding: $cube 0
             border-radius: 0 0 0 (0.5 * $cube)
-            transition: .5s linear
+            transition: $transition
 
             *
-                color: $white-text
+                color: $whiteDarkText
                 text-align: center
                 font-size: 1.5 * $cube
 
@@ -48,44 +41,42 @@
                 *
                     color: $red
 
+            &.isMoving *
+                color: $red
+
     .content
+        @include flex-column(center, flex-start)
         width: $width
         min-height: 50vh
-        background-color: $gray-light
-        border-right: $dark-prime-transparent solid $border-width
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: flex-start
-        transition: .5s linear
+        background-color: $grayLightBackground
         padding-bottom: 3 * $cube
 
     &.offscreen 
-        transform: translateX(-0.5 * $width - $border-width)
-        .btn-wrapper 
-            .retract-btn
-                @include arrow-visibility(".right.single-arrow")
-                transform: translateX($retract-btn-width + $border-width)
-                border-radius: 0 0 (0.5 * $cube) 0
+        width: 0
+        border-right: none
+        .btn-wrapper .retract-btn
+            @include arrow-visibility(".right.single-arrow")
+            transform: translateX($retractBtnWidth)
+            border-radius: 0 0 (0.5 * $cube) 0
 
-                &:hover
-                    @include arrow-visibility(".right.double-arrow")
+            &:hover
+                @include arrow-visibility(".right.double-arrow")
 
 @media screen and (prefers-color-scheme: dark)
     .left-row
         .btn-wrapper
-            background-color: $dark-prime
-            border-color: $gray-text-dark-theme
+            background-color: $darkDarkBackground
             .retract-btn
-                background-color: $dark-background
+                background-color: $darkGrayDarkBackground
                 *
-                    color: #C8D6E5
+                    color: $grayShiningDarkText
         .content
-            background-color: $dark-prime
-            border-color: $gray-text-dark-theme
+            background-color: $darkDarkBackground
         &.offscreen .btn-wrapper .retract-btn
-            background-color: $dark-prime
+            background-color: $darkDarkBackground
             *
-                color: $white-text
+                color: $whiteDarkText
             &:hover *
+                color: $red
+            &.isMoving *
                 color: $red

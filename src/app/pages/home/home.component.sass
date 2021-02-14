@@ -1,153 +1,158 @@
-@import '../../../styles'
+// @import '../../../styles'
 
-.body
-    display: flex
-    flex-direction: row
-    align-items: flex-start
-    justify-content: flex-start
-
-    .left-row-wrapper
-        transition: .5s linear
-        *
-            transition: .5s linear
-
-$border: $dark-prime-transparent solid 0.15 * $cube
 .content
-    width: 100%
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: flex-start
-    padding-top: 4 * $cube
+    width: 500px
+    height: 200px
+    background-color: green
 
-    .title-wrapper
-        width: 100%
-        display: flex
-        flex-direction: row
-        align-items: center
-        justify-content: flex-start
+// .body
+//     display: flex
+//     flex-direction: row
+//     align-items: flex-start
+//     justify-content: flex-start
 
-        .title
-            background-color: $gray-light
-            border:
-                top: $border
-                right: $border
-                bottom: $border
-                radius: 0 (1.5 * $cube) (1.5 * $cube) 0
-            padding: 
-                left: 2 * $cube
-                top: $cube
-                right: 4 * $cube
-                bottom: $cube
+//     .left-row-wrapper
+//         transition: .5s linear
+//         *
+//             transition: .5s linear
 
-            p
-                font-family: "Dancing Script", cursive
-                color: $blue-dark
-                font-size: 4 * $cube
+// $border: $dark-prime-transparent solid 0.15 * $cube
+// .content
+//     width: 100%
+//     display: flex
+//     flex-direction: column
+//     align-items: center
+//     justify-content: flex-start
+//     padding-top: 4 * $cube
+
+//     .title-wrapper
+//         width: 100%
+//         display: flex
+//         flex-direction: row
+//         align-items: center
+//         justify-content: flex-start
+
+//         .title
+//             background-color: $gray-light
+//             border:
+//                 top: $border
+//                 right: $border
+//                 bottom: $border
+//                 radius: 0 (1.5 * $cube) (1.5 * $cube) 0
+//             padding: 
+//                 left: 2 * $cube
+//                 top: $cube
+//                 right: 4 * $cube
+//                 bottom: $cube
+
+//             p
+//                 font-family: "Dancing Script", cursive
+//                 color: $blue-dark
+//                 font-size: 4 * $cube
         
-    .links
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: center
-        padding: 
-            top: 2 * $cube
-            bottom: 4 * $cube
+//     .links
+//         display: flex
+//         flex-direction: column
+//         align-items: center
+//         justify-content: center
+//         padding: 
+//             top: 2 * $cube
+//             bottom: 4 * $cube
 
-        .row
-            display: flex
-            flex-direction: row
-            align-items: flex-start
-            justify-content: center
-            padding:
-                right: 2 * $cube
-                top: 2 * $cube
-                left: 2 * $cube
+//         .row
+//             display: flex
+//             flex-direction: row
+//             align-items: flex-start
+//             justify-content: center
+//             padding:
+//                 right: 2 * $cube
+//                 top: 2 * $cube
+//                 left: 2 * $cube
 
-            .item
-                display: flex
-                flex-direction: column
-                align-items: center
-                justify-content: center
-                flex: 1
-                padding: 0 $cube
-                text-decoration: none
-                height: 100%
+//             .item
+//                 display: flex
+//                 flex-direction: column
+//                 align-items: center
+//                 justify-content: center
+//                 flex: 1
+//                 padding: 0 $cube
+//                 text-decoration: none
+//                 height: 100%
 
-                *
-                    text-align: center
+//                 *
+//                     text-align: center
 
-                i
-                    color: $dark-prime
-                    font-size: 3 * $cube
+//                 i
+//                     color: $dark-prime
+//                     font-size: 3 * $cube
 
-                .title
-                    transition: .3s linear
-                    color: $red
-                    font:
-                        size: 1.5 * $cube
-                        weight: 500
-                    padding:
-                        top: $cube
-                        bottom: 1.5 * $cube
+//                 .title
+//                     transition: .3s linear
+//                     color: $red
+//                     font:
+//                         size: 1.5 * $cube
+//                         weight: 500
+//                     padding:
+//                         top: $cube
+//                         bottom: 1.5 * $cube
 
-                &:hover
-                    .title
-                        transform: scale(1.1)
-                    .jump
-                        animation: icon-jump 1s linear infinite
-                    .shake
-                        animation: icon-shake 1s linear infinite
-                    .football
-                        animation: football-rotation 3s linear infinite
+//                 &:hover
+//                     .title
+//                         transform: scale(1.1)
+//                     .jump
+//                         animation: icon-jump 1s linear infinite
+//                     .shake
+//                         animation: icon-shake 1s linear infinite
+//                     .football
+//                         animation: football-rotation 3s linear infinite
 
-    .text-section
-        .text-1
-            padding-bottom: 4 * $cube
-        .text-2
-            padding-bottom: 3 * $cube
-        .text-4
-            padding-bottom: 10 * $cube
-        .text-5
-            color: $red
-            padding-bottom: 4 * $cube
+//     .text-section
+//         .text-1
+//             padding-bottom: 4 * $cube
+//         .text-2
+//             padding-bottom: 3 * $cube
+//         .text-4
+//             padding-bottom: 10 * $cube
+//         .text-5
+//             color: $red
+//             padding-bottom: 4 * $cube
 
-.content.mobile .title-wrapper .title
-    border:
-        right: none
-        radius: 0
-        padding: 0
-    width: 100%
+// .content.mobile .title-wrapper .title
+//     border:
+//         right: none
+//         radius: 0
+//         padding: 0
+//     width: 100%
 
-    p
-        font-size: 1.5 * $cube
-        text-align: center
+//     p
+//         font-size: 1.5 * $cube
+//         text-align: center
 
 
-@keyframes football-rotation 
-    0% 
-        transform: rotate(0)
-    100%
-        transform: rotate(360deg)
+// @keyframes football-rotation 
+//     0% 
+//         transform: rotate(0)
+//     100%
+//         transform: rotate(360deg)
 
-@keyframes icon-jump
-    0%
-        transform: translateY(0)
-    65% 
-        transform: translateY(-10px)
-    100% 
-        transform: translateY(0)
+// @keyframes icon-jump
+//     0%
+//         transform: translateY(0)
+//     65% 
+//         transform: translateY(-10px)
+//     100% 
+//         transform: translateY(0)
 
-@keyframes icon-shake
-    0%
-        transform: rotate(0)
-    25%
-        transform: rotate(10deg)
-    75% 
-        transform: rotate(-10deg)
-    100% 
-        transform: rotate(0)
+// @keyframes icon-shake
+//     0%
+//         transform: rotate(0)
+//     25%
+//         transform: rotate(10deg)
+//     75% 
+//         transform: rotate(-10deg)
+//     100% 
+//         transform: rotate(0)
 
-@media screen and (prefers-color-scheme: dark)
-    .content .title-wrapper .title
-        background-color: $dark-prime
+// @media screen and (prefers-color-scheme: dark)
+//     .content .title-wrapper .title
+//         background-color: $dark-prime

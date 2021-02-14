@@ -1,12 +1,16 @@
 
 <span class="body">
-    <span [ngStyle]="{'width': (leftRowWidth == null ? (deviceTypeListener.isMobile() ? 0 : 12.5) : leftRowWidth) + 'rem' }" class="left-row-wrapper">
+    <app-left-row>
+        Left Row
+    </app-left-row>
+    <!-- <span [ngStyle]="{'width': (leftRowWidth == null ? (deviceTypeListener.isMobile() ? 0 : 12.5) : leftRowWidth) + 'rem' }" class="left-row-wrapper">
         <app-left-row (widthEmitter)="handleLeftRowWidthChange($event)">                
             <app-home-left-row></app-home-left-row>
         </app-left-row>
-    </span>
+    </span> -->
     <span [ngClass]="deviceTypeListener.deviceTypeString()" class="content">
-        <span class="title-wrapper">
+        Main Content
+        <!-- <span class="title-wrapper">
             <span class="title">
                 <p>Herzlich Willkommen beim</p>
                 <p>SV Kleinsendelbach e.V.</p>
@@ -27,6 +31,6 @@
             <p class="content-text text-3 text-colored">Wir freuen uns auf Sie!</p>
             <p class="content-text text-4 text-colored">Ihre Vorstandschaft des SV Kleinsendelbach</p>
             <p class="content-text text-5">Der SVK bedankt sich herzlich bei allen Sponsoren und Gönnern.</p>
-        </span>
+        </span> -->
     </span>
 </span>
