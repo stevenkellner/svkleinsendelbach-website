@@ -9,6 +9,9 @@ import { FootballAdultsSecondTeamSquadComponent } from './pages/football-adults/
 import { FootballAdultsSecondTeamTimesComponent } from './pages/football-adults/second-team/times/times.component';
 import { FootballAdultsFirstTeamSquadComponent } from './pages/football-adults/first-team/squad/squad.component';
 import { FootballAdultsFirstTeamTimesComponent } from './pages/football-adults/first-team/times/times.component';
+import { FootballAdultsAhTeamContactComponent } from './pages/football-adults/ah-team/contact/contact.component';
+import { FootballAdultsAhTeamSquadComponent } from './pages/football-adults/ah-team/squad/squad.component';
+import { FootballAdultsAhTeamTimesComponent } from './pages/football-adults/ah-team/times/times.component';
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
 import { ChronicleComponent } from './pages/about-us/chronicle/chronicle.component';
@@ -35,6 +38,9 @@ const routes: Routes = [
     {path: 'fussball/herren/zweite-mannschaft/kontakt', component: FootballAdultsSecondTeamContactComponent},
     {path: 'fussball/herren/zweite-mannschaft/training', component: FootballAdultsSecondTeamTimesComponent},
     {path: 'fussball/herren/zweite-mannschaft/kader', component: FootballAdultsSecondTeamSquadComponent},
+    {path: 'fussball/herren/alte-herren/kontakt', component: FootballAdultsAhTeamContactComponent},
+    {path: 'fussball/herren/alte-herren/training', component: FootballAdultsAhTeamTimesComponent},
+    {path: 'fussball/herren/alte-herren/kader', component: FootballAdultsAhTeamSquadComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'}
 ]

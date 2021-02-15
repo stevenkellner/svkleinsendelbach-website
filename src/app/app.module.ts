@@ -5,8 +5,21 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 
+import { FootballAdultsSecondTeamContactComponent } from './pages/football-adults/second-team/contact/contact.component';
+import { FootballAdultsSecondTeamResultsComponent } from './pages/football-adults/second-team/results/results.component';
+import { FootballAdultsFirstTeamContactComponent } from './pages/football-adults/first-team/contact/contact.component';
+import { FootballAdultsFirstTeamResultsComponent } from './pages/football-adults/first-team/results/results.component';
+import { FootballAdultsSecondTeamSquadComponent } from './pages/football-adults/second-team/squad/squad.component';
+import { FootballAdultsSecondTeamTimesComponent } from './pages/football-adults/second-team/times/times.component';
+import { FootballAdultsFirstTeamSquadComponent } from './pages/football-adults/first-team/squad/squad.component';
+import { FootballAdultsFirstTeamTimesComponent } from './pages/football-adults/first-team/times/times.component';
+import { FootballAdultsAhTeamContactComponent } from './pages/football-adults/ah-team/contact/contact.component';
+import { FootballAdultsAhTeamSquadComponent } from './pages/football-adults/ah-team/squad/squad.component';
+import { FootballAdultsAhTeamTimesComponent } from './pages/football-adults/ah-team/times/times.component';
+import { NavBarItemComponent } from './_template/header/nav-bar/nav-bar-item/nav-bar-item.component';
 import { FootballAdultsLeftRowComponent } from './pages/football-adults/left-row/left-row.component';
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
+import { TopHeaderComponent } from './_template/header/top-header/top-header.component';
 import { AboutUsLeftRowComponent } from './pages/about-us/left-row/left-row.component';
 import { HomeLeftRowComponent } from './pages/home/left-row/left-row.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
@@ -21,16 +34,6 @@ import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
 import { WaveComponent } from './_template/wave/wave.component';
 import { HomeComponent } from './pages/home/home.component';
-import { TopHeaderComponent } from './_template/header/top-header/top-header.component';
-import { NavBarItemComponent } from './_template/header/nav-bar/nav-bar-item/nav-bar-item.component';
-import { FootballAdultsFirstTeamContactComponent } from './pages/football-adults/first-team/contact/contact.component';
-import { FootballAdultsFirstTeamSquadComponent } from './pages/football-adults/first-team/squad/squad.component';
-import { FootballAdultsFirstTeamTimesComponent } from './pages/football-adults/first-team/times/times.component';
-import { FootballAdultsFirstTeamResultsComponent } from './pages/football-adults/first-team/results/results.component';
-import { FootballAdultsSecondTeamContactComponent } from './pages/football-adults/second-team/contact/contact.component';
-import { FootballAdultsSecondTeamSquadComponent } from './pages/football-adults/second-team/squad/squad.component';
-import { FootballAdultsSecondTeamTimesComponent } from './pages/football-adults/second-team/times/times.component';
-import { FootballAdultsSecondTeamResultsComponent } from './pages/football-adults/second-team/results/results.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { FootballAdultsSecondTeamResultsComponent } from './pages/football-adult
     FootballAdultsSecondTeamTimesComponent,
     FootballAdultsFirstTeamSquadComponent,
     FootballAdultsFirstTeamTimesComponent,
+    FootballAdultsAhTeamContactComponent,
+    FootballAdultsAhTeamSquadComponent,
+    FootballAdultsAhTeamTimesComponent,
     FootballAdultsGeneralComponent,
     FootballAdultsLeftRowComponent,
     FootballAdultsGeneralComponent,

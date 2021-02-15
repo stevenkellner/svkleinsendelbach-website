@@ -26,5 +26,24 @@
                 }
             ]
         }
+    ],
+    "ah-team": [
+        {
+            "function": "Ansprechpartner",
+            "name": "Josef Hoier",
+            "imageName": "profile.png",
+            "reachable": [
+                {
+                    "type": "mobile",
+                    "text": "0176 / 57857884",
+                    "link": "TODO"
+                },
+                {
+                    "type": "telephone",
+                    "text": "09126 / 75467",
+                    "link": "TODO"
+                }
+            ]
+        }
     ]
 }
