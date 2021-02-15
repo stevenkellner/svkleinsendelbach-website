@@ -35,6 +35,7 @@ import { FootballYouthGSquadComponent } from './pages/football-youth/youth-g/squ
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
 import { FootballYouthLeftRowComponent } from './pages/football-youth/left-row/left-row.component';
 import { FootballYouthGeneralComponent } from './pages/football-youth/general/general.component';
+import { GymnasticsLeftRowComponent } from './pages/gymnastics/left-row/left-row.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
 import { TopHeaderComponent } from './_template/header/top-header/top-header.component';
 import { AboutUsLeftRowComponent } from './pages/about-us/left-row/left-row.component';
@@ -45,12 +46,12 @@ import { NavBarComponent } from './_template/header/nav-bar/nav-bar.component';
 import { StatuteComponent } from './pages/about-us/statute/statute.component';
 import { PrivacyComponent } from './pages/about-us/privacy/privacy.component';
 import { RequestComponent } from './pages/about-us/request/request.component';
+import { GymnasticsComponent } from './pages/gymnastics/gymnastics.component';
 import { LeftRowComponent } from './_template/left-row/left-row.component';
 import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
 import { WaveComponent } from './_template/wave/wave.component';
 import { HomeComponent } from './pages/home/home.component';
-
 
 @NgModule({
   declarations: [
@@ -84,10 +85,12 @@ import { HomeComponent } from './pages/home/home.component';
     FootballYouthFSquadComponent,
     FootballYouthGTimesComponent,
     FootballYouthGSquadComponent,
+    GymnasticsLeftRowComponent,
     AboutUsLeftRowComponent,
     HomeLeftRowComponent,
     SportsHomeComponent,
     NavBarItemComponent,
+    GymnasticsComponent,
     ChronicleComponent,
     TopHeaderComponent,
     ManagersComponent,

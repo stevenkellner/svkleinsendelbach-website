@@ -34,6 +34,7 @@ import { ManagersComponent } from './pages/about-us/managers/managers.component'
 import { PrivacyComponent } from './pages/about-us/privacy/privacy.component';
 import { StatuteComponent } from './pages/about-us/statute/statute.component';
 import { RequestComponent } from './pages/about-us/request/request.component';
+import { GymnasticsComponent } from './pages/gymnastics/gymnastics.component';
 import { HomeComponent } from './pages/home/home.component';
 
 
@@ -82,6 +83,8 @@ const routes: Routes = [
     {path: 'fussball/jugend/g-jugend/kontakt', component: FootballYouthGContactComponent},
     {path: 'fussball/jugend/g-jugend/training', component: FootballYouthGTimesComponent},
     {path: 'fussball/jugend/g-jugend/kader', component: FootballYouthGSquadComponent},
+    
+    {path: 'gymnastik', component: GymnasticsComponent},
 
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'}
