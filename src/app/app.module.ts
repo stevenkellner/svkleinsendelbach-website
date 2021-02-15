@@ -21,6 +21,7 @@ import { FootballAYouthEResultsComponent } from './pages/football-youth/youth-e/
 import { FootballYouthCContactComponent } from './pages/football-youth/youth-c/contact/contact.component';
 import { FootballYouthEContactComponent } from './pages/football-youth/youth-e/contact/contact.component';
 import { FootballYouthFContactComponent } from './pages/football-youth/youth-f/contact/contact.component';
+import { FootballYouthGContactComponent } from './pages/football-youth/youth-g/contact/contact.component';
 import { NavBarItemComponent } from './_template/header/nav-bar/nav-bar-item/nav-bar-item.component';
 import { FootballAdultsLeftRowComponent } from './pages/football-adults/left-row/left-row.component';
 import { FootballYouthCTimesComponent } from './pages/football-youth/youth-c/times/times.component';
@@ -29,6 +30,8 @@ import { FootballYouthETimesComponent } from './pages/football-youth/youth-e/tim
 import { FootballYouthESquadComponent } from './pages/football-youth/youth-e/squad/squad.component';
 import { FootballYouthFTimesComponent } from './pages/football-youth/youth-f/times/times.component';
 import { FootballYouthFSquadComponent } from './pages/football-youth/youth-f/squad/squad.component';
+import { FootballYouthGTimesComponent } from './pages/football-youth/youth-g/times/times.component';
+import { FootballYouthGSquadComponent } from './pages/football-youth/youth-g/squad/squad.component';
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
 import { FootballYouthLeftRowComponent } from './pages/football-youth/left-row/left-row.component';
 import { FootballYouthGeneralComponent } from './pages/football-youth/general/general.component';
@@ -70,6 +73,7 @@ import { HomeComponent } from './pages/home/home.component';
     FootballYouthCContactComponent,
     FootballYouthEContactComponent,
     FootballYouthFContactComponent,
+    FootballYouthGContactComponent,
     FootballYouthLeftRowComponent,
     FootballYouthGeneralComponent,
     FootballYouthCTimesComponent,
@@ -78,6 +82,8 @@ import { HomeComponent } from './pages/home/home.component';
     FootballYouthESquadComponent,
     FootballYouthFTimesComponent,
     FootballYouthFSquadComponent,
+    FootballYouthGTimesComponent,
+    FootballYouthGSquadComponent,
     AboutUsLeftRowComponent,
     HomeLeftRowComponent,
     SportsHomeComponent,

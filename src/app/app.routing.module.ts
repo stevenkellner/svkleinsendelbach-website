@@ -17,12 +17,15 @@ import { FootballAdultsAhTeamTimesComponent } from './pages/football-adults/ah-t
 import { FootballYouthCContactComponent } from './pages/football-youth/youth-c/contact/contact.component';
 import { FootballYouthEContactComponent } from './pages/football-youth/youth-e/contact/contact.component';
 import { FootballYouthFContactComponent } from './pages/football-youth/youth-f/contact/contact.component';
+import { FootballYouthGContactComponent } from './pages/football-youth/youth-g/contact/contact.component';
 import { FootballYouthCTimesComponent } from './pages/football-youth/youth-c/times/times.component';
 import { FootballYouthCSquadComponent } from './pages/football-youth/youth-c/squad/squad.component';
 import { FootballYouthETimesComponent } from './pages/football-youth/youth-e/times/times.component';
 import { FootballYouthESquadComponent } from './pages/football-youth/youth-e/squad/squad.component';
 import { FootballYouthFTimesComponent } from './pages/football-youth/youth-f/times/times.component';
 import { FootballYouthFSquadComponent } from './pages/football-youth/youth-f/squad/squad.component';
+import { FootballYouthGTimesComponent } from './pages/football-youth/youth-g/times/times.component';
+import { FootballYouthGSquadComponent } from './pages/football-youth/youth-g/squad/squad.component';
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
 import { FootballYouthGeneralComponent } from './pages/football-youth/general/general.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
@@ -75,6 +78,10 @@ const routes: Routes = [
     {path: 'fussball/jugend/f-jugend/kontakt', component: FootballYouthFContactComponent},
     {path: 'fussball/jugend/f-jugend/training', component: FootballYouthFTimesComponent},
     {path: 'fussball/jugend/f-jugend/kader', component: FootballYouthFSquadComponent},
+
+    {path: 'fussball/jugend/g-jugend/kontakt', component: FootballYouthGContactComponent},
+    {path: 'fussball/jugend/g-jugend/training', component: FootballYouthGTimesComponent},
+    {path: 'fussball/jugend/g-jugend/kader', component: FootballYouthGSquadComponent},
 
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'}
