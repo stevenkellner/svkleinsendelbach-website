@@ -29,6 +29,7 @@ import { FootballYouthGSquadComponent } from './pages/football-youth/youth-g/squ
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
 import { FootballYouthGeneralComponent } from './pages/football-youth/general/general.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ChronicleComponent } from './pages/about-us/chronicle/chronicle.component';
 import { ManagersComponent } from './pages/about-us/managers/managers.component';
 import { PrivacyComponent } from './pages/about-us/privacy/privacy.component';
@@ -91,7 +92,7 @@ const routes: Routes = [
     {path: 'anfahrt', component: DriveComponent},
 
     {path: '', redirectTo: '/home', pathMatch: 'full'},
-    {path: '**', redirectTo: '/home'}
+    {path: '**', component: PageNotFoundComponent}
 ]
 
 @NgModule({

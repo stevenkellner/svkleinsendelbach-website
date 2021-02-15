@@ -38,6 +38,7 @@ import { FootballYouthGeneralComponent } from './pages/football-youth/general/ge
 import { GymnasticsLeftRowComponent } from './pages/gymnastics/left-row/left-row.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
 import { TopHeaderComponent } from './_template/header/top-header/top-header.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AboutUsLeftRowComponent } from './pages/about-us/left-row/left-row.component';
 import { ChronicleComponent } from './pages/about-us/chronicle/chronicle.component';
 import { ManagersComponent } from './pages/about-us/managers/managers.component';
@@ -89,6 +90,7 @@ import { HomeComponent } from './pages/home/home.component';
     FootballYouthGSquadComponent,
     GymnasticsLeftRowComponent,
     AboutUsLeftRowComponent,
+    PageNotFoundComponent,
     HomeLeftRowComponent,
     SportsHomeComponent,
     NavBarItemComponent,
