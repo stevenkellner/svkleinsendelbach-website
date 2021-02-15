@@ -52,6 +52,7 @@ import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
 import { DancingComponent } from './pages/dancing/dancing.component';
 import { WaveComponent } from './_template/wave/wave.component';
+import { DriveComponent } from './pages/drive/drive.component';
 import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
@@ -103,6 +104,7 @@ import { HomeComponent } from './pages/home/home.component';
     HeaderComponent,
     NavBarComponent,
     FooterComponent,
+    DriveComponent,
     WaveComponent,
     HomeComponent,
     AppComponent
