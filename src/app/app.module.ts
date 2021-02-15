@@ -50,6 +50,7 @@ import { GymnasticsComponent } from './pages/gymnastics/gymnastics.component';
 import { LeftRowComponent } from './_template/left-row/left-row.component';
 import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
+import { DancingComponent } from './pages/dancing/dancing.component';
 import { WaveComponent } from './_template/wave/wave.component';
 import { HomeComponent } from './pages/home/home.component';
 
@@ -98,12 +99,13 @@ import { HomeComponent } from './pages/home/home.component';
     PrivacyComponent,
     RequestComponent,
     LeftRowComponent,
+    DancingComponent,
     HeaderComponent,
     NavBarComponent,
     FooterComponent,
-    AppComponent,
     WaveComponent,
-    HomeComponent
+    HomeComponent,
+    AppComponent
   ],
   imports: [
     HttpClientModule,
