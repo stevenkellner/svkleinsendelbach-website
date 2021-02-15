@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { FootballAdultsFirstTeamContactComponent } from './pages/football-adults/first-team/contact/contact.component';
 import { FootballAdultsSecondTeamContactComponent } from './pages/football-adults/second-team/contact/contact.component';
 import { FootballAdultsSecondTeamResultsComponent } from './pages/football-adults/second-team/results/results.component';
+import { FootballAdultsFirstTeamContactComponent } from './pages/football-adults/first-team/contact/contact.component';
 import { FootballAdultsFirstTeamResultsComponent } from './pages/football-adults/first-team/results/results.component';
 import { FootballAdultsSecondTeamSquadComponent } from './pages/football-adults/second-team/squad/squad.component';
 import { FootballAdultsSecondTeamTimesComponent } from './pages/football-adults/second-team/times/times.component';
@@ -13,6 +13,7 @@ import { FootballAdultsAhTeamContactComponent } from './pages/football-adults/ah
 import { FootballAdultsAhTeamSquadComponent } from './pages/football-adults/ah-team/squad/squad.component';
 import { FootballAdultsAhTeamTimesComponent } from './pages/football-adults/ah-team/times/times.component';
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
+import { FootballYouthGeneralComponent } from './pages/football-youth/general/general.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
 import { ChronicleComponent } from './pages/about-us/chronicle/chronicle.component';
 import { ManagersComponent } from './pages/about-us/managers/managers.component';
@@ -41,6 +42,7 @@ const routes: Routes = [
     {path: 'fussball/herren/alte-herren/kontakt', component: FootballAdultsAhTeamContactComponent},
     {path: 'fussball/herren/alte-herren/training', component: FootballAdultsAhTeamTimesComponent},
     {path: 'fussball/herren/alte-herren/kader', component: FootballAdultsAhTeamSquadComponent},
+    {path: 'fussball/jugend/übersicht', component: FootballYouthGeneralComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'}
 ]

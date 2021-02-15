@@ -3,18 +3,18 @@ import { Title } from '@angular/platform-browser';
 import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 
 @Component({
-    selector: 'app-football-adults-general',
+    selector: 'app-football-youth-general',
     templateUrl: './general.component.html',
     styleUrls: ['./general.component.sass']
 })
-export class FootballAdultsGeneralComponent {
+export class FootballYouthGeneralComponent {
 
     deviceTypeListener: DeviceTypeListener;
     
-    activeNavBarId: string = "football-adult";
+    activeNavBarId: string = "football-youth";
 
     constructor(private titleService: Title) {
-        this.titleService.setTitle("Herrenfußball")
+        this.titleService.setTitle("Jugendfußball")
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 

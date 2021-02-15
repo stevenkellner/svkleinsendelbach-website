@@ -11,7 +11,7 @@
     {
       "id": "football-adult",
       "name": "Herrenfussball",
-      "linkUrl": "fussball/herren/allgemein",
+      "linkUrl": "fussball/herren/übersicht",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
       "iconClass": "far fa-futbol",
       "animation": "football"
@@ -19,7 +19,7 @@
     {
       "id": "football-youth",
       "name": "Jugendfussball",
-      "linkUrl": "fussball/jugend/allgemein",
+      "linkUrl": "fussball/jugend/übersicht",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae maiores. Velit nisi, reprehenderit, nobis officia.",
       "iconClass": "far fa-futbol",
       "animation": "football"

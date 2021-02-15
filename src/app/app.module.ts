@@ -19,12 +19,14 @@ import { FootballAdultsAhTeamTimesComponent } from './pages/football-adults/ah-t
 import { NavBarItemComponent } from './_template/header/nav-bar/nav-bar-item/nav-bar-item.component';
 import { FootballAdultsLeftRowComponent } from './pages/football-adults/left-row/left-row.component';
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
+import { FootballYouthLeftRowComponent } from './pages/football-youth/left-row/left-row.component';
+import { FootballYouthGeneralComponent } from './pages/football-youth/general/general.component';
 import { TopHeaderComponent } from './_template/header/top-header/top-header.component';
 import { AboutUsLeftRowComponent } from './pages/about-us/left-row/left-row.component';
-import { HomeLeftRowComponent } from './pages/home/left-row/left-row.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
 import { ChronicleComponent } from './pages/about-us/chronicle/chronicle.component';
 import { ManagersComponent } from './pages/about-us/managers/managers.component';
+import { HomeLeftRowComponent } from './pages/home/left-row/left-row.component';
 import { NavBarComponent } from './_template/header/nav-bar/nav-bar.component';
 import { StatuteComponent } from './pages/about-us/statute/statute.component';
 import { PrivacyComponent } from './pages/about-us/privacy/privacy.component';
@@ -51,6 +53,8 @@ import { HomeComponent } from './pages/home/home.component';
     FootballAdultsGeneralComponent,
     FootballAdultsLeftRowComponent,
     FootballAdultsGeneralComponent,
+    FootballYouthLeftRowComponent,
+    FootballYouthGeneralComponent,
     AboutUsLeftRowComponent,
     HomeLeftRowComponent,
     SportsHomeComponent,

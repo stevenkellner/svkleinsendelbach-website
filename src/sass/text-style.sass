@@ -84,7 +84,11 @@
             display: inline
 
     .images
+        @include flex-row(space-between)
         width: 100%
+
+        &.two-img img
+            width: 47.5%
 
     img
         width: 100%
@@ -126,6 +130,13 @@
     .dark
         color: $darkLightText
 
+.mobile .images
+    @include flex-column()
+    &.two-img img
+        width: 100%
+        &:first-child
+            margin-bottom: $cube
+    
 @media screen and (prefers-color-scheme: dark)
     .text-section
         border-top: $grayShiningDarkText solid 1px
