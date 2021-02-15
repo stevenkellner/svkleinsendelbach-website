@@ -17,11 +17,15 @@ import { FootballAdultsAhTeamContactComponent } from './pages/football-adults/ah
 import { FootballAdultsAhTeamSquadComponent } from './pages/football-adults/ah-team/squad/squad.component';
 import { FootballAdultsAhTeamTimesComponent } from './pages/football-adults/ah-team/times/times.component';
 import { FootballAYouthCResultsComponent } from './pages/football-youth/youth-c/results/results.component';
+import { FootballAYouthEResultsComponent } from './pages/football-youth/youth-e/results/results.component';
 import { FootballYouthCContactComponent } from './pages/football-youth/youth-c/contact/contact.component';
+import { FootballYouthEContactComponent } from './pages/football-youth/youth-e/contact/contact.component';
 import { NavBarItemComponent } from './_template/header/nav-bar/nav-bar-item/nav-bar-item.component';
 import { FootballAdultsLeftRowComponent } from './pages/football-adults/left-row/left-row.component';
 import { FootballYouthCTimesComponent } from './pages/football-youth/youth-c/times/times.component';
 import { FootballYouthCSquadComponent } from './pages/football-youth/youth-c/squad/squad.component';
+import { FootballYouthETimesComponent } from './pages/football-youth/youth-e/times/times.component';
+import { FootballYouthESquadComponent } from './pages/football-youth/youth-e/squad/squad.component';
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
 import { FootballYouthLeftRowComponent } from './pages/football-youth/left-row/left-row.component';
 import { FootballYouthGeneralComponent } from './pages/football-youth/general/general.component';
@@ -56,14 +60,18 @@ import { HomeComponent } from './pages/home/home.component';
     FootballAdultsAhTeamSquadComponent,
     FootballAdultsAhTeamTimesComponent,
     FootballAYouthCResultsComponent,
+    FootballAYouthEResultsComponent,
     FootballAdultsGeneralComponent,
     FootballAdultsLeftRowComponent,
     FootballAdultsGeneralComponent,
     FootballYouthCContactComponent,
+    FootballYouthEContactComponent,
     FootballYouthLeftRowComponent,
     FootballYouthGeneralComponent,
     FootballYouthCTimesComponent,
     FootballYouthCSquadComponent,
+    FootballYouthETimesComponent,
+    FootballYouthESquadComponent,
     AboutUsLeftRowComponent,
     HomeLeftRowComponent,
     SportsHomeComponent,
