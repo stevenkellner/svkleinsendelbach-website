@@ -10,8 +10,12 @@ import { FootballAdultsSecondTeamTimesComponent } from './pages/football-adults/
 import { FootballAdultsFirstTeamSquadComponent } from './pages/football-adults/first-team/squad/squad.component';
 import { FootballAdultsFirstTeamTimesComponent } from './pages/football-adults/first-team/times/times.component';
 import { FootballAdultsAhTeamContactComponent } from './pages/football-adults/ah-team/contact/contact.component';
+import { FootballAYouthCResultsComponent } from './pages/football-youth/youth-c/results/results.component';
 import { FootballAdultsAhTeamSquadComponent } from './pages/football-adults/ah-team/squad/squad.component';
 import { FootballAdultsAhTeamTimesComponent } from './pages/football-adults/ah-team/times/times.component';
+import { FootballYouthCContactComponent } from './pages/football-youth/youth-c/contact/contact.component';
+import { FootballYouthCTimesComponent } from './pages/football-youth/youth-c/times/times.component';
+import { FootballYouthCSquadComponent } from './pages/football-youth/youth-c/squad/squad.component';
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
 import { FootballYouthGeneralComponent } from './pages/football-youth/general/general.component';
 import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
@@ -22,27 +26,40 @@ import { StatuteComponent } from './pages/about-us/statute/statute.component';
 import { RequestComponent } from './pages/about-us/request/request.component';
 import { HomeComponent } from './pages/home/home.component';
 
+
 const routes: Routes = [
     {path: 'home', component: HomeComponent},
+
     {path: 'über-uns/vorstandschaft', component: ManagersComponent},
     {path: 'über-uns/mitgliedsantrag', component: RequestComponent},
     {path: 'über-uns/sportheim', component: SportsHomeComponent},
     {path: 'über-uns/datenschutz', component: PrivacyComponent},
     {path: 'über-uns/chronik', component: ChronicleComponent},
     {path: 'über-uns/satzung', component: StatuteComponent},
+
     {path: 'fussball/herren/übersicht', component: FootballAdultsGeneralComponent},
+
     {path: 'fussball/herren/erste-mannschaft/ergebnis', component: FootballAdultsFirstTeamResultsComponent},
     {path: 'fussball/herren/erste-mannschaft/kontakt', component: FootballAdultsFirstTeamContactComponent},
     {path: 'fussball/herren/erste-mannschaft/training', component: FootballAdultsFirstTeamTimesComponent},
     {path: 'fussball/herren/erste-mannschaft/kader', component: FootballAdultsFirstTeamSquadComponent},
+
     {path: 'fussball/herren/zweite-mannschaft/ergebnis', component: FootballAdultsSecondTeamResultsComponent},
     {path: 'fussball/herren/zweite-mannschaft/kontakt', component: FootballAdultsSecondTeamContactComponent},
     {path: 'fussball/herren/zweite-mannschaft/training', component: FootballAdultsSecondTeamTimesComponent},
     {path: 'fussball/herren/zweite-mannschaft/kader', component: FootballAdultsSecondTeamSquadComponent},
+
     {path: 'fussball/herren/alte-herren/kontakt', component: FootballAdultsAhTeamContactComponent},
     {path: 'fussball/herren/alte-herren/training', component: FootballAdultsAhTeamTimesComponent},
     {path: 'fussball/herren/alte-herren/kader', component: FootballAdultsAhTeamSquadComponent},
+
     {path: 'fussball/jugend/übersicht', component: FootballYouthGeneralComponent},
+
+    {path: 'fussball/jugend/c-jugend/ergebnis', component: FootballAYouthCResultsComponent},
+    {path: 'fussball/jugend/c-jugend/kontakt', component: FootballYouthCContactComponent},
+    {path: 'fussball/jugend/c-jugend/training', component: FootballYouthCTimesComponent},
+    {path: 'fussball/jugend/c-jugend/kader', component: FootballYouthCSquadComponent},
+
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', redirectTo: '/home'}
 ]

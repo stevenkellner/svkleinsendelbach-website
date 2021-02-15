@@ -6,45 +6,45 @@
             "link": "fussball/jugend/übersicht"
         },
         {
-            "id": "youth-A",
+            "id": "youth-a",
             "title": "A-Jugend",
             "link": "http://sv-hetzles.de/index.php/a-junioren",
             "extern": true
         },
         {
-            "id": "youth-B",
+            "id": "youth-b",
             "title": "B-Jugend",
             "link": "http://sv-hetzles.de/index.php/b-junioren-u17",
             "extern": true
         },
         {
-            "id": "youth-C",
+            "id": "youth-c",
             "title": "C-Jugend",
             "sub-items": [
                 {
-                    "id": "youth-C-squad",
+                    "id": "youth-c-squad",
                     "title": "Kader",
                     "link": "fussball/jugend/c-jugend/kader"
                 },
                 {
-                    "id": "youth-C-times",
+                    "id": "youth-c-times",
                     "title": "Trainingszeiten",
                     "link": "fussball/jugend/c-jugend/training"
                 },
                 {
-                    "id": "youth-C-contact",
+                    "id": "youth-c-contact",
                     "title": "Kontakt",
                     "link": "fussball/jugend/c-jugend/kontakt"
                 },
                 {
-                    "id": "youth-C-results",
+                    "id": "youth-c-results",
                     "title": "Ergegnisse",
                     "link": "fussball/jugend/c-jugend/ergebnis"
                 }
             ]
         },
         {
-            "id": "youth-D",
+            "id": "youth-d",
             "title": "D-Jugend",
             "link": "https://www.tsv-neunkirchen-am-brand.de/fu/junioren/",
             "extern": true
@@ -52,68 +52,68 @@
     ],
     "small-field": [
         {
-            "id": "youth-E",
+            "id": "youth-e",
             "title": "E-Jugend",
             "sub-items": [
                 {
-                    "id": "youth-E-squad",
+                    "id": "youth-e-squad",
                     "title": "Kader",
                     "link": "fussball/jugend/e-jugend/kader"
                 },
                 {
-                    "id": "youth-E-times",
+                    "id": "youth-e-times",
                     "title": "Trainingszeiten",
                     "link": "fussball/jugend/e-jugend/training"
                 },
                 {
-                    "id": "youth-E-contact",
+                    "id": "youth-e-contact",
                     "title": "Kontakt",
                     "link": "fussball/jugend/e-jugend/kontakt"
                 },
                 {
-                    "id": "youth-E-results",
+                    "id": "youth-e-results",
                     "title": "Ergegnisse",
                     "link": "fussball/jugend/e-jugend/ergebnis"
                 }
             ]
         },
         {
-            "id": "youth-F",
+            "id": "youth-f",
             "title": "F-Jugend",
             "sub-items": [
                 {
-                    "id": "youth-F-squad",
+                    "id": "youth-f-squad",
                     "title": "Kader",
                     "link": "fussball/jugend/f-jugend/kader"
                 },
                 {
-                    "id": "youth-F-times",
+                    "id": "youth-f-times",
                     "title": "Trainingszeiten",
                     "link": "fussball/jugend/f-jugend/training"
                 },
                 {
-                    "id": "youth-F-contact",
+                    "id": "youth-f-contact",
                     "title": "Kontakt",
                     "link": "fussball/jugend/f-jugend/kontakt"
                 }
             ]
         },
         {
-            "id": "youth-G",
+            "id": "youth-g",
             "title": "G-Jugend",
             "sub-items": [
                 {
-                    "id": "youth-G-squad",
+                    "id": "youth-g-squad",
                     "title": "Kader",
                     "link": "fussball/jugend/g-jugend/kader"
                 },
                 {
-                    "id": "youth-G-times",
+                    "id": "youth-g-times",
                     "title": "Trainingszeiten",
                     "link": "fussball/jugend/g-jugend/training"
                 },
                 {
-                    "id": "youth-G-contact",
+                    "id": "youth-g-contact",
                     "title": "Kontakt",
                     "link": "fussball/jugend/g-jugend/kontakt"
                 }

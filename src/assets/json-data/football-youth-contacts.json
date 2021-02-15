@@ -1,5 +1,5 @@
 ﻿{
-    "youth-C": [
+    "youth-c": [
         {
             "function": "Trainer",
             "name": "Diethard Plöckl",
@@ -17,7 +17,7 @@
                 },
                 {
                     "type": "email",
-                    "text": "c-jugend@sv-kleinsendelbach.de",
+                    "text": "E-Mail",
                     "link": "TODO"
                 }
             ]
@@ -35,7 +35,7 @@
             "reachable": []
         }
     ],
-    "youth-E": [
+    "youth-e": [
         {
             "function": "Trainer",
             "name": "Matthias Iberl",
@@ -48,7 +48,7 @@
                 },
                 {
                     "type": "email",
-                    "text": "e-jugend@sv-kleinsendelbach.de",
+                    "text": "E-Mail",
                     "link": "TODO"
                 }
             ]
@@ -66,7 +66,7 @@
             ]
         }
     ],
-    "youth-F": [
+    "youth-f": [
         {
             "function": "Trainer",
             "name": "Bernd Aumüller",
@@ -79,7 +79,7 @@
                 },
                 {
                     "type": "email",
-                    "text": "f-jugend@sv-kleinsendelbach.de",
+                    "text": "E-Mail",
                     "link": "TODO"
                 }
             ]
@@ -97,7 +97,7 @@
             ]
         }
     ],
-    "youth-G": [
+    "youth-g": [
         {
             "function": "Trainer",
             "name": "Markus Schmitt",
@@ -110,7 +110,7 @@
                 },
                 {
                     "type": "email",
-                    "text": "g-jugend@sv-kleinsendelbach.de",
+                    "text": "E-Mail",
                     "link": "TODO"
                 }
             ]

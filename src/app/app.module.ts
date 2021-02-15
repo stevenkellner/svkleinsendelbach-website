@@ -16,14 +16,18 @@ import { FootballAdultsFirstTeamTimesComponent } from './pages/football-adults/f
 import { FootballAdultsAhTeamContactComponent } from './pages/football-adults/ah-team/contact/contact.component';
 import { FootballAdultsAhTeamSquadComponent } from './pages/football-adults/ah-team/squad/squad.component';
 import { FootballAdultsAhTeamTimesComponent } from './pages/football-adults/ah-team/times/times.component';
+import { FootballAYouthCResultsComponent } from './pages/football-youth/youth-c/results/results.component';
+import { FootballYouthCContactComponent } from './pages/football-youth/youth-c/contact/contact.component';
 import { NavBarItemComponent } from './_template/header/nav-bar/nav-bar-item/nav-bar-item.component';
 import { FootballAdultsLeftRowComponent } from './pages/football-adults/left-row/left-row.component';
+import { FootballYouthCTimesComponent } from './pages/football-youth/youth-c/times/times.component';
+import { FootballYouthCSquadComponent } from './pages/football-youth/youth-c/squad/squad.component';
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
 import { FootballYouthLeftRowComponent } from './pages/football-youth/left-row/left-row.component';
 import { FootballYouthGeneralComponent } from './pages/football-youth/general/general.component';
+import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
 import { TopHeaderComponent } from './_template/header/top-header/top-header.component';
 import { AboutUsLeftRowComponent } from './pages/about-us/left-row/left-row.component';
-import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.component';
 import { ChronicleComponent } from './pages/about-us/chronicle/chronicle.component';
 import { ManagersComponent } from './pages/about-us/managers/managers.component';
 import { HomeLeftRowComponent } from './pages/home/left-row/left-row.component';
@@ -36,6 +40,7 @@ import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
 import { WaveComponent } from './_template/wave/wave.component';
 import { HomeComponent } from './pages/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -50,11 +55,15 @@ import { HomeComponent } from './pages/home/home.component';
     FootballAdultsAhTeamContactComponent,
     FootballAdultsAhTeamSquadComponent,
     FootballAdultsAhTeamTimesComponent,
+    FootballAYouthCResultsComponent,
     FootballAdultsGeneralComponent,
     FootballAdultsLeftRowComponent,
     FootballAdultsGeneralComponent,
+    FootballYouthCContactComponent,
     FootballYouthLeftRowComponent,
     FootballYouthGeneralComponent,
+    FootballYouthCTimesComponent,
+    FootballYouthCSquadComponent,
     AboutUsLeftRowComponent,
     HomeLeftRowComponent,
     SportsHomeComponent,

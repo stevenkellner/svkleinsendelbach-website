@@ -76,37 +76,37 @@
       "linkUrl": "fussball/jugend/übersicht"
     },
     {
-      "id": "football-youth-A",
+      "id": "football-youth-a",
       "name": "A-Jugend",
       "linkUrl": "TODO"
     },
     {
-      "id": "football-youth-B",
+      "id": "football-youth-b",
       "name": "B-Jugend",
       "linkUrl": "TODO"
     },
     {
-      "id": "football-youth-C",
+      "id": "football-youth-c",
       "name": "C-Jugend",
       "linkUrl": "fussball/jugend/c-jugend/kader"
     },
     {
-      "id": "football-youth-D",
+      "id": "football-youth-d",
       "name": "D-Jugend",
       "linkUrl": "TODO"
     },
     {
-      "id": "football-youth-E",
+      "id": "football-youth-e",
       "name": "E-Jugend",
       "linkUrl": "fussball/jugend/e-jugend/kader"
     },
     {
-      "id": "football-youth-F",
+      "id": "football-youth-f",
       "name": "F-Jugend",
       "linkUrl": "fussball/jugend/f-jugend/kader"
     },
     {
-      "id": "football-youth-G",
+      "id": "football-youth-g",
       "name": "G-Jugend",
       "linkUrl": "fussball/jugend/g-jugend/kader"
     },
@@ -157,13 +157,13 @@
     {
       "id": "football-youth",
       "sub-items": [
-        "football-youth-A",
-        "football-youth-B",
-        "football-youth-C",
-        "football-youth-D",
-        "football-youth-E",
-        "football-youth-F",
-        "football-youth-G"
+        "football-youth-a",
+        "football-youth-b",
+        "football-youth-c",
+        "football-youth-d",
+        "football-youth-e",
+        "football-youth-f",
+        "football-youth-g"
       ]
     },
     {
@@ -212,13 +212,13 @@
       "id": "football-youth",
       "sub-items": [
         "football-youth-general",
-        "football-youth-A",
-        "football-youth-B",
-        "football-youth-C",
-        "football-youth-D",
-        "football-youth-E",
-        "football-youth-F",
-        "football-youth-G"
+        "football-youth-a",
+        "football-youth-b",
+        "football-youth-c",
+        "football-youth-d",
+        "football-youth-e",
+        "football-youth-f",
+        "football-youth-g"
       ]
     },
     {
@@ -262,13 +262,13 @@
       "id": "football-youth",
       "sub-items": [
         "football-youth-general",
-        "football-youth-A",
-        "football-youth-B",
-        "football-youth-C",
-        "football-youth-D",
-        "football-youth-E",
-        "football-youth-F",
-        "football-youth-G"
+        "football-youth-a",
+        "football-youth-b",
+        "football-youth-c",
+        "football-youth-d",
+        "football-youth-e",
+        "football-youth-f",
+        "football-youth-g"
       ]
     },
     {
