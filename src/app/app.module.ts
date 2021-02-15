@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { GoogleMapsModule } from '@angular/google-maps'
-
-import { AppRoutingModule } from './app.routing.module'
+import { GoogleMapsModule } from '@angular/google-maps';
+import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
+
 import { FootballAdultsLeftRowComponent } from './pages/football-adults/left-row/left-row.component';
 import { FootballAdultsGeneralComponent } from './pages/football-adults/general/general.component';
 import { AboutUsLeftRowComponent } from './pages/about-us/left-row/left-row.component';
@@ -27,39 +27,47 @@ import { FootballAdultsFirstTeamContactComponent } from './pages/football-adults
 import { FootballAdultsFirstTeamSquadComponent } from './pages/football-adults/first-team/squad/squad.component';
 import { FootballAdultsFirstTeamTimesComponent } from './pages/football-adults/first-team/times/times.component';
 import { FootballAdultsFirstTeamResultsComponent } from './pages/football-adults/first-team/results/results.component';
+import { FootballAdultsSecondTeamContactComponent } from './pages/football-adults/second-team/contact/contact.component';
+import { FootballAdultsSecondTeamSquadComponent } from './pages/football-adults/second-team/squad/squad.component';
+import { FootballAdultsSecondTeamTimesComponent } from './pages/football-adults/second-team/times/times.component';
+import { FootballAdultsSecondTeamResultsComponent } from './pages/football-adults/second-team/results/results.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    NavBarComponent,
-    FooterComponent,
-    WaveComponent,
-    LeftRowComponent,
-    HomeComponent,
-    HomeLeftRowComponent,
-    ManagersComponent,
-    AboutUsLeftRowComponent,
-    SportsHomeComponent,
-    ChronicleComponent,
-    StatuteComponent,
-    PrivacyComponent,
-    RequestComponent,
+    FootballAdultsSecondTeamContactComponent,
+    FootballAdultsSecondTeamResultsComponent,
+    FootballAdultsFirstTeamContactComponent,
+    FootballAdultsFirstTeamResultsComponent,
+    FootballAdultsSecondTeamSquadComponent,
+    FootballAdultsSecondTeamTimesComponent,
+    FootballAdultsFirstTeamSquadComponent,
+    FootballAdultsFirstTeamTimesComponent,
     FootballAdultsGeneralComponent,
     FootballAdultsLeftRowComponent,
     FootballAdultsGeneralComponent,
-    TopHeaderComponent,
+    AboutUsLeftRowComponent,
+    HomeLeftRowComponent,
+    SportsHomeComponent,
     NavBarItemComponent,
-    FootballAdultsFirstTeamSquadComponent,
-    FootballAdultsFirstTeamTimesComponent,
-    FootballAdultsFirstTeamContactComponent,
-    FootballAdultsFirstTeamResultsComponent
+    ChronicleComponent,
+    TopHeaderComponent,
+    ManagersComponent,
+    StatuteComponent,
+    PrivacyComponent,
+    RequestComponent,
+    LeftRowComponent,
+    HeaderComponent,
+    NavBarComponent,
+    FooterComponent,
+    AppComponent,
+    WaveComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,5 +12,19 @@
                 }
             ]
         }
+    ],
+    "second-team": [
+        {
+            "function": "Trainer",
+            "name": "Simon Krell",
+            "imageName": "profile.png",
+            "reachable": [
+                {
+                    "type": "mobile",
+                    "text": "0176 / 84171396",
+                    "link": "TODO"
+                }
+            ]
+        }
     ]
 }
