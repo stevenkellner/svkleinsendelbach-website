@@ -1,0 +1,25 @@
+<span class="body">
+    <app-left-row>                
+        <app-football-adults-left-row [activePageId]="'first-team-contact'" class="app-left-row"></app-football-adults-left-row>
+    </app-left-row>
+    <span [ngClass]="deviceTypeListener.deviceTypeString()" class="main-content">
+       <span class="text-section">
+           <h1>Kontakt zur Ersten Mannschaft</h1>
+       </span>
+       <span *ngIf="contacts" class="contacts">
+           <span *ngFor="let row of contacts" class="row">
+               <span *ngFor="let contact of row" class="contact">
+                   <img class="image" src="../../../../../assets/images/{{ contact.imageName }}">
+                   <p class="function">{{ contact.function }}</p>
+                   <p class="name">{{ contact.name }}</p>
+                   <a *ngFor="let reachable of contact.reachable" href="{{ reachable.link }}" class="reachable">
+                       <i *ngIf="reachable.type == 'mobile'" class="fas fa-mobile-alt"></i>
+                       <i *ngIf="reachable.type == 'telephone'" class="fas fa-phone"></i>
+                       <i *ngIf="reachable.type == 'email'" class="fas fa-envelope"></i>
+                       <p class="text">{{ reachable.text }}</p>
+                   </a>
+               </span>
+           </span>
+       </span>
+    </span>
+</span>

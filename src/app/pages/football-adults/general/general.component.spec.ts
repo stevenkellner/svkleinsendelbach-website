@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FootballAdultsGeneralComponent } from './football-adults-general.component';
+import { FootballAdultsGeneralComponent } from './general.component';
 
 describe('FootballAdultsGeneralComponent', () => {
   let component: FootballAdultsGeneralComponent;

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FootballAdultsLeftRowComponent } from './football-adults-left-row.component';
+import { FootballAdultsLeftRowComponent } from './left-row.component';
 
 describe('FootballAdultsLeftRowComponent', () => {
   let component: FootballAdultsLeftRowComponent;

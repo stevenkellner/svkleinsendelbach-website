@@ -1,22 +1,24 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, Input } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 
 @Component({
     selector: 'app-football-adults-left-row',
-    templateUrl: './football-adults-left-row.component.html',
-    styleUrls: ['./football-adults-left-row.component.sass']
+    templateUrl: './left-row.component.html',
+    styleUrls: ['./left-row.component.sass']
 })
-export class FootballAdultsLeftRowComponent implements OnInit {
+export class FootballAdultsLeftRowComponent implements AfterViewInit {
 
     @Input() activePageId: string | undefined;
 
+    expandedLinkId: string | null = null;
+
     deviceTypeListener: DeviceTypeListener;
 
-    events: Event[] = [];
+    events: Event[] | null = null;
 
-    links: Link[] = [];
+    links: Link[] | null = null;
     
     activeNavBarId: string = "football-adult";
 
@@ -28,11 +30,30 @@ export class FootballAdultsLeftRowComponent implements OnInit {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 
-    ngOnInit(): void {}
+    ngAfterViewInit() {
+        this.setExpandedLinkId();
+    }
 
-    @HostListener('window:resize', ['$event'])
-    windowChanged(event: any): void {
+    @HostListener('window:resize')
+    windowChanged() {
         this.deviceTypeListener.windowChanged(window);
+    }
+
+    handleClick(link: Link) {
+        this.expandedLinkId = this.expandedLinkId == link.id ? null : link.id;
+    }
+
+    setExpandedLinkId() {
+        if (!this.activePageId || !this.links) return;
+        outer: for (const link of this.links) {
+            if (!link.subLinks) continue;
+            for (const subLink of link.subLinks) {
+                if (subLink.id == this.activePageId) {
+                    this.expandedLinkId = link.id;
+                    continue outer;
+                }
+            }
+        }
     }
 
     decodeEvents() {
@@ -42,7 +63,7 @@ export class FootballAdultsLeftRowComponent implements OnInit {
                 const event = new Event(eventJson);
                 this.events.push(event);
             }
-            this.events = this.events.filter(event => event.date >= new Date());
+            this.events = this.events.filter(event => event.date.dateStruct >= new Date());
             this.events = this.events.sort((firstEvent, secondEvent) => firstEvent.date > secondEvent.date ? 1 : -1);
         });
     }
@@ -54,6 +75,7 @@ export class FootballAdultsLeftRowComponent implements OnInit {
                 const link = new Link(linkJson);
                 this.links.push(link);
             }
+            this.setExpandedLinkId();
         });
     }
 }
@@ -99,7 +121,7 @@ class Link {
 
 class Event {
 
-    date: Date;
+    date: CustomDate;
 
     title: string;
 
@@ -108,9 +130,41 @@ class Event {
     link: string | undefined;
 
     constructor(jsonData: any) {
-        this.date = new Date(jsonData["date"]);
+        this.date = new CustomDate(jsonData["date"]);
         this.title = jsonData["title"];
         this.description = jsonData["description"];
         this.link = jsonData["link"];
+    }
+}
+
+class CustomDate {
+
+    dateStruct: Date;
+
+    date: string;
+
+    time: string | null;
+
+    constructor(jsonString: string) {
+        this.dateStruct = new Date(jsonString);
+        this.date = this.dateStruct.getDate() + ". " + this.getMonth() + ". " + this.dateStruct.getFullYear()
+        if (!jsonString.includes("T")) {
+            this.time = null;
+            return;
+        }
+        this.time = this.dateStruct.getHours() + ":" + this.dateStruct.getMinutes();
+    }
+
+    private getMonth(): string {
+        let monthList = ["Jan", "Feb", "März", "Apr", "Mai", "Jun", "Jul", "Aug", "Sept", "Okt", "Nov", "Dez"];
+        return monthList[this.dateStruct.getMonth()];
+    }
+
+    formated() : string {
+        let result = this.date;
+        if (this.time) {
+            result += " " + this.time + "Uhr";
+        }
+        return result;
     }
 }

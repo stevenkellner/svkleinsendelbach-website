@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeLeftRowComponent } from './home-left-row.component';
+import { AboutUsLeftRowComponent } from './left-row.component';
 
-describe('HomeLeftRowComponent', () => {
-  let component: HomeLeftRowComponent;
-  let fixture: ComponentFixture<HomeLeftRowComponent>;
+describe('AboutUsLeftRowComponent', () => {
+  let component: AboutUsLeftRowComponent;
+  let fixture: ComponentFixture<AboutUsLeftRowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeLeftRowComponent ]
+      declarations: [ AboutUsLeftRowComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeLeftRowComponent);
+    fixture = TestBed.createComponent(AboutUsLeftRowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

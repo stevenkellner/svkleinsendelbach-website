@@ -1,0 +1,16 @@
+﻿{
+    "first-team": [
+        {
+            "function": "Trainer",
+            "name": "Simon Müller",
+            "imageName": "profile.png",
+            "reachable": [
+                {
+                    "type": "mobile",
+                    "text": "01590 / 1094261",
+                    "link": "TODO"
+                }
+            ]
+        }
+    ]
+}

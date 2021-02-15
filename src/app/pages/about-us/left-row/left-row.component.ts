@@ -4,8 +4,8 @@ import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 
 @Component({
     selector: 'app-about-us-left-row',
-    templateUrl: './about-us-left-row.component.html',
-    styleUrls: ['./about-us-left-row.component.sass']
+    templateUrl: './left-row.component.html',
+    styleUrls: ['./left-row.component.sass']
 })
 export class AboutUsLeftRowComponent {
 
