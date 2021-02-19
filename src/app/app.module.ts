@@ -4,6 +4,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 
 import { FootballAdultsSecondTeamContactComponent } from './pages/football-adults/second-team/contact/contact.component';
 import { FootballAdultsSecondTeamResultsComponent } from './pages/football-adults/second-team/results/results.component';
@@ -52,6 +54,7 @@ import { LeftRowComponent } from './_template/left-row/left-row.component';
 import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
 import { DancingComponent } from './pages/dancing/dancing.component';
+import { ContactComponent } from './pages/contact/contact.component';
 import { WaveComponent } from './_template/wave/wave.component';
 import { DriveComponent } from './pages/drive/drive.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -103,6 +106,7 @@ import { HomeComponent } from './pages/home/home.component';
     RequestComponent,
     LeftRowComponent,
     DancingComponent,
+    ContactComponent,
     HeaderComponent,
     NavBarComponent,
     FooterComponent,
@@ -112,10 +116,13 @@ import { HomeComponent } from './pages/home/home.component';
     AppComponent
   ],
   imports: [
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     GoogleMapsModule,
-    BrowserModule
+    BrowserModule,
+    RecaptchaModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
