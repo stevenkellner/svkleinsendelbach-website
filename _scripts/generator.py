@@ -48,15 +48,20 @@ def main():
     # Remove preexisting data
     removePreexistingData()
 
-    data = []
+    data = {}
 
     # Parse all markdown files
     for directory in getAllDirectories():
+
+        filesData = []
+
         for file in getFilesInDirectory(directory):
             fileTags = parseMarkdown(os.path.abspath(os.path.join(directory, file)))
             url = f"https://{GITHUB_USERNAME}.github.io/{GITHUB_REPOSITORY}/{os.path.join(directory, file.replace('.md', ''))}"
             fileTags["url"] = url
-            data.append(fileTags)
+            filesData.append(fileTags)
+
+        data[directory] = filesData
 
     # Write files json
     writeFilesJson(data)
