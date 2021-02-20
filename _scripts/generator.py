@@ -12,7 +12,7 @@ def removePreexistingData():
         os.remove(FILES_JSON_PATH)
 
 
-def getAllDirectories() -> [str]:
+def getAllDirectories():
     return [
         directory
         for directory in next(os.walk("."))[1]
@@ -22,7 +22,7 @@ def getAllDirectories() -> [str]:
     ]
 
 
-def getFilesInDirectory(directory: str) -> [str]:
+def getFilesInDirectory(directory):
     return [
         file
         for file in os.listdir(os.path.abspath(directory))
@@ -31,7 +31,7 @@ def getFilesInDirectory(directory: str) -> [str]:
     ]
 
 
-def parseMarkdown(path: str) -> dict[str, str]:
+def parseMarkdown(path):
     with open(path) as md:
         fileTags = frontmatter.load(md).metadata
     if "title" not in fileTags or "address" not in fileTags:
@@ -39,7 +39,7 @@ def parseMarkdown(path: str) -> dict[str, str]:
     return fileTags
 
 
-def writeFilesJson(data: [dict[str, str]]):
+def writeFilesJson(data):
     with open(FILES_JSON_PATH, "w") as data_json:
         data_json.write(json.dumps(data, indent=4))
 
@@ -48,7 +48,7 @@ def main():
     # Remove preexisting data
     removePreexistingData()
 
-    data: [dict[str, str]] = []
+    data = []
 
     # Parse all markdown files
     for directory in getAllDirectories():
