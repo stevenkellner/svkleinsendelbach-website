@@ -3,8 +3,8 @@ import json
 import os
 
 FILES_JSON_PATH = os.path.abspath("_scripts/files.json")
-GITHUB_USERNAME = 'USERNAME'  # os.environ.get("GITHUB_ACTOR")
-GITHUB_REPOSITORY = 'REPOSITORY'  # os.environ.get("GITHUB_REPOSITORY").split("/")[1]
+GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
+GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY").split("/")[1]
 
 
 def removePreexistingData():
