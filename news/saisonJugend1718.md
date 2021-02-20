@@ -8,7 +8,7 @@ Die Saison 2017/18 ist vorüber. Bevor es in die neue Spielzeit geht, wollen wir
 
 <span style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
     <img src="../assets/saisonrueckblick.png">
-    <p>Unsere U19 Mannschaft, frisch gebackener Kreisklassenmeister und KJR- Pokalsieger</p>
+    Unsere U19 Mannschaft, frisch gebackener Kreisklassenmeister und KJR- Pokalsieger
 </span>
 
 ## A-Jugend
