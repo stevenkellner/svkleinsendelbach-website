@@ -95,6 +95,21 @@
         &.failure, &.inputError
             border: 2px solid $red 
 
+    .recaptcha
+        margin-bottom: $cube
+        &.invalid
+            border: 2px solid $red
+            border-radius: 5px
+    
+    .recaptcha-error-msg
+        padding:
+            left: 0.5 * $cube
+            bottom: $cube
+        font: 
+            size: 1.5 * $cube
+            weight: 400
+        color: $red 
+
     .status
         width: 100%
         padding:
@@ -113,3 +128,13 @@
         input.ng-invalid, textarea.ng-invalid, select.ng-invalid
             border: 2px solid $red
             
+@media screen and (prefers-color-scheme: dark)
+    .form
+        .input .label
+            color: $grayShiningDarkText 
+
+        .input input, .input select, .input textarea, button
+            border: 2px solid $grayDarkText
+            background-color: $darkDarkBackground
+            color: $grayDarkText
+

@@ -6,7 +6,7 @@
             <p class="large no-bottom-space">Wir werden Ihnen gerne antworten.</p>
         </span>
         <span class="text-section">
-            <form class="form" [formGroup]="contactForm" #form>
+            <form [ngClass]="{'evaluated': formEvaluated }" class="form" [formGroup]="contactForm">
                 <span class="input name">
                     <label class="label">Ihr Name:</label>
                     <input placeholder="Ihr Name" formControlName="name">
@@ -29,10 +29,22 @@
                     <label *ngIf="contactForm.controls.message.invalid && (contactForm.controls.message.touched || formEvaluated)" class="error-msg">Eine Nachricht ist erforderlich.</label>
                 </span>
                 <re-captcha
+                    *ngIf="!isDarkMode"
                     (resolved)="resolved($event)"
-                    formControlName="recaptchaReactive"
-                    siteKey="6LeRPV8aAAAAAGTROCrbNN8noUpHrs4vh6qJOOzL">
+                    theme="light"
+                    siteKey="6LeRPV8aAAAAAGTROCrbNN8noUpHrs4vh6qJOOzL"
+                    class="recaptcha"
+                    [ngClass]="{'invalid': !recaptchaValid && formEvaluated }">
                 </re-captcha>
+                <re-captcha
+                    *ngIf="isDarkMode"
+                    (resolved)="resolved($event)"
+                    theme="dark"
+                    siteKey="6LeRPV8aAAAAAGTROCrbNN8noUpHrs4vh6qJOOzL"
+                    class="recaptcha"
+                    [ngClass]="{'invalid': !recaptchaValid && formEvaluated }">
+                </re-captcha>
+                <label *ngIf="!recaptchaValid && formEvaluated" class="recaptcha-error-msg">reCAPTCHA ist erforderlich.</label>
                 <button [ngClass]="status" type="submit" (click)="onSubmit()">Abschicken</button>
                 <label *ngIf="status == 'success'" class="status success">Email wurde versendet.</label>
                 <label *ngIf="status == 'failure'" class="status failure">Es gab einen Fehler beim Senden.</label>
