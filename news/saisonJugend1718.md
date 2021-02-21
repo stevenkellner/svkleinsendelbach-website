@@ -1,7 +1,7 @@
 ---
 title: Saisonrückblick Jugend 2017 / 2018
 address: saisonJugend1718
-date: 2018.07.01
+date: 2018-07-01
 image: assets/saisonrueckblick.png
 description: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
 ---
