@@ -5,6 +5,7 @@ import os
 FILES_JSON_PATH = os.path.abspath("_scripts/files.json")
 GITHUB_USERNAME = os.environ.get("GITHUB_ACTOR")
 GITHUB_REPOSITORY = os.environ.get("GITHUB_REPOSITORY").split("/")[1]
+GITHUB_PAGES_LINK = f"https://{GITHUB_USERNAME}.github.io/{GITHUB_REPOSITORY}"
 
 
 def removePreexistingData():
@@ -31,12 +32,28 @@ def getFilesInDirectory(directory):
     ]
 
 
+def checkTags(fileTags, tags):
+    for tag in tags:
+        if tag not in fileTags:
+            return False
+    return True
+
+
+def getLinks(fileTags, linkTags):
+    for linkTag in linkTags:
+        if linkTag in fileTags:
+            rawLink = fileTags[linkTag]
+            link = os.path.join(GITHUB_PAGES_LINK, rawLink)
+            fileTags[linkTag] = link
+    return fileTags
+
+
 def parseMarkdown(path):
     with open(path) as md:
         fileTags = frontmatter.load(md).metadata
-    if "title" not in fileTags or "address" not in fileTags:
+    if not checkTags(fileTags, ["title", "address", "date"]):
         return {"error": "Missing tags"}
-    return fileTags
+    return getLinks(fileTags, ["image"])
 
 
 def writeFilesJson(data):
@@ -57,7 +74,7 @@ def main():
 
         for file in getFilesInDirectory(directory):
             fileTags = parseMarkdown(os.path.abspath(os.path.join(directory, file)))
-            url = f"https://{GITHUB_USERNAME}.github.io/{GITHUB_REPOSITORY}/{os.path.join(directory, file.replace('.md', ''))}"
+            url = os.path.join(GITHUB_PAGES_LINK, directory, file.replace(".md", ""))
             fileTags["url"] = url
             filesData.append(fileTags)
 
