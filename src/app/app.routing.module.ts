@@ -87,7 +87,7 @@ const routes: Routes = [
     {path: 'fussball/jugend/g-jugend/kontakt', component: FootballYouthGContactComponent},
     {path: 'fussball/jugend/g-jugend/training', component: FootballYouthGTimesComponent},
     {path: 'fussball/jugend/g-jugend/kader', component: FootballYouthGSquadComponent},
-    
+
     {path: 'gymnastik', component: GymnasticsComponent},
     {path: 'tanzen', component: DancingComponent},
     {path: 'anfahrt', component: DriveComponent},
@@ -95,7 +95,7 @@ const routes: Routes = [
 
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', component: PageNotFoundComponent}
-]
+];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

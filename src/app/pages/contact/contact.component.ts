@@ -12,23 +12,23 @@ import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 })
 export class ContactComponent {
 
-    formEvaluated: boolean = false;
+    formEvaluated = false;
 
     status: Status = Status.input;
 
     deviceTypeListener: DeviceTypeListener;
 
-    activeNavBarId: string = "contact";
+    activeNavBarId = 'contact';
 
     private currentStatusTimeout: number | null = null;
 
     receivers: Receiver[] = [
-        {name: "Vorstandschaft", address: "TODO"},
-        {name: "Herrenfußball", address: "TODO"},
-        {name: "Jugendfußball", address: "TODO"},
-        {name: "Gymnastik", address: "TODO"},
-        {name: "Tanzen", address: "TODO"}
-    ]
+        {name: 'Vorstandschaft', address: 'TODO'},
+        {name: 'Herrenfußball', address: 'TODO'},
+        {name: 'Jugendfußball', address: 'TODO'},
+        {name: 'Gymnastik', address: 'TODO'},
+        {name: 'Tanzen', address: 'TODO'}
+    ];
 
     contactForm = this.fb.group({
         name: ['', Validators.required],
@@ -37,15 +37,15 @@ export class ContactComponent {
         message: ['', Validators.required]
     });
 
-    recaptchaValid: boolean = false;
+    recaptchaValid = false;
 
     isDarkMode: boolean;
 
     constructor(private titleService: Title,
-        private fb: FormBuilder,
-        private recaptchaTokenService: ReCaptchaTokenService,
-        private sendContactMailService: SendContactMailService) {
-        this.titleService.setTitle("Kontakt")
+                private fb: FormBuilder,
+                private recaptchaTokenService: ReCaptchaTokenService,
+                private sendContactMailService: SendContactMailService) {
+        this.titleService.setTitle('Kontakt');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
         this.isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
@@ -54,19 +54,20 @@ export class ContactComponent {
     }
 
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    onSubmit() {
+    onSubmit(): void {
         if (this.contactForm.invalid || !this.recaptchaValid) {
             this.formEvaluated = true;
             this.setStatus(Status.inputError);
             return;
         }
         const address = this.receivers.find(receiver => {
-            return receiver.name == this.contactForm.value.receiver;
-        })!.address;
+            return receiver.name === this.contactForm.value.receiver;
+        })?.address;
+        if (!address) { return; }
         this.sendContactMailService.sendMail({
             sender: {
                 name: this.contactForm.value.name,
@@ -74,7 +75,7 @@ export class ContactComponent {
             },
             receiver: {
                 name: this.contactForm.value.receiver,
-                address: address
+                address
             },
             message: this.contactForm.value.message
         }, failed => {
@@ -83,24 +84,24 @@ export class ContactComponent {
             if (!failed) {
                 this.resetForm();
             }
-        })
+        });
     }
 
-    resetForm() {
+    resetForm(): void {
         this.contactForm.reset();
-        this.contactForm.controls.receiver.setValue(this.receivers[0].name)
+        this.contactForm.controls.receiver.setValue(this.receivers[0].name);
         this.formEvaluated = false;
     }
 
-    setStatus(status: Status) {
+    setStatus(status: Status): void {
         this.status = status;
-        if (this.currentStatusTimeout) clearTimeout(this.currentStatusTimeout);
+        if (this.currentStatusTimeout) { clearTimeout(this.currentStatusTimeout); }
         this.currentStatusTimeout = window.setTimeout(() => {
             this.status = Status.input;
         }, 5000);
     }
 
-    resolved(captchaResponse: string) {
+    resolved(captchaResponse: string): void {
         this.recaptchaTokenService.sendToken(captchaResponse, valid => {
             this.recaptchaValid = valid;
         });
@@ -108,13 +109,13 @@ export class ContactComponent {
 }
 
 interface Receiver {
-    name: string
-    address: string
+    name: string;
+    address: string;
 }
 
 enum Status {
-    input = "",
-    success = "success",
-    inputError = "inputError",
-    failure = "failure"
+    input = '',
+    success = 'success',
+    inputError = 'inputError',
+    failure = 'failure'
 }

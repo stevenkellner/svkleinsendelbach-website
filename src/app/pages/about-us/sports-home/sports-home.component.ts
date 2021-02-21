@@ -14,20 +14,20 @@ export class SportsHomeComponent {
 
     deviceTypeListener: DeviceTypeListener;
 
-    openingHourItemRows: OpeningHourItem[][] = []; 
-    
-    activeNavBarId: string = "about-us";
+    openingHourItemRows: OpeningHourItem[][] = [];
+
+    activeNavBarId = 'about-us';
 
     constructor(private titleService: Title,
-        private httpClient: HttpClient) {
-        this.titleService.setTitle("Sportheim")
+                private httpClient: HttpClient) {
+        this.titleService.setTitle('Sportheim');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {
             this.decodeOpeningHourItems();
         });
     }
 
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 
@@ -36,10 +36,11 @@ export class SportsHomeComponent {
             const openingHourItemIdRows = data[this.deviceTypeListener.deviceType];
             this.openingHourItemRows = [];
             for (const openingHourItemIdRow of openingHourItemIdRows) {
-                let openingHourItemRow: OpeningHourItem[] = [];
+                const openingHourItemRow: OpeningHourItem[] = [];
                 for (const openingHourItemId of openingHourItemIdRow) {
-                    const openingHourItemJson = data["opening-hours-items"].find((element: {[x: string]: string}) => element["id"] == openingHourItemId);
-                    let openingHourItem = new OpeningHourItem(openingHourItemJson);
+                    const openingHourItemJson = data['opening-hours-items']
+                        .find((element: {[x: string]: string}) => element.id === openingHourItemId);
+                    const openingHourItem = new OpeningHourItem(openingHourItemJson);
                     openingHourItemRow.push(openingHourItem);
                 }
                 this.openingHourItemRows.push(openingHourItemRow);
@@ -54,11 +55,11 @@ class OpeningHourItem {
 
     title: string;
 
-    time: string
+    time: string;
 
     constructor(jsonData: any) {
-        this.id = jsonData["id"];
-        this.title = jsonData["title"];
-        this.time = jsonData["time"];
+        this.id = jsonData.id;
+        this.title = jsonData.title;
+        this.time = jsonData.time;
     }
 }

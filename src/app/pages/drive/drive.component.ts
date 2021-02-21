@@ -11,30 +11,30 @@ export class DriveComponent {
 
     deviceTypeListener: DeviceTypeListener;
 
-    activeNavBarId: string = "drive";
+    activeNavBarId = 'drive';
 
     mapProperties = new MapProperties();
 
     constructor(private titleService: Title) {
-        this.titleService.setTitle("Anfahrt")
+        this.titleService.setTitle('Anfahrt');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
-    
+
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 }
 
 class MapProperties {
 
-    zoom = 12
+    zoom = 12;
 
     center = {
-        lat: 49.592270, 
+        lat: 49.592270,
         lng: 11.157840
-    }
-    
+    };
+
     options = {
         scrollwheel: false,
         maxZoom: 18,
@@ -44,11 +44,11 @@ class MapProperties {
     marker: MapMarker[] = [
         {
             position: {
-                lat: 49.592270, 
+                lat: 49.592270,
                 lng: 11.157840
             }
         }
-    ]
+    ];
 }
 
 interface MapMarker {

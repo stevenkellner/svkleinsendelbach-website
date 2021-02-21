@@ -12,12 +12,12 @@ export class PageNotFoundComponent {
     deviceTypeListener: DeviceTypeListener;
 
     constructor(private titleService: Title) {
-        this.titleService.setTitle("Seite nicht gefunden")
+        this.titleService.setTitle('Seite nicht gefunden');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
-    
+
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 }

@@ -10,16 +10,16 @@ import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 export class FootballAdultsAhTeamSquadComponent {
 
     deviceTypeListener: DeviceTypeListener;
-    
-    activeNavBarId: string = "football-adult";
+
+    activeNavBarId = 'football-adult';
 
     constructor(private titleService: Title) {
-        this.titleService.setTitle("Alte Herren")
+        this.titleService.setTitle('Alte Herren');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 }

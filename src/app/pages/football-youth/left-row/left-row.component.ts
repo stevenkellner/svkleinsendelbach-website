@@ -27,34 +27,34 @@ export class FootballYouthLeftRowComponent implements AfterViewInit {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 
-    ngAfterViewInit() {
+    ngAfterViewInit(): void {
         this.setExpandedLinkId();
     }
 
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    handleClick(link: Link) {
-        this.expandedLinkId = this.expandedLinkId == link.id ? null : link.id;
+    handleClick(link: Link): void {
+        this.expandedLinkId = this.expandedLinkId === link.id ? null : link.id;
     }
 
-    setExpandedLinkId() {
-        if (!this.activePageId || !this.largeFieldLinks || !this.smallFieldLinks) return;
+    setExpandedLinkId(): void {
+        if (!this.activePageId || !this.largeFieldLinks || !this.smallFieldLinks) { return; }
         outer: for (const link of this.largeFieldLinks) {
-            if (!link.subLinks) continue;
+            if (!link.subLinks) { continue; }
             for (const subLink of link.subLinks) {
-                if (subLink.id == this.activePageId) {
+                if (subLink.id === this.activePageId) {
                     this.expandedLinkId = link.id;
                     continue outer;
                 }
             }
         }
         outer: for (const link of this.smallFieldLinks) {
-            if (!link.subLinks) continue;
+            if (!link.subLinks) { continue; }
             for (const subLink of link.subLinks) {
-                if (subLink.id == this.activePageId) {
+                if (subLink.id === this.activePageId) {
                     this.expandedLinkId = link.id;
                     continue outer;
                 }
@@ -62,10 +62,10 @@ export class FootballYouthLeftRowComponent implements AfterViewInit {
         }
     }
 
-    decodeEvents() {
+    decodeEvents(): void {
         this.httpClient.get('../../../../assets/json-data/events.json').subscribe((data: any) => {
             this.events = [];
-            for (const eventJson of data["football-youth"]) {
+            for (const eventJson of data['football-youth']) {
                 const event = new Event(eventJson);
                 this.events.push(event);
             }
@@ -74,15 +74,15 @@ export class FootballYouthLeftRowComponent implements AfterViewInit {
         });
     }
 
-    decodeLinks() {
+    decodeLinks(): void {
         this.httpClient.get('../../../../assets/json-data/football-youth-links.json').subscribe((data: any) => {
             this.largeFieldLinks = [];
             this.smallFieldLinks = [];
-            for (const linkJson of data["large-field"]) {
+            for (const linkJson of data['large-field']) {
                 const link = new Link(linkJson);
                 this.largeFieldLinks.push(link);
             }
-            for (const linkJson of data["small-field"]) {
+            for (const linkJson of data['small-field']) {
                 const link = new Link(linkJson);
                 this.smallFieldLinks.push(link);
             }
@@ -100,9 +100,9 @@ class SubLink {
     link: string;
 
     constructor(jsonData: any) {
-        this.id = jsonData["id"];
-        this.title = jsonData["title"];
-        this.link = jsonData["link"];
+        this.id = jsonData.id;
+        this.title = jsonData.title;
+        this.link = jsonData.link;
     }
 }
 
@@ -119,15 +119,15 @@ class Link {
     extern: boolean;
 
     constructor(jsonData: any) {
-        this.id = jsonData["id"];
-        this.title = jsonData["title"];
-        this.link = jsonData["link"];
-        this.extern = jsonData["extern"] ? jsonData["extern"] : false;
-        if (jsonData["sub-items"] != null) {
+        this.id = jsonData.id;
+        this.title = jsonData.title;
+        this.link = jsonData.link;
+        this.extern = jsonData.extern ? jsonData.extern : false;
+        if (jsonData['sub-items'] != null) {
             this.subLinks = [];
-            for (const subLinkJson of jsonData["sub-items"]) {
+            for (const subLinkJson of jsonData['sub-items']) {
                 const subLink = new SubLink(subLinkJson);
-                this.subLinks!.push(subLink);
+                this.subLinks.push(subLink);
             }
         }
     }
@@ -144,10 +144,10 @@ class Event {
     link: string | undefined;
 
     constructor(jsonData: any) {
-        this.date = new CustomDate(jsonData["date"]);
-        this.title = jsonData["title"];
-        this.description = jsonData["description"];
-        this.link = jsonData["link"];
+        this.date = new CustomDate(jsonData.date);
+        this.title = jsonData.title;
+        this.description = jsonData.description;
+        this.link = jsonData.link;
     }
 }
 
@@ -161,23 +161,23 @@ class CustomDate {
 
     constructor(jsonString: string) {
         this.dateStruct = new Date(jsonString);
-        this.date = this.dateStruct.getDate() + ". " + this.getMonth() + ". " + this.dateStruct.getFullYear()
-        if (!jsonString.includes("T")) {
+        this.date = this.dateStruct.getDate() + '. ' + this.getMonth() + '. ' + this.dateStruct.getFullYear();
+        if (!jsonString.includes('T')) {
             this.time = null;
             return;
         }
-        this.time = this.dateStruct.getHours() + ":" + this.dateStruct.getMinutes();
+        this.time = this.dateStruct.getHours() + ':' + this.dateStruct.getMinutes();
     }
 
     private getMonth(): string {
-        let monthList = ["Jan", "Feb", "März", "Apr", "Mai", "Jun", "Jul", "Aug", "Sept", "Okt", "Nov", "Dez"];
+        const monthList = ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sept', 'Okt', 'Nov', 'Dez'];
         return monthList[this.dateStruct.getMonth()];
     }
 
-    formated() : string {
+    formated(): string {
         let result = this.date;
         if (this.time) {
-            result += " " + this.time + "Uhr";
+            result += ' ' + this.time + 'Uhr';
         }
         return result;
     }

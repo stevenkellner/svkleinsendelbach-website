@@ -10,11 +10,11 @@ export class AppComponent {
 
     title = 'svkleinsendelbach-website';
 
-    navBarSticky: boolean = false;
+    navBarSticky = false;
 
     deviceTypeListener: DeviceTypeListener;
 
-    activeNavBarId: string = "home";
+    activeNavBarId = 'home';
 
     constructor() {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
@@ -29,7 +29,7 @@ export class AppComponent {
       this.navBarSticky = navBarSticky;
     }
 
-    setActiveNavBarId(event: any) {
-        this.activeNavBarId = event["activeNavBarId"];
+    setActiveNavBarId(event: any): void {
+        this.activeNavBarId = event.activeNavBarId;
     }
 }

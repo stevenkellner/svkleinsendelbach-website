@@ -12,11 +12,11 @@ export class ChronicleComponent {
     leftRowWidth: number | undefined;
 
     deviceTypeListener: DeviceTypeListener;
-    
-    activeNavBarId: string = "about-us";
+
+    activeNavBarId = 'about-us';
 
     constructor(private titleService: Title) {
-        this.titleService.setTitle("Chronik")
+        this.titleService.setTitle('Chronik');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 

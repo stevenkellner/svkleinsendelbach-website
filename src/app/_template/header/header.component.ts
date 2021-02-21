@@ -9,7 +9,7 @@ import { NavBarDecoderService, NavigationBarItem } from 'src/app/services/nav-ba
 })
 export class HeaderComponent {
 
-    /** Id of active nav bar item */ 
+    /** Id of active nav bar item */
     @Input() activePageId: string | undefined;
 
     /** Title of current navigation page (e.g. 'Über uns' for all about-us tabs) */
@@ -33,11 +33,11 @@ export class HeaderComponent {
                 if (error != null) {
                     throw error;
                 } else if (navBarItems == null) {
-                    throw new Error("Couln't decode nav bar.");
+                    throw new Error('Couln\'t decode nav bar.');
                 }
                 this.navBarItems = navBarItems;
                 for (const navBarItem of navBarItems) {
-                    if (navBarItem.id == this.activePageId) {
+                    if (navBarItem.id === this.activePageId) {
                         this.title = navBarItem.name;
                         break;
                     }
@@ -63,15 +63,15 @@ export class HeaderComponent {
      * Handles sticky nav bar change
      * @param navBarSticky is nav bar sticky
      */
-    handleNavBarStickyEmitter(navBarSticky: boolean) {
+    handleNavBarStickyEmitter(navBarSticky: boolean): void {
         this.navBarStickyEmitter.emit(navBarSticky);
       }
 }
 
 export enum DeviceType {
-    desktop = "desktop",
-    tablet = "tablet",
-    mobile = "mobile"
+    desktop = 'desktop',
+    tablet = 'tablet',
+    mobile = 'mobile'
 }
 
 export class DeviceTypeListener {
@@ -79,7 +79,7 @@ export class DeviceTypeListener {
     deviceType: DeviceType;
 
     constructor(window: Window,
-        private onChange: (deviceType: DeviceType) => void) {
+                private onChange: (deviceType: DeviceType) => void) {
             this.deviceType = this.getDeviceType(window);
             this.onChange(this.deviceType);
         }
@@ -99,15 +99,15 @@ export class DeviceTypeListener {
     }
 
     isMobile(): boolean {
-        return this.deviceType == DeviceType.mobile;
+        return this.deviceType === DeviceType.mobile;
     }
-    
+
     isTablet(): boolean {
-        return this.deviceType == DeviceType.tablet;
+        return this.deviceType === DeviceType.tablet;
     }
 
     isDesktop(): boolean {
-        return this.deviceType == DeviceType.desktop;
+        return this.deviceType === DeviceType.desktop;
     }
 
     deviceTypeString(): string {

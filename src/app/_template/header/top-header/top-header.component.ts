@@ -10,7 +10,7 @@ import { DeviceTypeListener } from '../header.component';
 export class TopHeaderComponent implements AfterViewInit {
 
     @Input() title: string | undefined;
-    
+
     @Input() expandedNavBarItem: NavigationBarItem | null = null;
 
     deviceTypeListener: DeviceTypeListener;
@@ -31,9 +31,9 @@ export class TopHeaderComponent implements AfterViewInit {
     }
 
     setHeaderSheetTimeout(): void {
-        this.renderer.addClass(this.titleContainer?.nativeElement, "after-load");
+        this.renderer.addClass(this.titleContainer?.nativeElement, 'after-load');
         setTimeout(() => {
-            this.renderer.removeClass(this.titleContainer?.nativeElement, "after-load");
+            this.renderer.removeClass(this.titleContainer?.nativeElement, 'after-load');
         }, 10000);
     }
 }

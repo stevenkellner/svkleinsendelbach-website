@@ -11,15 +11,15 @@ export class GymnasticsComponent {
 
     deviceTypeListener: DeviceTypeListener;
 
-    activeNavBarId: string = "gymnastics";
+    activeNavBarId = 'gymnastics';
 
     constructor(private titleService: Title) {
-        this.titleService.setTitle("Gymnastik")
+        this.titleService.setTitle('Gymnastik');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
-    
+
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 }

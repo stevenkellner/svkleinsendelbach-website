@@ -12,21 +12,21 @@ export class NavBarItemComponent {
     @Input() navBarItem: NavigationBarItem | null = null;
 
     @Input() expandedNavBarItem: NavigationBarItem | null = null;
-    
+
     @Input() activePageId: string | undefined;
 
     @Input() lastNavBarItemId: string | null = null;
 
     @Input() afterExpandedNavBarItemId: string | null = null;
 
-    @Input() isMobileNavBarExtended: boolean = false;
+    @Input() isMobileNavBarExtended = false;
 
     @Output() expandedNavBarItemEmitter: EventEmitter<NavigationBarItem | null> = new EventEmitter<NavigationBarItem | null>();
-    
+
     @ViewChild('navBarItemTitle') navBarItemTitleElement: ElementRef | undefined;
 
     @ViewChild('subItems') subItemsElement: ElementRef | undefined;
-    
+
     @ViewChildren('subItem') subItemElements: ElementRef[] | undefined;
 
     deviceTypeListener: DeviceTypeListener;
@@ -41,9 +41,9 @@ export class NavBarItemComponent {
     }
 
     numberSubItemsStyle(): string {
-        if (!this.navBarItem?.subItems) return "";
-        if (this.navBarItem != this.expandedNavBarItem) return "";
-        return "number" + this.navBarItem.subItems.length.toString();
+        if (!this.navBarItem?.subItems) { return ''; }
+        if (this.navBarItem !== this.expandedNavBarItem) { return ''; }
+        return 'number' + this.navBarItem.subItems.length.toString();
     }
 
     widthOfSubItems(): number {
@@ -56,23 +56,23 @@ export class NavBarItemComponent {
         return (maxLetterCount + 4) * 10;
     }
 
-    widthStyle(): Object | null {
+    widthStyle(): object | null {
         if (this.deviceTypeListener.isMobile()) { return null; }
         return {
-            'width': this.widthOfSubItems() + 'px'
+            width: this.widthOfSubItems() + 'px'
         };
     }
 
-    setExpandedNavBarItemOnClick() {
-        this.expandedNavBarItemEmitter.emit(this.navBarItem)
+    setExpandedNavBarItemOnClick(): void {
+        this.expandedNavBarItemEmitter.emit(this.navBarItem);
     }
 
-    hoverStarted() {
+    hoverStarted(): void {
         if (!this.deviceTypeListener.isDesktop()) { return; }
         this.expandedNavBarItemEmitter.emit(this.navBarItem);
     }
 
-    hoverEnded() {
+    hoverEnded(): void {
         if (!this.deviceTypeListener.isDesktop()) { return; }
         this.expandedNavBarItemEmitter.emit(null);
     }

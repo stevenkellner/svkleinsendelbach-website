@@ -18,42 +18,42 @@ export class LeftRowComponent implements AfterViewInit {
 
     constructor() {
         this.deviceTypeListener = new DeviceTypeListener(window, deviceType => {
-            if (deviceType == DeviceType.mobile) {
+            if (deviceType === DeviceType.mobile) {
                 this.offscreen = true;
             }
-            let appLeftRow = document.getElementById("left-row")?.parentElement;
-            appLeftRow?.classList.remove("desktop");
-            appLeftRow?.classList.remove("tablet");
-            appLeftRow?.classList.remove("mobile");
+            const appLeftRow = document.getElementById('left-row')?.parentElement;
+            appLeftRow?.classList.remove('desktop');
+            appLeftRow?.classList.remove('tablet');
+            appLeftRow?.classList.remove('mobile');
             appLeftRow?.classList.add(deviceType);
         });
     }
 
-    ngAfterViewInit() {
-        let appLeftRow = document.getElementById("left-row")?.parentElement;
-        appLeftRow?.classList.remove("desktop");
-        appLeftRow?.classList.remove("tablet");
-        appLeftRow?.classList.remove("mobile");
+    ngAfterViewInit(): void {
+        const appLeftRow = document.getElementById('left-row')?.parentElement;
+        appLeftRow?.classList.remove('desktop');
+        appLeftRow?.classList.remove('tablet');
+        appLeftRow?.classList.remove('mobile');
         appLeftRow?.classList.add(this.deviceTypeListener.deviceType);
     }
 
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    toggleOffscreen() {
+    toggleOffscreen(): void {
         this.offscreen = this.offscreen ? false : true;
         if (this.deviceTypeListener.isMobile()) {
-            let appLeftRow = document.getElementById("left-row")?.parentElement;
+            const appLeftRow = document.getElementById('left-row')?.parentElement;
             if (this.offscreen) {
-                appLeftRow?.classList.remove("onscreen");
+                appLeftRow?.classList.remove('onscreen');
             } else {
-                appLeftRow?.classList.add("onscreen");
+                appLeftRow?.classList.add('onscreen');
             }
         }
         this.isMoving = true;
-        if (this.currentMovingTimeout) clearTimeout(this.currentMovingTimeout);
+        if (this.currentMovingTimeout) { clearTimeout(this.currentMovingTimeout); }
         this.currentMovingTimeout = window.setTimeout(() => {
             this.isMoving = false;
         }, 500);

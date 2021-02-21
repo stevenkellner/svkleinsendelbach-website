@@ -25,25 +25,25 @@ export class FootballAdultsLeftRowComponent implements AfterViewInit {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 
-    ngAfterViewInit() {
+    ngAfterViewInit(): void {
         this.setExpandedLinkId();
     }
 
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    handleClick(link: Link) {
-        this.expandedLinkId = this.expandedLinkId == link.id ? null : link.id;
+    handleClick(link: Link): void {
+        this.expandedLinkId = this.expandedLinkId === link.id ? null : link.id;
     }
 
-    setExpandedLinkId() {
-        if (!this.activePageId || !this.links) return;
+    setExpandedLinkId(): void {
+        if (!this.activePageId || !this.links) { return; }
         outer: for (const link of this.links) {
-            if (!link.subLinks) continue;
+            if (!link.subLinks) { continue; }
             for (const subLink of link.subLinks) {
-                if (subLink.id == this.activePageId) {
+                if (subLink.id === this.activePageId) {
                     this.expandedLinkId = link.id;
                     continue outer;
                 }
@@ -51,10 +51,10 @@ export class FootballAdultsLeftRowComponent implements AfterViewInit {
         }
     }
 
-    decodeEvents() {
+    decodeEvents(): void {
         this.httpClient.get('../../../../assets/json-data/events.json').subscribe((data: any) => {
             this.events = [];
-            for (const eventJson of data["football-adults"]) {
+            for (const eventJson of data['football-adults']) {
                 const event = new Event(eventJson);
                 this.events.push(event);
             }
@@ -63,10 +63,10 @@ export class FootballAdultsLeftRowComponent implements AfterViewInit {
         });
     }
 
-    decodeLinks() {
+    decodeLinks(): void {
         this.httpClient.get('../../../../assets/json-data/football-adult-links.json').subscribe((data: any) => {
             this.links = [];
-            for (const linkJson of data["links"]) {
+            for (const linkJson of data.links) {
                 const link = new Link(linkJson);
                 this.links.push(link);
             }
@@ -84,9 +84,9 @@ class SubLink {
     link: string;
 
     constructor(jsonData: any) {
-        this.id = jsonData["id"];
-        this.title = jsonData["title"];
-        this.link = jsonData["link"];
+        this.id = jsonData.id;
+        this.title = jsonData.title;
+        this.link = jsonData.link;
     }
 }
 
@@ -101,14 +101,14 @@ class Link {
     subLinks: SubLink[] | undefined;
 
     constructor(jsonData: any) {
-        this.id = jsonData["id"];
-        this.title = jsonData["title"];
-        this.link = jsonData["link"];
-        if (jsonData["sub-items"] != null) {
+        this.id = jsonData.id;
+        this.title = jsonData.title;
+        this.link = jsonData.link;
+        if (jsonData['sub-items'] != null) {
             this.subLinks = [];
-            for (const subLinkJson of jsonData["sub-items"]) {
+            for (const subLinkJson of jsonData['sub-items']) {
                 const subLink = new SubLink(subLinkJson);
-                this.subLinks!.push(subLink);
+                this.subLinks.push(subLink);
             }
         }
     }
@@ -125,10 +125,10 @@ class Event {
     link: string | undefined;
 
     constructor(jsonData: any) {
-        this.date = new CustomDate(jsonData["date"]);
-        this.title = jsonData["title"];
-        this.description = jsonData["description"];
-        this.link = jsonData["link"];
+        this.date = new CustomDate(jsonData.date);
+        this.title = jsonData.title;
+        this.description = jsonData.description;
+        this.link = jsonData.link;
     }
 }
 
@@ -142,23 +142,23 @@ class CustomDate {
 
     constructor(jsonString: string) {
         this.dateStruct = new Date(jsonString);
-        this.date = this.dateStruct.getDate() + ". " + this.getMonth() + ". " + this.dateStruct.getFullYear()
-        if (!jsonString.includes("T")) {
+        this.date = this.dateStruct.getDate() + '. ' + this.getMonth() + '. ' + this.dateStruct.getFullYear();
+        if (!jsonString.includes('T')) {
             this.time = null;
             return;
         }
-        this.time = this.dateStruct.getHours() + ":" + this.dateStruct.getMinutes();
+        this.time = this.dateStruct.getHours() + ':' + this.dateStruct.getMinutes();
     }
 
     private getMonth(): string {
-        let monthList = ["Jan", "Feb", "März", "Apr", "Mai", "Jun", "Jul", "Aug", "Sept", "Okt", "Nov", "Dez"];
+        const monthList = ['Jan', 'Feb', 'März', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sept', 'Okt', 'Nov', 'Dez'];
         return monthList[this.dateStruct.getMonth()];
     }
 
-    formated() : string {
+    formated(): string {
         let result = this.date;
         if (this.time) {
-            result += " " + this.time + "Uhr";
+            result += ' ' + this.time + 'Uhr';
         }
         return result;
     }

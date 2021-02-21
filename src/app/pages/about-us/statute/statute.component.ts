@@ -12,16 +12,16 @@ export class StatuteComponent {
     leftRowWidth: number | undefined;
 
     deviceTypeListener: DeviceTypeListener;
-    
-    activeNavBarId: string = "about-us";
+
+    activeNavBarId = 'about-us';
 
     constructor(private titleService: Title) {
-        this.titleService.setTitle("Satzung")
+        this.titleService.setTitle('Satzung');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 }

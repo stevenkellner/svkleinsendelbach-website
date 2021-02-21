@@ -11,34 +11,34 @@ import {  DeviceTypeListener } from 'src/app/_template/header/header.component';
 export class HomeComponent {
 
     deviceTypeListener: DeviceTypeListener;
-    
+
     linkItemRows: LinkItem[][] = [];
 
-    activeNavBarId: string = "home";
+    activeNavBarId = 'home';
 
     constructor(private httpClient: HttpClient,
-        private titleService: Title) {
-        this.titleService.setTitle("SV Kleinsendelbach")
+                private titleService: Title) {
+        this.titleService.setTitle('SV Kleinsendelbach');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {
             this.decodeLinkItems();
         });
     }
 
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    decodeLinkItems() {
+    decodeLinkItems(): void {
         this.httpClient.get('../../../../assets/json-data/link-items.json').subscribe((data: any) => {
             const linkItemIdRows = data[this.deviceTypeListener.deviceType];
-            let linkItemRows: LinkItem[][] = [];
+            const linkItemRows: LinkItem[][] = [];
             for (const linkItemIdRow of linkItemIdRows) {
-                let linkItemRow: LinkItem[] = [];
+                const linkItemRow: LinkItem[] = [];
                 for (const linkItemId of linkItemIdRow) {
-                    const linkItemsJson = data["link-items"];
+                    const linkItemsJson = data['link-items'];
                     for (const linkItemJson of linkItemsJson) {
-                        if (linkItemJson["id"] == linkItemId) {
+                        if (linkItemJson.id === linkItemId) {
                             const linkItem = new LinkItem(linkItemJson);
                             linkItemRow.push(linkItem);
                             break;
@@ -61,11 +61,11 @@ class LinkItem {
     animation: string;
 
     constructor(jsonData: any) {
-        this.id = jsonData["id"];
-        this.name = jsonData["name"];
-        this.linkUrl = jsonData["linkUrl"];
-        this.description = jsonData["description"];
-        this.iconClass = jsonData["iconClass"];
-        this.animation = jsonData["animation"];
+        this.id = jsonData.id;
+        this.name = jsonData.name;
+        this.linkUrl = jsonData.linkUrl;
+        this.description = jsonData.description;
+        this.iconClass = jsonData.iconClass;
+        this.animation = jsonData.animation;
     }
 }

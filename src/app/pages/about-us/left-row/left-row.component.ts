@@ -14,25 +14,25 @@ export class AboutUsLeftRowComponent {
     deviceTypeListener: DeviceTypeListener;
 
     leftRowItems: LeftRowItem[] = [];
-    
+
     constructor(private httpClient: HttpClient) {
         this.deviceTypeListener = new DeviceTypeListener(window, () => {
             this.decodeLeftRowItems();
         });
     }
-    
+
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 
-    decodeLeftRowItems() {
+    decodeLeftRowItems(): void {
         this.httpClient.get('../../../../assets/json-data/nav-bar-items.json').subscribe((data: any) => {
-            const leftRowItemsId = data[this.deviceTypeListener.deviceType].find((element: {[x: string]: string}) => element["id"] == "about-us")["sub-items"];
+            const leftRowItemsId = data[this.deviceTypeListener.deviceType].find((element: {[x: string]: string}) => element.id === 'about-us')['sub-items'];
             this.leftRowItems = [];
             for (const leftRowItemId of leftRowItemsId) {
-                let leftRowItemJson = data["all-nav-items"].find((element: {[x: string]: string}) => element["id"] == leftRowItemId);
-                let leftRowItem = new LeftRowItem(leftRowItemJson);
+                const leftRowItemJson = data['all-nav-items'].find((element: {[x: string]: string}) => element.id === leftRowItemId);
+                const leftRowItem = new LeftRowItem(leftRowItemJson);
                 this.leftRowItems.push(leftRowItem);
             }
         });
@@ -47,8 +47,8 @@ class LeftRowItem {
     linkUrl: string;
 
     constructor(jsonData: any) {
-        this.id = jsonData["id"];
-        this.name = jsonData["name"];
-        this.linkUrl = jsonData["linkUrl"];
+        this.id = jsonData.id;
+        this.name = jsonData.name;
+        this.linkUrl = jsonData.linkUrl;
     }
 }

@@ -11,25 +11,25 @@ import { DeviceType, DeviceTypeListener } from 'src/app/_template/header/header.
 export class FootballYouthCContactComponent  {
 
     deviceTypeListener: DeviceTypeListener;
-    
-    activeNavBarId: string = "football-youth";
+
+    activeNavBarId = 'football-youth';
 
     contacts: Contact[][] | null = null;
 
     constructor(private titleService: Title,
-        private httpClient: HttpClient) {
-        this.titleService.setTitle("C-Jugend")
+                private httpClient: HttpClient) {
+        this.titleService.setTitle('C-Jugend');
         this.deviceTypeListener = new DeviceTypeListener(window, deviceType => {
             this.decodeContacts(deviceType);
         });
     }
 
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
-    
-    decodeContacts(deviceType: DeviceType) {
+
+    decodeContacts(deviceType: DeviceType): void {
         this.httpClient.get('../../../../../assets/json-data/football-youth-contacts.json').subscribe((data: any) => {
             this.contacts = [];
             let numberInRow: number;
@@ -44,12 +44,12 @@ export class FootballYouthCContactComponent  {
                     numberInRow = 1;
                     break;
             }
-            const jsonData = data["youth-c"];
+            const jsonData = data['youth-c'];
             let row: Contact[] = [];
             let currentNumberInRow = 0;
             for (const contactJson of jsonData) {
                 const contact: Contact = contactJson;
-                if (currentNumberInRow == numberInRow) {
+                if (currentNumberInRow === numberInRow) {
                     this.contacts.push(row);
                     row = [];
                     currentNumberInRow = 0;
@@ -57,7 +57,7 @@ export class FootballYouthCContactComponent  {
                 row.push(contact);
                 currentNumberInRow++;
             }
-            if (currentNumberInRow != 0) {
+            if (currentNumberInRow !== 0) {
                 this.contacts.push(row);
             }
         });

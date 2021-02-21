@@ -12,16 +12,16 @@ export class PrivacyComponent {
     leftRowWidth: number | undefined;
 
     deviceTypeListener: DeviceTypeListener;
-    
-    activeNavBarId: string = "about-us";
+
+    activeNavBarId = 'about-us';
 
     constructor(private titleService: Title) {
-        this.titleService.setTitle("Datenschutzerklärung")
+        this.titleService.setTitle('Datenschutzerklärung');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
 
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 }

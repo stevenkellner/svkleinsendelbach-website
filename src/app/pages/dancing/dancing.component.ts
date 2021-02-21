@@ -11,15 +11,15 @@ export class DancingComponent {
 
     deviceTypeListener: DeviceTypeListener;
 
-    activeNavBarId: string = "dancing";
+    activeNavBarId = 'dancing';
 
     constructor(private titleService: Title) {
-        this.titleService.setTitle("Tanzen")
+        this.titleService.setTitle('Tanzen');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
-    
+
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 }

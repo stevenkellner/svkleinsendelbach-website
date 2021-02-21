@@ -10,30 +10,30 @@ import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 export class FootballYouthCTimesComponent {
 
     deviceTypeListener: DeviceTypeListener;
-    
-    activeNavBarId: string = "football-youth";
+
+    activeNavBarId = 'football-youth';
 
     mapProperties = new MapProperties();
 
     constructor(private titleService: Title) {
-        this.titleService.setTitle("C-Jugend")
+        this.titleService.setTitle('C-Jugend');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
     }
     @HostListener('window:resize')
-    windowChanged() {
+    windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);
     }
 }
 
 class MapProperties {
 
-    zoom = 12
+    zoom = 12;
 
     center = {
-        lat: 49.589936, 
+        lat: 49.589936,
         lng: 11.162849
-    }
-    
+    };
+
     options = {
         scrollwheel: false,
         maxZoom: 18,
@@ -43,11 +43,11 @@ class MapProperties {
     marker: MapMarker[] = [
         {
             position: {
-                lat: 49.589936, 
+                lat: 49.589936,
                 lng: 11.162849
             }
         }
-    ]
+    ];
 }
 
 interface MapMarker {
