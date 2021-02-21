@@ -48,12 +48,26 @@ def getLinks(fileTags, linkTags):
     return fileTags
 
 
+def parseDate(fileTags, dateTags):
+    for dateTag in dateTags:
+        if dateTag in fileTags:
+            dateString = str(fileTags[dateTag])
+            fileTags[dateTag] = dateString
+    return fileTags
+
+
+def parseFileTags(fileTags):
+    fileTags = getLinks(fileTags, ["image"])
+    fileTags = parseDate(fileTags, ["date"])
+    return fileTags
+
+
 def parseMarkdown(path):
     with open(path) as md:
         fileTags = frontmatter.load(md).metadata
     if not checkTags(fileTags, ["title", "address", "date"]):
         return {"error": "Missing tags"}
-    return getLinks(fileTags, ["image"])
+    return parseFileTags(fileTags)
 
 
 def writeFilesJson(data):
