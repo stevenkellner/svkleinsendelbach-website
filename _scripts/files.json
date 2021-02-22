@@ -1,0 +1,20 @@
+{
+    "news": [
+        {
+            "title": "Saisonr\u00fcckblick Jugend 2017 / 2018",
+            "address": "saisonJugend1718",
+            "date": "2018-07-01",
+            "image": "https://stevenkellner.github.io/svkleinsendelbach-website/src/assets/saisonrueckblick.png",
+            "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
+            "url": "https://stevenkellner.github.io/svkleinsendelbach-website/src/news/saisonJugend1718"
+        },
+        {
+            "title": "Kochbuch \"Schmackofatz\" zu Gunsten der Kabinenrenovierung",
+            "address": "schmackofatz",
+            "date": "2020-01-01",
+            "image": "https://stevenkellner.github.io/svkleinsendelbach-website/src/assets/schmackofatz.png",
+            "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore",
+            "url": "https://stevenkellner.github.io/svkleinsendelbach-website/src/news/schmackofatz"
+        }
+    ]
+}
