@@ -5,7 +5,7 @@
     <span [ngClass]="deviceTypeListener.deviceTypeString()" class="main-content">
         <span class="text-section">
             <h1>Alle Nachrichten</h1>
-            <a *ngFor="let news of allNews" href="TODO" class="news">
+            <a *ngFor="let news of allNews" href="news/{{ news.address }}" class="news">
                 <span class="img-wrapper">
                     <img src="{{ news.image }}">
                 </span>

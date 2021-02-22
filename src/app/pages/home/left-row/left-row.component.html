@@ -5,7 +5,7 @@
             <p>news</p>
         </span>
         <span *ngIf="allNews" class="items">
-            <a *ngFor="let news of allNews" href="TODO" class="news-item item">
+            <a *ngFor="let news of allNews" href="news/{{ news.address }}" class="news-item item">
                 <span class="text">{{ news.title }}</span>
             </a>
         </span>
@@ -17,16 +17,16 @@
             <p>Ergebnisse</p>
         </span>
         <span class="items">
-            <a href="TODO" class="result-item item">
+            <a href="fussball/herren/erste-mannschaft/ergebnis" class="result-item item">
                 <span class="text">1. Mannschaft</span>
             </a>
-            <a href="TODO" class="result-item item">
+            <a href="fussball/herren/zweite-mannschaft/ergebnis" class="result-item item">
                 <span class="text">2. Mannschaft</span>
             </a>
-            <a href="TODO" class="result-item item">
+            <a href="fussball/jugend/c-jugend/ergebnis" class="result-item item">
                 <span class="text">C-Jugend</span>
             </a>
-            <a href="TODO" class="result-item item">
+            <a href="fussball/jugend/e-jugend/ergebnis" class="result-item item">
                 <span class="text">E-Jugend</span>
             </a>
         </span>
