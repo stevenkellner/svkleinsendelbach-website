@@ -42,6 +42,7 @@ import { SportsHomeComponent } from './pages/about-us/sports-home/sports-home.co
 import { TopHeaderComponent } from './_template/header/top-header/top-header.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AboutUsLeftRowComponent } from './pages/about-us/left-row/left-row.component';
+import { ImprintLeftRowComponent } from './pages/imprint/left-row/left-row.component';
 import { ChronicleComponent } from './pages/about-us/chronicle/chronicle.component';
 import { ManagersComponent } from './pages/about-us/managers/managers.component';
 import { HomeLeftRowComponent } from './pages/home/left-row/left-row.component';
@@ -57,6 +58,7 @@ import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
 import { DancingComponent } from './pages/dancing/dancing.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ImprintComponent } from './pages/imprint/imprint.component';
 import { WaveComponent } from './_template/wave/wave.component';
 import { DriveComponent } from './pages/drive/drive.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -95,6 +97,7 @@ import { HomeComponent } from './pages/home/home.component';
     FootballYouthGSquadComponent,
     GymnasticsLeftRowComponent,
     AboutUsLeftRowComponent,
+    ImprintLeftRowComponent,
     PageNotFoundComponent,
     HomeLeftRowComponent,
     NewsDetailsComponent,
@@ -111,6 +114,7 @@ import { HomeComponent } from './pages/home/home.component';
     DancingComponent,
     ContactComponent,
     AllNewsComponent,
+    ImprintComponent,
     HeaderComponent,
     NavBarComponent,
     FooterComponent,

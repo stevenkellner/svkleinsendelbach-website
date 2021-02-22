@@ -38,6 +38,7 @@ import { RequestComponent } from './pages/about-us/request/request.component';
 import { GymnasticsComponent } from './pages/gymnastics/gymnastics.component';
 import { NewsDetailsComponent } from './pages/news/details/details.component';
 import { AllNewsComponent } from './pages/news/all-news/all-news.component';
+import { ImprintComponent } from './pages/imprint/imprint.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DancingComponent } from './pages/dancing/dancing.component';
 import { DriveComponent } from './pages/drive/drive.component';
@@ -97,6 +98,8 @@ const routes: Routes = [
 
     {path: 'news/alle-news', component: AllNewsComponent},
     {path: 'news/:detail', component: NewsDetailsComponent},
+
+    {path: 'impressum', component: ImprintComponent},
 
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', component: PageNotFoundComponent}

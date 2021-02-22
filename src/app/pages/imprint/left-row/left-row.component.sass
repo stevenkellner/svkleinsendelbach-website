@@ -1,0 +1,47 @@
+@import '../../../../styles'
+
+.left-row-content
+    @include flex-column(center, flex-start)
+
+    > *
+        @include flex-column(center, flex-start)
+        margin-top: 3 * $cube
+
+        .title
+            @include flex-row()
+            border-bottom: $darkGrayLightBackground solid 1px
+            padding: 0.5 * $cube
+
+            i
+                font-size: 1.25 * $cube
+                color: $dark-prime
+                margin-right: 4px
+            p
+                font-size: 1.25 * $cube
+                color: $dark-prime
+                text-transform: uppercase
+
+        .items
+            @include flex-column(center, flex-start)
+            margin-top: $cube
+
+            .item
+                @include flex-row()
+                text-decoration: none
+                margin: $cube (2 * $cube)
+                padding: (0.5 * $cube) 0
+                padding:
+                    bottom: $cube
+                    left: 0.5 * $cube
+                    right: 0.5 * $cube
+                border-bottom: $darkGrayLightBackground solid 1px
+                color: $darkLightText
+                &:hover
+                    color: $redLightText
+
+@media screen and (prefers-color-scheme: dark)
+    .left-row-content *
+        .title, .items .item
+            border-color: $grayDarkText
+        .title i, .title p, .items .item
+            color: $grayDarkText

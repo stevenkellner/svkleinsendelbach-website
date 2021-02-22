@@ -1,0 +1,18 @@
+@import '../../../styles'
+
+.main-content .text-section .item
+    @include flex-column()
+    width: 100%
+    padding-bottom: 2 * $cube
+
+    .address
+        @include flex-column()
+        width: 100%
+        padding: $cube 0
+
+        *
+            padding: 0
+
+        > *
+            padding-bottom: 0.5 * $cube
+            width: 100%
