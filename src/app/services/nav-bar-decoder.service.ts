@@ -31,7 +31,8 @@ export class NavBarDecoderService {
                         const navBarSubItem: NavigationBarSubItem = {
                             id: subItem,
                             name: decodedSubItem.name,
-                            linkUrl: decodedSubItem.link
+                            linkUrl: decodedSubItem.link,
+                            extern: decodedSubItem.extern
                         };
                         navBarSubItems.push(navBarSubItem);
                     }
@@ -48,13 +49,14 @@ export class NavBarDecoderService {
         });
     }
 
-    private decodeItem(data: any, id: string): {name: string, link: string} | null {
+    private decodeItem(data: any, id: string): {name: string, link: string, extern?: boolean} | null {
         const allNavItems = data['all-nav-items'];
         for (const navItem of allNavItems) {
             if (navItem.id === id) {
                 return {
                     name: navItem.name,
-                    link: navItem.linkUrl
+                    link: navItem.linkUrl,
+                    extern: navItem.extern
                 };
             }
         }
@@ -87,4 +89,6 @@ interface NavigationBarSubItem {
     name: string;
 
     linkUrl: string;
+
+    extern?: boolean;
 }

@@ -23,11 +23,11 @@ export class ContactComponent {
     private currentStatusTimeout: number | null = null;
 
     receivers: Receiver[] = [
-        {name: 'Vorstandschaft', address: 'TODO'},
-        {name: 'Herrenfußball', address: 'TODO'},
-        {name: 'Jugendfußball', address: 'TODO'},
-        {name: 'Gymnastik', address: 'TODO'},
-        {name: 'Tanzen', address: 'TODO'}
+        {name: 'Vorstandschaft', address: 'vorstand@sv-kleinsendelbach.de'},
+        {name: 'Herrenfußball', address: 'herrenfußball@sv-kleinsendelbach.de'},
+        {name: 'Jugendfußball', address: 'jugenfußball@sv-kleinsendelbach.de'},
+        {name: 'Gymnastik', address: 'gymnastik@sv-kleinsendelbach.de'},
+        {name: 'Tanzen', address: 'tanzen@sv-kleinsendelbach.de'}
     ];
 
     contactForm = this.fb.group({

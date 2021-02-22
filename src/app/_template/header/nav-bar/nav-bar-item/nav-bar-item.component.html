@@ -36,7 +36,8 @@
             [ngClass]="{'expanded': expandedNavBarItem?.id == navBarItem.id }"  
             href="{{ subItem.linkUrl }}" 
             class="sub-item"
-            #subItem>
+            #subItem
+            target="{{ subItem.extern ? '_blank' : '_self' }}">
             {{ subItem.name }}
         </a>
     </span>

@@ -8,7 +8,7 @@
                 {
                     "type": "mobile",
                     "text": "01590 / 1094261",
-                    "link": "TODO"
+                    "link": "tel:015901094261"
                 }
             ]
         }
@@ -22,7 +22,7 @@
                 {
                     "type": "mobile",
                     "text": "0176 / 84171396",
-                    "link": "TODO"
+                    "link": "tel:017684171396"
                 }
             ]
         }
@@ -36,12 +36,12 @@
                 {
                     "type": "mobile",
                     "text": "0176 / 57857884",
-                    "link": "TODO"
+                    "link": "tel:017657857884"
                 },
                 {
                     "type": "telephone",
                     "text": "09126 / 75467",
-                    "link": "TODO"
+                    "link": "tel:0912675467"
                 }
             ]
         }

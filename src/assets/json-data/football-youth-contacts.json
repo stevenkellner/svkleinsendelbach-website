@@ -8,17 +8,17 @@
                 {
                     "type": "telephone",
                     "text": "09134 / 997793",
-                    "link": "TODO"
+                    "link": "tel:09134997793"
                 },
                 {
                     "type": "mobile",
                     "text": "0163 / 1864871",
-                    "link": "TODO"
+                    "link": "tel:01631864871"
                 },
                 {
                     "type": "email",
                     "text": "E-Mail",
-                    "link": "TODO"
+                    "link": "mailto:c-jugend@sv-kleinsendelbach.de"
                 }
             ]
         },
@@ -44,12 +44,12 @@
                 {
                     "type": "mobile",
                     "text": "0160 / 6120508",
-                    "link": "TODO"
+                    "link": "tel:01606120508"
                 },
                 {
                     "type": "email",
                     "text": "E-Mail",
-                    "link": "TODO"
+                    "link": "mailto:e-jugend@sv-kleinsendelbach.de"
                 }
             ]
         },
@@ -61,7 +61,7 @@
                 {
                     "type": "mobile",
                     "text": "0170 / 2911886",
-                    "link": "TODO"
+                    "link": "tel:01702911886"
                 }
             ]
         }
@@ -75,12 +75,12 @@
                 {
                     "type": "mobile",
                     "text": "0172 / 9915405",
-                    "link": "TODO"
+                    "link": "tel:01729915405"
                 },
                 {
                     "type": "email",
                     "text": "E-Mail",
-                    "link": "TODO"
+                    "link": "mailto:f-jugend@sv-kleinsendelbach.de"
                 }
             ]
         },
@@ -92,7 +92,7 @@
                 {
                     "type": "mobile",
                     "text": "0171 / 2447114",
-                    "link": "TODO"
+                    "link": "tel:01712447114"
                 }
             ]
         }
@@ -106,12 +106,12 @@
                 {
                     "type": "mobile",
                     "text": "0176 / 32844763",
-                    "link": "TODO"
+                    "link": "tel:017632844763"
                 },
                 {
                     "type": "email",
                     "text": "E-Mail",
-                    "link": "TODO"
+                    "link": "mailto:g-jugend@sv-kleinsendelbach.de"
                 }
             ]
         },
@@ -123,7 +123,7 @@
                 {
                     "type": "mobile",
                     "text": "0170 / 8087516",
-                    "link": "TODO"
+                    "link": "tel:01708087516"
                 }
             ]
         }

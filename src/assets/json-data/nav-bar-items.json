@@ -78,12 +78,14 @@
     {
       "id": "football-youth-a",
       "name": "A-Jugend",
-      "linkUrl": "TODO"
+      "linkUrl": "http://sv-hetzles.de/index.php/a-junioren",
+      "extern": true
     },
     {
       "id": "football-youth-b",
       "name": "B-Jugend",
-      "linkUrl": "TODO"
+      "linkUrl": "http://sv-hetzles.de/index.php/b-junioren-u17",
+      "extern": true
     },
     {
       "id": "football-youth-c",
@@ -93,7 +95,8 @@
     {
       "id": "football-youth-d",
       "name": "D-Jugend",
-      "linkUrl": "TODO"
+      "linkUrl": "http://www.tsv-neunkirchen-am-brand.de/fu/junioren",
+      "extern": true
     },
     {
       "id": "football-youth-e",
