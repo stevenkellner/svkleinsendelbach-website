@@ -15,6 +15,8 @@ export class NewsDetailsComponent implements AfterViewInit {
 
     deviceTypeListener: DeviceTypeListener;
 
+    title = 'Nachricht';
+
     constructor(private titleService: Title,
                 private router: Router,
                 private dynamicPagesService: DynamicPagesService) {
@@ -23,10 +25,10 @@ export class NewsDetailsComponent implements AfterViewInit {
 
     ngAfterViewInit(): void {
         this.dynamicPagesService.getNews(allNews => {
-            const address = this.router.url.split("/")[2];
-            const news = allNews.find(element => element.address == address);
+            const address = this.router.url.split('/')[2];
+            const news = allNews.find(element => element.address === address);
             if (!news) {
-                this.router.navigateByUrl("pageNotFound");
+                this.router.navigateByUrl('pageNotFound');
                 return;
             }
             this.titleService.setTitle(news.title);
@@ -36,7 +38,7 @@ export class NewsDetailsComponent implements AfterViewInit {
             });
         });
     }
-    
+
     @HostListener('window:resize')
     windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);

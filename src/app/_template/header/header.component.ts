@@ -13,7 +13,7 @@ export class HeaderComponent {
     @Input() activePageId: string | undefined;
 
     /** Title of current navigation page (e.g. 'Über uns' for all about-us tabs) */
-    title: string | undefined;
+    @Input() title: string | undefined;
 
     /** Current nav bar item that is hovered over (e.g. 'Gynmastik' if hover over 'Gymnastik' nav bar item) */
     expandedNavBarItem: NavigationBarItem | null = null;

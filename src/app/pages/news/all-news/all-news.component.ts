@@ -12,17 +12,19 @@ export class AllNewsComponent {
 
     deviceTypeListener: DeviceTypeListener;
 
-    allNews: News[] | null = null
+    allNews: News[] | null = null;
+
+    title = 'Alle Nachrichten';
 
     constructor(private titleService: Title,
                 private dynamicPagesService: DynamicPagesService) {
-        this.titleService.setTitle('Alle Nachrichten')
+        this.titleService.setTitle('Alle Nachrichten');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});
         this.dynamicPagesService.getNews(allNews => {
             this.allNews = allNews.sort((firstNews, secondNews) => firstNews.date > secondNews.date ? 1 : -1);
         });
     }
-    
+
     @HostListener('window:resize')
     windowChanged(): void {
         this.deviceTypeListener.windowChanged(window);

@@ -11,6 +11,8 @@ export class PageNotFoundComponent {
 
     deviceTypeListener: DeviceTypeListener;
 
+    title = 'Seite nicht gefunden';
+
     constructor(private titleService: Title) {
         this.titleService.setTitle('Seite nicht gefunden');
         this.deviceTypeListener = new DeviceTypeListener(window, () => {});

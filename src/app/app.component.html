@@ -1,5 +1,5 @@
 <span [ngClass]="deviceTypeListener.deviceTypeString()" class="page-container"> 
-    <app-header [activePageId]="activeNavBarId" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-header>
+    <app-header [activePageId]="activeNavBarId" [title]="title" (navBarStickyEmitter)="handleNavBarSticky($event)"></app-header>
     <span [ngClass]="{'nav-bar-sticky': navBarSticky }" class="body">
         <router-outlet class="outlet" (activate)="setActiveNavBarId($event)"></router-outlet>
     </span>

@@ -8,7 +8,7 @@ import { DeviceTypeListener } from './_template/header/header.component';
 })
 export class AppComponent {
 
-    title = 'svkleinsendelbach-website';
+    title = 'SV Kleinsendelbach e.V.';
 
     navBarSticky = false;
 
@@ -31,5 +31,6 @@ export class AppComponent {
 
     setActiveNavBarId(event: any): void {
         this.activeNavBarId = event.activeNavBarId;
+        this.title = event.title;
     }
 }

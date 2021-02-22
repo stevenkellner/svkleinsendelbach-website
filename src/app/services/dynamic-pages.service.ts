@@ -10,7 +10,7 @@ export class DynamicPagesService {
     constructor(private httpClient: HttpClient) {}
 
     getNews(handler: (allNews: News[]) => void): void {
-        const url = "https://raw.githubusercontent.com/stevenkellner/svkleinsendelbach-website/dynamic-pages/_scripts/files.json";
+        const url = 'https://raw.githubusercontent.com/stevenkellner/svkleinsendelbach-website/dynamic-pages/_scripts/files.json';
         this.httpClient.get(url).subscribe((data: any) => {
             const allNews: News[] = [];
             data.news.forEach((newsJson: any) => {
@@ -26,7 +26,7 @@ export class DynamicPagesService {
         this.httpClient.get(url, {
             responseType: 'text'
         }).subscribe(data => {
-            handler(data)
+            handler(data);
         }, () => {
             handler(null);
         });
