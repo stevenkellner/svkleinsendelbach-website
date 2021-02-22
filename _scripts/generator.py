@@ -6,7 +6,7 @@ import os
 import re
 
 FILES_JSON_PATH = os.path.abspath("_scripts/files.json")
-SOURCE_PATH = os.path.abspath("src")
+SOURCE_PATH = "src"
 GITHUB_USERNAME = "GITHUB_USERNAME"
 GITHUB_REPOSITORY = "GITHUB_REPOSITORY"
 
