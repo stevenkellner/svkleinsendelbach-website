@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 
 import { FootballAdultsSecondTeamContactComponent } from './pages/football-adults/second-team/contact/contact.component';
 import { FootballAdultsSecondTeamResultsComponent } from './pages/football-adults/second-team/results/results.component';
@@ -36,6 +36,7 @@ import { PrivacyComponent } from './pages/about-us/privacy/privacy.component';
 import { StatuteComponent } from './pages/about-us/statute/statute.component';
 import { RequestComponent } from './pages/about-us/request/request.component';
 import { GymnasticsComponent } from './pages/gymnastics/gymnastics.component';
+import { NewsDetailsComponent } from './pages/news/details/details.component';
 import { AllNewsComponent } from './pages/news/all-news/all-news.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DancingComponent } from './pages/dancing/dancing.component';
@@ -95,6 +96,7 @@ const routes: Routes = [
     {path: 'kontakt', component: ContactComponent},
 
     {path: 'news/alle-news', component: AllNewsComponent},
+    {path: 'news/:detail', component: NewsDetailsComponent},
 
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', component: PageNotFoundComponent}

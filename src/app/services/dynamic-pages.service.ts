@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -20,6 +21,16 @@ export class DynamicPagesService {
             handler(allNews);
         });
     }
+
+    getPage(url: string, handler: (content: string | null) => void): void {
+        this.httpClient.get(url, {
+            responseType: 'text'
+        }).subscribe(data => {
+            handler(data)
+        }, () => {
+            handler(null);
+        });
+    }
 }
 
 export interface News {
@@ -27,6 +38,6 @@ export interface News {
     address: string;
     date: Date;
     image?: string;
-    describtion?: string;
+    description?: string;
     url: string;
 }

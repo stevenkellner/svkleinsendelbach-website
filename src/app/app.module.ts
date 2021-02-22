@@ -1,11 +1,11 @@
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { AppRoutingModule } from './app.routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 
 import { FootballAdultsSecondTeamContactComponent } from './pages/football-adults/second-team/contact/contact.component';
 import { FootballAdultsSecondTeamResultsComponent } from './pages/football-adults/second-team/results/results.component';
@@ -50,6 +50,8 @@ import { StatuteComponent } from './pages/about-us/statute/statute.component';
 import { PrivacyComponent } from './pages/about-us/privacy/privacy.component';
 import { RequestComponent } from './pages/about-us/request/request.component';
 import { GymnasticsComponent } from './pages/gymnastics/gymnastics.component';
+import { NewsDetailsComponent } from './pages/news/details/details.component';
+import { AllNewsComponent } from './pages/news/all-news/all-news.component';
 import { LeftRowComponent } from './_template/left-row/left-row.component';
 import { HeaderComponent } from './_template/header/header.component';
 import { FooterComponent } from './_template/footer/footer.component';
@@ -58,7 +60,6 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { WaveComponent } from './_template/wave/wave.component';
 import { DriveComponent } from './pages/drive/drive.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AllNewsComponent } from './pages/news/all-news/all-news.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import { AllNewsComponent } from './pages/news/all-news/all-news.component';
     AboutUsLeftRowComponent,
     PageNotFoundComponent,
     HomeLeftRowComponent,
+    NewsDetailsComponent,
     SportsHomeComponent,
     NavBarItemComponent,
     GymnasticsComponent,
@@ -108,6 +110,7 @@ import { AllNewsComponent } from './pages/news/all-news/all-news.component';
     LeftRowComponent,
     DancingComponent,
     ContactComponent,
+    AllNewsComponent,
     HeaderComponent,
     NavBarComponent,
     FooterComponent,
@@ -115,16 +118,15 @@ import { AllNewsComponent } from './pages/news/all-news/all-news.component';
     WaveComponent,
     HomeComponent,
     AppComponent,
-    AllNewsComponent
   ],
   imports: [
+    ReactiveFormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     GoogleMapsModule,
-    BrowserModule,
     RecaptchaModule,
-    ReactiveFormsModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
