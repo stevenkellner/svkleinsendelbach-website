@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, HostListener } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import {  DeviceTypeListener } from 'src/app/_template/header/header.component';
+import { DeviceTypeListener } from 'src/app/_template/header/header.component';
 
 @Component({
     selector: 'app-home',

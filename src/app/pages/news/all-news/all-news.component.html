@@ -1,0 +1,19 @@
+<span class="body">
+    <app-left-row>
+        <app-home-left-row></app-home-left-row>
+    </app-left-row>
+    <span [ngClass]="deviceTypeListener.deviceTypeString()" class="main-content">
+        <span class="text-section">
+            <h1>Alle Nachrichten</h1>
+            <a *ngFor="let news of allNews" href="TODO" class="news">
+                <span class="img-wrapper">
+                    <img src="{{ news.image }}">
+                </span>
+                <span class="right-column">
+                    <p class="title">{{ news.title }}</p>
+                    <p class="description">{{ news.description }}</p>
+                </span>
+            </a>
+        </span>
+    </span>
+</span>

@@ -4,18 +4,12 @@
             <i class="far fa-newspaper"></i>
             <p>news</p>
         </span>
-        <span class="items">
-            <a href="TODO" class="news-item item">
-                <span class="text">
-                    Saisonrückblick Jugend 2017 / 2018
-                </span>
-            </a>
-            <a href="TODO" class="news-item item">
-                <span class="text">
-                    Kochbuch "Schmackofatz" zu Gunsten der Kabinen-Renovierung
-                </span>
+        <span *ngIf="allNews" class="items">
+            <a *ngFor="let news of allNews" href="TODO" class="news-item item">
+                <span class="text">{{ news.title }}</span>
             </a>
         </span>
+        <a *ngIf="showAllNewsButtonVisible" href="news/alle-news" class="show-more">Alle News zeigen</a>
     </span>
     <span class="results">
         <span class="title">

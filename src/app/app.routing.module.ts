@@ -36,6 +36,7 @@ import { PrivacyComponent } from './pages/about-us/privacy/privacy.component';
 import { StatuteComponent } from './pages/about-us/statute/statute.component';
 import { RequestComponent } from './pages/about-us/request/request.component';
 import { GymnasticsComponent } from './pages/gymnastics/gymnastics.component';
+import { AllNewsComponent } from './pages/news/all-news/all-news.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { DancingComponent } from './pages/dancing/dancing.component';
 import { DriveComponent } from './pages/drive/drive.component';
@@ -92,6 +93,8 @@ const routes: Routes = [
     {path: 'tanzen', component: DancingComponent},
     {path: 'anfahrt', component: DriveComponent},
     {path: 'kontakt', component: ContactComponent},
+
+    {path: 'news/alle-news', component: AllNewsComponent},
 
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', component: PageNotFoundComponent}

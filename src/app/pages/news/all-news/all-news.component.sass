@@ -1,0 +1,36 @@
+@import '../../../../styles'
+
+.main-content .text-section .news
+    @include flex-row(flex-start)
+    width: 100%
+    padding: 0
+    margin-bottom: 2 * $cube
+
+    .img-wrapper
+        @include flex-column(center, flex-start)
+        width: 25%
+        min-height: 10 * $cube
+        overflow: hidden
+        padding: 0
+
+        img
+            height: 10 * $cube
+            width: auto
+            border: none
+
+    .right-column
+        @include flex-column(flex-start, flex-start)
+        width: 75%
+        min-height: 10 * $cube
+        padding: 0
+
+        .title
+            text-align: left
+            padding: 0 0 (0.5 * $cube) $cube
+            font-size: 1.25 * $cube
+            color: $darkLightText
+
+        .description
+            text-align: left
+            padding: 0 0 0 $cube
+                

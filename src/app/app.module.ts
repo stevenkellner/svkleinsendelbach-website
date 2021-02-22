@@ -58,6 +58,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { WaveComponent } from './_template/wave/wave.component';
 import { DriveComponent } from './pages/drive/drive.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AllNewsComponent } from './pages/news/all-news/all-news.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +114,8 @@ import { HomeComponent } from './pages/home/home.component';
     DriveComponent,
     WaveComponent,
     HomeComponent,
-    AppComponent
+    AppComponent,
+    AllNewsComponent
   ],
   imports: [
     ReactiveFormsModule,
