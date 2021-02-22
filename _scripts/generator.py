@@ -6,7 +6,7 @@ import os
 import re
 
 FILES_JSON_PATH = os.path.abspath("_scripts/files.json")
-SOURCE_PATH = os.path.abspath("_src")
+SOURCE_PATH = os.path.abspath("src")
 GITHUB_USERNAME = "GITHUB_USERNAME"
 GITHUB_REPOSITORY = "GITHUB_REPOSITORY"
 
@@ -33,7 +33,7 @@ def getAllDirectories():
     return [
         directory
         for directory in next(os.walk("."))[1]
-        if directory != "assets"
+        if directory not in ["assets", "src"]
            and not directory.startswith("_")
            and not directory.startswith(".")
     ]
