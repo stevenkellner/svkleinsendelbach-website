@@ -24,7 +24,7 @@ jobs:
               run: |
                   git config --local user.email "action@github.com"
                   git config --local user.name "github-actions"
-                  git add _scripts/files.json
+                  git add _scripts/files.json src/*
                   if [ -z "$(git status --porcelain)" ]; then
                     echo "::set-output name=push::false"
                   else
